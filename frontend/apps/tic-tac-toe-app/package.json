@@ -1,7 +1,27 @@
 {
     "name": "@wbk--reactjs-playground--typescript/tic-tac-toe-app",
+    "id": "tic-tac-toe-app-01",
     "formattedName": "Tic Tac Toe App",
-    "description": "A simple tic-tac-toe game built with React and TypeScript.",
+    "description": "A simple tic-tac-toe game built with React and TypeScript to practice frontend development skills.",
+    "shortDescription": "A simple tic-tac-toe game built with React and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-19T00:00:00.000Z",
+    "tags": [
+        "game",
+        "react",
+        "typescript",
+        "frontend"
+    ],
     "private": true,
     "version": "0.3.0",
     "type": "module",
