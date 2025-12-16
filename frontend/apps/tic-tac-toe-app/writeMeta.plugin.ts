@@ -49,7 +49,7 @@ export const writeMetaPlugin = (): Plugin => {
                 name: packageJson?.formattedName,
                 version: packageJson.version,
                 description: packageJson.description,
-                slug: PROJECT_NAME,
+                slug: PROJECT_NAME || '',
                 id: packageJson.id || '',
                 shortDescription: packageJson?.shortDescription || '',
                 category: packageJson?.category || 'Other',
