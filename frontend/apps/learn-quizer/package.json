@@ -1,5 +1,28 @@
 {
     "name": "@wbk--reactjs-playground--typescript/learn-quizer",
+    "id": "learn-quizer-01",
+    "formattedName": "Learn Quizer",
+    "description": "An interactive quiz application built with React and TypeScript, designed to help users learn and test their knowledge across various subjects.",
+    "shortDescription": "An interactive quiz application built with React and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2025-06-19T00:00:00.000Z",
+    "tags": [
+        "quiz",
+        "education",
+        "react",
+        "typescript",
+        "frontend"
+    ],
     "private": true,
     "version": "0.0.0",
     "type": "module",

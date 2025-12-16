@@ -1,5 +1,32 @@
 {
     "name": "@wbk--reactjs-playground--typescript/moveit-work-flow",
+    "id": "moveit-work-flow-01",
+    "formattedName": "MoveIt Work Flow",
+    "description": "A comprehensive work flow application built with React and TypeScript, featuring task management, scheduling, and progress tracking functionalities.",
+    "shortDescription": "A work flow application with task management and scheduling features.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Blockchain"
+    ],
+    "images": [],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2025-11-19T00:00:00.000Z",
+    "tags": [
+        "workflow",
+        "react",
+        "typescript",
+        "frontend",
+        "productivity",
+        "blockchain",
+        "web3",
+        "sui"
+    ],
     "private": true,
     "version": "0.0.0",
     "type": "module",

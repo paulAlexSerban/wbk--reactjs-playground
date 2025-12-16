@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { writeMetaPlugin } from './writeMeta.plugin';
-
+import path from 'path';
 import packageJson from './package.json';
 
 const PROJECT_NAME = packageJson.name.split('/').pop();
@@ -12,6 +12,11 @@ export default defineConfig(({ command }) => {
     const config = {
         plugins: [react(), writeMetaPlugin()],
         base: '/',
+        resolve: {
+            alias: {
+                '@': path.resolve(__dirname, './src'),
+            },
+        },
     };
 
     if (command !== 'serve') {
