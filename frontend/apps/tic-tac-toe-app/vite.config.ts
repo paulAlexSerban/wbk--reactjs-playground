@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 
-const packageJson = require('./package.json');
+import packageJson from './package.json';
+
 const PROJECT_NAME = packageJson.name.split('/').pop();
 const BASE_URL = process.env.BASE_URL || '/';
 
