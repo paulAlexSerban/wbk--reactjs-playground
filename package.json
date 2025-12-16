@@ -42,7 +42,8 @@
             "frontend/**/*",
             "shared/*",
             "shared/**/*",
-            "tools/*"
+            "tools/*",
+            "dashboard/*"
         ],
         "nohoist": [
             "**/normalize-scss"
