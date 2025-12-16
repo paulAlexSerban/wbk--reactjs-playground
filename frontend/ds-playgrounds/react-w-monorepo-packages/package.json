@@ -1,10 +1,10 @@
 {
-    "name": "@wbk--reactjs-playground--typescript/playgrounds-react",
+    "name": "@wbk--reactjs-playground--typescript/react-w-monorepo-packages",
     "version": "0.2.1",
     "license": "MIT",
     "scripts": {
         "develop:playgrounds": "export NODE_ENV=development && parcel build src/index.html && parcel src/index.html -p 3000 --https",
-        "lint": "echo \"No linting configured\"",
+        "lint:playgrounds": "echo \"No linting configured\"",
         "build:dev:playgrounds": "rm -rfv ./dist && export NODE_ENV=development && parcel build src/index.html",
         "build:prod:playgrounds": "rm -rfv ./dist && export NODE_ENV=production && parcel build src/index.html --no-source-maps --no-cache --no-autoinstall"
     },

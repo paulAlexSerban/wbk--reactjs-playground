@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { Select } from '@wbk--reactjs-playground--typescript/react-cmp-lib';
 
@@ -7,7 +7,6 @@ import '@wbk--reactjs-playground--typescript/lsg-styles-generic/lib/components/a
 import '@wbk--reactjs-playground--typescript/lsg-styles-generic/lib/components/atoms/margin.css';
 import '@wbk--reactjs-playground--typescript/lsg-styles-generic/lib/components/molecules/select.css';
 import '@wbk--reactjs-playground--typescript/lsg-styles-generic/lib/components/atoms/utilities.css';
-import '@wbk--reactjs-playground--typescript/lsg-styles-generic/lib/components/atoms/text.css';
 
 const options = [
     {
@@ -24,9 +23,12 @@ const options = [
     },
 ];
 
-ReactDOM.render(
-    <div style={{ padding: '40px' }}>
-        <Select options={options} />
-    </div>,
-    document.querySelector('#root')
-);
+const rootElement = document.querySelector('#root');
+if (rootElement) {
+    const root = createRoot(rootElement);
+    root.render(
+        <div style={{ padding: '40px' }}>
+            <Select options={options} />
+        </div>
+    );
+}

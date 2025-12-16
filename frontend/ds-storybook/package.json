@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "storybook": "storybook dev --port 6006 --no-open",
+        "develop:storybook": "storybook dev --port 6006 --no-open",
         "build:storybook": "storybook build --output-dir dist",
         "test:chromatic": "bash scripts/chromatic.sh",
         "package": "bash scripts/package.bash"
