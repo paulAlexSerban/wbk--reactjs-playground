@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/paulAlexSerban/wbk--fullstack/compare/@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.2.0...@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.3.0) (2025-12-16)
+
+### Features
+
+- **arch:** cleanup ([eaaacce](https://github.com/paulAlexSerban/wbk--fullstack/commit/eaaacceb69e3614d269b60cb944cca66b5a59e4c))
+- **arch:** scripts test ([984b6cd](https://github.com/paulAlexSerban/wbk--fullstack/commit/984b6cdbdcdd9cd32782a6889fa6ace1239f0454))
+- **duolingo app:** added ([0053373](https://github.com/paulAlexSerban/wbk--fullstack/commit/005337384b2ee24f746df522c95a0c8d5f505939))
+- **minesweeper:** added some tests ([6c33b61](https://github.com/paulAlexSerban/wbk--fullstack/commit/6c33b61e476d4c2b227d73c3898a3383d1464f11))
+- **solid:** move solid examples to single app ([6e417cd](https://github.com/paulAlexSerban/wbk--fullstack/commit/6e417cdd26d783d17f831a049e58f660d61be20a))
+- some cleanup ([7a07cee](https://github.com/paulAlexSerban/wbk--fullstack/commit/7a07cee4ec656ca6cfe3e9b9f0ddd02a9b351756))
+- some cleanup ([4b68ed0](https://github.com/paulAlexSerban/wbk--fullstack/commit/4b68ed0783d63bb638bb91c3faae7ec3d0344906))
+
 # [0.2.0](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/compare/@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.1.0...@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.2.0) (2024-02-05)
 
 ### Features

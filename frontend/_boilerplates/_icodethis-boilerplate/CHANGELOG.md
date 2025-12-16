@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/paulAlexSerban/wbk--fullstack/compare/@wbk--reactjs-playground--typescript/playgrounds-icodethis-boilerplate@0.1.1...@wbk--reactjs-playground--typescript/playgrounds-icodethis-boilerplate@0.2.0) (2025-12-16)
+
+### Features
+
+- some cleanup ([7a07cee](https://github.com/paulAlexSerban/wbk--fullstack/commit/7a07cee4ec656ca6cfe3e9b9f0ddd02a9b351756))
+- some cleanup ([4b68ed0](https://github.com/paulAlexSerban/wbk--fullstack/commit/4b68ed0783d63bb638bb91c3faae7ec3d0344906))
+
 ## [0.1.1](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/compare/@wbk--reactjs-playground--typescript/playgrounds-icodethis-boilerplate@0.1.0...@wbk--reactjs-playground--typescript/playgrounds-icodethis-boilerplate@0.1.1) (2024-02-05)
 
 **Note:** Version bump only for package @wbk--reactjs-playground--typescript/playgrounds-icodethis-boilerplate

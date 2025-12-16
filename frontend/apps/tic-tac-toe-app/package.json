@@ -3,7 +3,7 @@
     "formattedName": "Tic Tac Toe App",
     "description": "A simple tic-tac-toe game built with React and TypeScript.",
     "private": true,
-    "version": "0.2.0",
+    "version": "0.3.0",
     "type": "module",
     "scripts": {
         "develop": "vite",

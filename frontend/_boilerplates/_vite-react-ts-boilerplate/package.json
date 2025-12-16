@@ -3,7 +3,7 @@
     "formattedName": "Vite React TypeScript Boilerplate",
     "description": "A Vite-based React TypeScript boilerplate with ESLint, Prettier, and Sass support.",
     "private": true,
-    "version": "0.2.0",
+    "version": "0.3.0",
     "type": "module",
     "scripts": {
         "develop:boilerplates": "vite",
