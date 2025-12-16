@@ -1,0 +1,1917 @@
+[
+    {
+        "id": "proj-000",
+        "name": "MonitorX 0",
+        "slug": "monitorx-0",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Library",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/monitorx-0-1/800/600",
+            "https://picsum.photos/seed/monitorx-0-2/800/600",
+            "https://picsum.photos/seed/monitorx-0-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/monitorx-0",
+        "docsUrl": "https://docs.example.com/monitorx-0",
+        "featured": false,
+        "createdAt": "2024-11-14T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Library"]
+    },
+    {
+        "id": "proj-001",
+        "name": "FraudDetect 1",
+        "slug": "frauddetect-1",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "API",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/frauddetect-1-1/800/600",
+            "https://picsum.photos/seed/frauddetect-1-2/800/600",
+            "https://picsum.photos/seed/frauddetect-1-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/frauddetect-1",
+        "demoUrl": "https://frauddetect-1.example.com",
+        "docsUrl": "https://docs.example.com/frauddetect-1",
+        "featured": false,
+        "createdAt": "2023-10-25T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "API"]
+    },
+    {
+        "id": "proj-002",
+        "name": "PDFGenerator 2",
+        "slug": "pdfgenerator-2",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Other",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/pdfgenerator-2-1/800/600",
+            "https://picsum.photos/seed/pdfgenerator-2-2/800/600",
+            "https://picsum.photos/seed/pdfgenerator-2-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/pdfgenerator-2",
+        "demoUrl": "https://pdfgenerator-2.example.com",
+        "docsUrl": "https://docs.example.com/pdfgenerator-2",
+        "featured": false,
+        "createdAt": "2024-06-17T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "Other"]
+    },
+    {
+        "id": "proj-003",
+        "name": "AuditLog 3",
+        "slug": "auditlog-3",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Web App",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/auditlog-3-1/800/600",
+            "https://picsum.photos/seed/auditlog-3-2/800/600",
+            "https://picsum.photos/seed/auditlog-3-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/auditlog-3",
+        "demoUrl": "https://auditlog-3.example.com",
+        "featured": false,
+        "createdAt": "2023-03-21T22:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "Web App"]
+    },
+    {
+        "id": "proj-004",
+        "name": "SearchIndex 4",
+        "slug": "searchindex-4",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "CLI Tool",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/searchindex-4-1/800/600",
+            "https://picsum.photos/seed/searchindex-4-2/800/600",
+            "https://picsum.photos/seed/searchindex-4-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/searchindex-4",
+        "demoUrl": "https://searchindex-4.example.com",
+        "docsUrl": "https://docs.example.com/searchindex-4",
+        "featured": false,
+        "createdAt": "2023-12-21T22:00:00.000Z",
+        "tags": ["Django", "Celery", "CLI Tool"]
+    },
+    {
+        "id": "proj-005",
+        "name": "ProxyServer 5",
+        "slug": "proxyserver-5",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "Game",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/proxyserver-5-1/800/600",
+            "https://picsum.photos/seed/proxyserver-5-2/800/600",
+            "https://picsum.photos/seed/proxyserver-5-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/proxyserver-5",
+        "demoUrl": "https://proxyserver-5.example.com",
+        "docsUrl": "https://docs.example.com/proxyserver-5",
+        "featured": false,
+        "createdAt": "2023-09-21T21:00:00.000Z",
+        "tags": ["Flutter", "Dart", "Game"]
+    },
+    {
+        "id": "proj-006",
+        "name": "ServiceMesh 6",
+        "slug": "servicemesh-6",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "CLI Tool",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/servicemesh-6-1/800/600",
+            "https://picsum.photos/seed/servicemesh-6-2/800/600",
+            "https://picsum.photos/seed/servicemesh-6-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/servicemesh-6",
+        "demoUrl": "https://servicemesh-6.example.com",
+        "docsUrl": "https://docs.example.com/servicemesh-6",
+        "featured": false,
+        "createdAt": "2023-04-08T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "CLI Tool"]
+    },
+    {
+        "id": "proj-007",
+        "name": "SecretVault 7",
+        "slug": "secretvault-7",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "API",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/secretvault-7-1/800/600",
+            "https://picsum.photos/seed/secretvault-7-2/800/600",
+            "https://picsum.photos/seed/secretvault-7-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/secretvault-7",
+        "demoUrl": "https://secretvault-7.example.com",
+        "featured": false,
+        "createdAt": "2024-03-17T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "API"]
+    },
+    {
+        "id": "proj-008",
+        "name": "MLPipeline 8",
+        "slug": "mlpipeline-8",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "CLI Tool",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/mlpipeline-8-1/800/600",
+            "https://picsum.photos/seed/mlpipeline-8-2/800/600",
+            "https://picsum.photos/seed/mlpipeline-8-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/mlpipeline-8",
+        "demoUrl": "https://mlpipeline-8.example.com",
+        "featured": false,
+        "createdAt": "2024-12-03T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "CLI Tool"]
+    },
+    {
+        "id": "proj-009",
+        "name": "RPCFramework 9",
+        "slug": "rpcframework-9",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "DevOps",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/rpcframework-9-1/800/600",
+            "https://picsum.photos/seed/rpcframework-9-2/800/600",
+            "https://picsum.photos/seed/rpcframework-9-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/rpcframework-9",
+        "demoUrl": "https://rpcframework-9.example.com",
+        "featured": false,
+        "createdAt": "2024-11-23T22:00:00.000Z",
+        "tags": ["Flutter", "Dart", "DevOps"]
+    },
+    {
+        "id": "proj-010",
+        "name": "ChatEngine 10",
+        "slug": "chatengine-10",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/chatengine-10-1/800/600",
+            "https://picsum.photos/seed/chatengine-10-2/800/600",
+            "https://picsum.photos/seed/chatengine-10-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/chatengine-10",
+        "demoUrl": "https://chatengine-10.example.com",
+        "docsUrl": "https://docs.example.com/chatengine-10",
+        "featured": false,
+        "createdAt": "2024-02-23T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Web App"]
+    },
+    {
+        "id": "proj-011",
+        "name": "DataLake 11",
+        "slug": "datalake-11",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "CLI Tool",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/datalake-11-1/800/600",
+            "https://picsum.photos/seed/datalake-11-2/800/600",
+            "https://picsum.photos/seed/datalake-11-3/800/600"
+        ],
+        "demoUrl": "https://datalake-11.example.com",
+        "featured": true,
+        "createdAt": "2024-08-14T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "CLI Tool"]
+    },
+    {
+        "id": "proj-012",
+        "name": "DocConverter 12",
+        "slug": "docconverter-12",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/docconverter-12-1/800/600",
+            "https://picsum.photos/seed/docconverter-12-2/800/600",
+            "https://picsum.photos/seed/docconverter-12-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/docconverter-12",
+        "demoUrl": "https://docconverter-12.example.com",
+        "docsUrl": "https://docs.example.com/docconverter-12",
+        "featured": false,
+        "createdAt": "2024-10-27T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Web App"]
+    },
+    {
+        "id": "proj-013",
+        "name": "EmailTemplates 13",
+        "slug": "emailtemplates-13",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "AI/ML",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/emailtemplates-13-1/800/600",
+            "https://picsum.photos/seed/emailtemplates-13-2/800/600",
+            "https://picsum.photos/seed/emailtemplates-13-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/emailtemplates-13",
+        "demoUrl": "https://emailtemplates-13.example.com",
+        "featured": false,
+        "createdAt": "2023-08-19T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "AI/ML"]
+    },
+    {
+        "id": "proj-014",
+        "name": "AnalyticsDash 14",
+        "slug": "analyticsdash-14",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/analyticsdash-14-1/800/600",
+            "https://picsum.photos/seed/analyticsdash-14-2/800/600",
+            "https://picsum.photos/seed/analyticsdash-14-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/analyticsdash-14",
+        "demoUrl": "https://analyticsdash-14.example.com",
+        "featured": false,
+        "createdAt": "2023-05-01T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "Web App"]
+    },
+    {
+        "id": "proj-015",
+        "name": "RPCFramework 15",
+        "slug": "rpcframework-15",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "Game",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/rpcframework-15-1/800/600",
+            "https://picsum.photos/seed/rpcframework-15-2/800/600",
+            "https://picsum.photos/seed/rpcframework-15-3/800/600"
+        ],
+        "demoUrl": "https://rpcframework-15.example.com",
+        "featured": false,
+        "createdAt": "2023-07-07T21:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Game"]
+    },
+    {
+        "id": "proj-016",
+        "name": "RecommendEngine 16",
+        "slug": "recommendengine-16",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "DevOps",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/recommendengine-16-1/800/600",
+            "https://picsum.photos/seed/recommendengine-16-2/800/600",
+            "https://picsum.photos/seed/recommendengine-16-3/800/600"
+        ],
+        "demoUrl": "https://recommendengine-16.example.com",
+        "docsUrl": "https://docs.example.com/recommendengine-16",
+        "featured": false,
+        "createdAt": "2023-01-13T22:00:00.000Z",
+        "tags": ["Rust", "Actix", "DevOps"]
+    },
+    {
+        "id": "proj-017",
+        "name": "FileProcessor 17",
+        "slug": "fileprocessor-17",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Web App",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/fileprocessor-17-1/800/600",
+            "https://picsum.photos/seed/fileprocessor-17-2/800/600",
+            "https://picsum.photos/seed/fileprocessor-17-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/fileprocessor-17",
+        "demoUrl": "https://fileprocessor-17.example.com",
+        "featured": false,
+        "createdAt": "2024-10-09T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "Web App"]
+    },
+    {
+        "id": "proj-018",
+        "name": "AuditLog 18",
+        "slug": "auditlog-18",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "AI/ML",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/auditlog-18-1/800/600",
+            "https://picsum.photos/seed/auditlog-18-2/800/600",
+            "https://picsum.photos/seed/auditlog-18-3/800/600"
+        ],
+        "featured": true,
+        "createdAt": "2024-05-26T21:00:00.000Z",
+        "tags": ["Flutter", "Dart", "AI/ML"]
+    },
+    {
+        "id": "proj-019",
+        "name": "CronScheduler 19",
+        "slug": "cronscheduler-19",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "AI/ML",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/cronscheduler-19-1/800/600",
+            "https://picsum.photos/seed/cronscheduler-19-2/800/600",
+            "https://picsum.photos/seed/cronscheduler-19-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/cronscheduler-19",
+        "demoUrl": "https://cronscheduler-19.example.com",
+        "docsUrl": "https://docs.example.com/cronscheduler-19",
+        "featured": false,
+        "createdAt": "2023-10-18T21:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "AI/ML"]
+    },
+    {
+        "id": "proj-020",
+        "name": "CronScheduler 20",
+        "slug": "cronscheduler-20",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "AI/ML",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/cronscheduler-20-1/800/600",
+            "https://picsum.photos/seed/cronscheduler-20-2/800/600",
+            "https://picsum.photos/seed/cronscheduler-20-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/cronscheduler-20",
+        "demoUrl": "https://cronscheduler-20.example.com",
+        "docsUrl": "https://docs.example.com/cronscheduler-20",
+        "featured": false,
+        "createdAt": "2023-07-19T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "AI/ML"]
+    },
+    {
+        "id": "proj-021",
+        "name": "CodeVault 21",
+        "slug": "codevault-21",
+        "description": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scaling, and cost optimization features.",
+        "shortDescription": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scal...",
+        "category": "Web App",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/codevault-21-1/800/600",
+            "https://picsum.photos/seed/codevault-21-2/800/600",
+            "https://picsum.photos/seed/codevault-21-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/codevault-21",
+        "demoUrl": "https://codevault-21.example.com",
+        "featured": false,
+        "createdAt": "2023-12-18T22:00:00.000Z",
+        "tags": ["Go", "Gin", "Web App"]
+    },
+    {
+        "id": "proj-022",
+        "name": "MLPipeline 22",
+        "slug": "mlpipeline-22",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Mobile",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/mlpipeline-22-1/800/600",
+            "https://picsum.photos/seed/mlpipeline-22-2/800/600",
+            "https://picsum.photos/seed/mlpipeline-22-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/mlpipeline-22",
+        "docsUrl": "https://docs.example.com/mlpipeline-22",
+        "featured": true,
+        "createdAt": "2023-11-08T22:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "Mobile"]
+    },
+    {
+        "id": "proj-023",
+        "name": "LogStream 23",
+        "slug": "logstream-23",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "Library",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/logstream-23-1/800/600",
+            "https://picsum.photos/seed/logstream-23-2/800/600",
+            "https://picsum.photos/seed/logstream-23-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/logstream-23",
+        "demoUrl": "https://logstream-23.example.com",
+        "docsUrl": "https://docs.example.com/logstream-23",
+        "featured": false,
+        "createdAt": "2024-10-13T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "Library"]
+    },
+    {
+        "id": "proj-024",
+        "name": "DevMetrics 24",
+        "slug": "devmetrics-24",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "Blockchain",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/devmetrics-24-1/800/600",
+            "https://picsum.photos/seed/devmetrics-24-2/800/600",
+            "https://picsum.photos/seed/devmetrics-24-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/devmetrics-24",
+        "demoUrl": "https://devmetrics-24.example.com",
+        "docsUrl": "https://docs.example.com/devmetrics-24",
+        "featured": false,
+        "createdAt": "2024-09-04T21:00:00.000Z",
+        "tags": ["Go", "Gin", "Blockchain"]
+    },
+    {
+        "id": "proj-025",
+        "name": "ServiceMesh 25",
+        "slug": "servicemesh-25",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Blockchain",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/servicemesh-25-1/800/600",
+            "https://picsum.photos/seed/servicemesh-25-2/800/600",
+            "https://picsum.photos/seed/servicemesh-25-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/servicemesh-25",
+        "demoUrl": "https://servicemesh-25.example.com",
+        "docsUrl": "https://docs.example.com/servicemesh-25",
+        "featured": false,
+        "createdAt": "2023-10-05T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "Blockchain"]
+    },
+    {
+        "id": "proj-026",
+        "name": "BatchProcessor 26",
+        "slug": "batchprocessor-26",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "Blockchain",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/batchprocessor-26-1/800/600",
+            "https://picsum.photos/seed/batchprocessor-26-2/800/600",
+            "https://picsum.photos/seed/batchprocessor-26-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/batchprocessor-26",
+        "demoUrl": "https://batchprocessor-26.example.com",
+        "featured": false,
+        "createdAt": "2024-10-19T21:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "Blockchain"]
+    },
+    {
+        "id": "proj-027",
+        "name": "SSLCert 27",
+        "slug": "sslcert-27",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Blockchain",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/sslcert-27-1/800/600",
+            "https://picsum.photos/seed/sslcert-27-2/800/600",
+            "https://picsum.photos/seed/sslcert-27-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/sslcert-27",
+        "demoUrl": "https://sslcert-27.example.com",
+        "featured": false,
+        "createdAt": "2024-05-04T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "Blockchain"]
+    },
+    {
+        "id": "proj-028",
+        "name": "WebhookHandler 28",
+        "slug": "webhookhandler-28",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "API",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/webhookhandler-28-1/800/600",
+            "https://picsum.photos/seed/webhookhandler-28-2/800/600",
+            "https://picsum.photos/seed/webhookhandler-28-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/webhookhandler-28",
+        "docsUrl": "https://docs.example.com/webhookhandler-28",
+        "featured": false,
+        "createdAt": "2024-02-26T22:00:00.000Z",
+        "tags": ["Django", "Celery", "API"]
+    },
+    {
+        "id": "proj-029",
+        "name": "EventBroker 29",
+        "slug": "eventbroker-29",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Web App",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/eventbroker-29-1/800/600",
+            "https://picsum.photos/seed/eventbroker-29-2/800/600",
+            "https://picsum.photos/seed/eventbroker-29-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/eventbroker-29",
+        "featured": false,
+        "createdAt": "2024-06-09T21:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "Web App"]
+    },
+    {
+        "id": "proj-030",
+        "name": "PDFGenerator 30",
+        "slug": "pdfgenerator-30",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Blockchain",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/pdfgenerator-30-1/800/600",
+            "https://picsum.photos/seed/pdfgenerator-30-2/800/600",
+            "https://picsum.photos/seed/pdfgenerator-30-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/pdfgenerator-30",
+        "demoUrl": "https://pdfgenerator-30.example.com",
+        "docsUrl": "https://docs.example.com/pdfgenerator-30",
+        "featured": false,
+        "createdAt": "2024-04-23T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "Blockchain"]
+    },
+    {
+        "id": "proj-031",
+        "name": "ChatEngine 31",
+        "slug": "chatengine-31",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "Mobile",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/chatengine-31-1/800/600",
+            "https://picsum.photos/seed/chatengine-31-2/800/600",
+            "https://picsum.photos/seed/chatengine-31-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/chatengine-31",
+        "featured": false,
+        "createdAt": "2024-09-08T21:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "Mobile"]
+    },
+    {
+        "id": "proj-032",
+        "name": "CDNManager 32",
+        "slug": "cdnmanager-32",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "DevOps",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/cdnmanager-32-1/800/600",
+            "https://picsum.photos/seed/cdnmanager-32-2/800/600",
+            "https://picsum.photos/seed/cdnmanager-32-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/cdnmanager-32",
+        "docsUrl": "https://docs.example.com/cdnmanager-32",
+        "featured": false,
+        "createdAt": "2024-11-01T22:00:00.000Z",
+        "tags": ["Go", "Gin", "DevOps"]
+    },
+    {
+        "id": "proj-033",
+        "name": "CronScheduler 33",
+        "slug": "cronscheduler-33",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "CLI Tool",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/cronscheduler-33-1/800/600",
+            "https://picsum.photos/seed/cronscheduler-33-2/800/600",
+            "https://picsum.photos/seed/cronscheduler-33-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/cronscheduler-33",
+        "docsUrl": "https://docs.example.com/cronscheduler-33",
+        "featured": false,
+        "createdAt": "2024-12-18T22:00:00.000Z",
+        "tags": ["Flutter", "Dart", "CLI Tool"]
+    },
+    {
+        "id": "proj-034",
+        "name": "DeployHub 34",
+        "slug": "deployhub-34",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Web App",
+        "techStack": ["Node.js", "Express", "PostgreSQL", "Redis"],
+        "images": [
+            "https://picsum.photos/seed/deployhub-34-1/800/600",
+            "https://picsum.photos/seed/deployhub-34-2/800/600",
+            "https://picsum.photos/seed/deployhub-34-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/deployhub-34",
+        "demoUrl": "https://deployhub-34.example.com",
+        "featured": false,
+        "createdAt": "2024-05-08T21:00:00.000Z",
+        "tags": ["Node.js", "Express", "Web App"]
+    },
+    {
+        "id": "proj-035",
+        "name": "DevMetrics 35",
+        "slug": "devmetrics-35",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "DevOps",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/devmetrics-35-1/800/600",
+            "https://picsum.photos/seed/devmetrics-35-2/800/600",
+            "https://picsum.photos/seed/devmetrics-35-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/devmetrics-35",
+        "demoUrl": "https://devmetrics-35.example.com",
+        "featured": false,
+        "createdAt": "2024-08-21T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "DevOps"]
+    },
+    {
+        "id": "proj-036",
+        "name": "TaskFlow 36",
+        "slug": "taskflow-36",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "Game",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/taskflow-36-1/800/600",
+            "https://picsum.photos/seed/taskflow-36-2/800/600",
+            "https://picsum.photos/seed/taskflow-36-3/800/600"
+        ],
+        "demoUrl": "https://taskflow-36.example.com",
+        "docsUrl": "https://docs.example.com/taskflow-36",
+        "featured": false,
+        "createdAt": "2023-09-26T21:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "Game"]
+    },
+    {
+        "id": "proj-037",
+        "name": "WorkflowEngine 37",
+        "slug": "workflowengine-37",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Game",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/workflowengine-37-1/800/600",
+            "https://picsum.photos/seed/workflowengine-37-2/800/600",
+            "https://picsum.photos/seed/workflowengine-37-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/workflowengine-37",
+        "demoUrl": "https://workflowengine-37.example.com",
+        "featured": false,
+        "createdAt": "2024-06-09T21:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Game"]
+    },
+    {
+        "id": "proj-038",
+        "name": "MessageQueue 38",
+        "slug": "messagequeue-38",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "Web App",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/messagequeue-38-1/800/600",
+            "https://picsum.photos/seed/messagequeue-38-2/800/600",
+            "https://picsum.photos/seed/messagequeue-38-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/messagequeue-38",
+        "demoUrl": "https://messagequeue-38.example.com",
+        "docsUrl": "https://docs.example.com/messagequeue-38",
+        "featured": false,
+        "createdAt": "2024-12-11T22:00:00.000Z",
+        "tags": ["Go", "Gin", "Web App"]
+    },
+    {
+        "id": "proj-039",
+        "name": "EmailTemplates 39",
+        "slug": "emailtemplates-39",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Game",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/emailtemplates-39-1/800/600",
+            "https://picsum.photos/seed/emailtemplates-39-2/800/600",
+            "https://picsum.photos/seed/emailtemplates-39-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/emailtemplates-39",
+        "demoUrl": "https://emailtemplates-39.example.com",
+        "featured": true,
+        "createdAt": "2024-09-23T21:00:00.000Z",
+        "tags": ["Flutter", "Dart", "Game"]
+    },
+    {
+        "id": "proj-040",
+        "name": "FeatureFlags 40",
+        "slug": "featureflags-40",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Blockchain",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/featureflags-40-1/800/600",
+            "https://picsum.photos/seed/featureflags-40-2/800/600",
+            "https://picsum.photos/seed/featureflags-40-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/featureflags-40",
+        "demoUrl": "https://featureflags-40.example.com",
+        "docsUrl": "https://docs.example.com/featureflags-40",
+        "featured": false,
+        "createdAt": "2023-06-11T21:00:00.000Z",
+        "tags": ["Go", "Gin", "Blockchain"]
+    },
+    {
+        "id": "proj-041",
+        "name": "UserSegment 41",
+        "slug": "usersegment-41",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "DevOps",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/usersegment-41-1/800/600",
+            "https://picsum.photos/seed/usersegment-41-2/800/600",
+            "https://picsum.photos/seed/usersegment-41-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/usersegment-41",
+        "demoUrl": "https://usersegment-41.example.com",
+        "docsUrl": "https://docs.example.com/usersegment-41",
+        "featured": false,
+        "createdAt": "2024-05-08T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "DevOps"]
+    },
+    {
+        "id": "proj-042",
+        "name": "AudioStreamer 42",
+        "slug": "audiostreamer-42",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "CLI Tool",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/audiostreamer-42-1/800/600",
+            "https://picsum.photos/seed/audiostreamer-42-2/800/600",
+            "https://picsum.photos/seed/audiostreamer-42-3/800/600"
+        ],
+        "docsUrl": "https://docs.example.com/audiostreamer-42",
+        "featured": false,
+        "createdAt": "2024-01-07T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "CLI Tool"]
+    },
+    {
+        "id": "proj-043",
+        "name": "MessageQueue 43",
+        "slug": "messagequeue-43",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Game",
+        "techStack": ["Node.js", "Express", "PostgreSQL", "Redis"],
+        "images": [
+            "https://picsum.photos/seed/messagequeue-43-1/800/600",
+            "https://picsum.photos/seed/messagequeue-43-2/800/600",
+            "https://picsum.photos/seed/messagequeue-43-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/messagequeue-43",
+        "demoUrl": "https://messagequeue-43.example.com",
+        "featured": false,
+        "createdAt": "2024-09-09T21:00:00.000Z",
+        "tags": ["Node.js", "Express", "Game"]
+    },
+    {
+        "id": "proj-044",
+        "name": "SocketManager 44",
+        "slug": "socketmanager-44",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Web App",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/socketmanager-44-1/800/600",
+            "https://picsum.photos/seed/socketmanager-44-2/800/600",
+            "https://picsum.photos/seed/socketmanager-44-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/socketmanager-44",
+        "featured": false,
+        "createdAt": "2024-03-16T22:00:00.000Z",
+        "tags": ["Rust", "Actix", "Web App"]
+    },
+    {
+        "id": "proj-045",
+        "name": "CacheLayer 45",
+        "slug": "cachelayer-45",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "AI/ML",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/cachelayer-45-1/800/600",
+            "https://picsum.photos/seed/cachelayer-45-2/800/600",
+            "https://picsum.photos/seed/cachelayer-45-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/cachelayer-45",
+        "demoUrl": "https://cachelayer-45.example.com",
+        "docsUrl": "https://docs.example.com/cachelayer-45",
+        "featured": true,
+        "createdAt": "2024-04-27T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "AI/ML"]
+    },
+    {
+        "id": "proj-046",
+        "name": "ContainerOrch 46",
+        "slug": "containerorch-46",
+        "description": "Project management tool with kanban boards, sprint planning, and team collaboration features.",
+        "shortDescription": "Project management tool with kanban boards, sprint planning, and team collaboration features....",
+        "category": "Blockchain",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/containerorch-46-1/800/600",
+            "https://picsum.photos/seed/containerorch-46-2/800/600",
+            "https://picsum.photos/seed/containerorch-46-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/containerorch-46",
+        "docsUrl": "https://docs.example.com/containerorch-46",
+        "featured": false,
+        "createdAt": "2024-11-26T22:00:00.000Z",
+        "tags": ["Flutter", "Dart", "Blockchain"]
+    },
+    {
+        "id": "proj-047",
+        "name": "ProxyServer 47",
+        "slug": "proxyserver-47",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "AI/ML",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/proxyserver-47-1/800/600",
+            "https://picsum.photos/seed/proxyserver-47-2/800/600",
+            "https://picsum.photos/seed/proxyserver-47-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/proxyserver-47",
+        "docsUrl": "https://docs.example.com/proxyserver-47",
+        "featured": false,
+        "createdAt": "2023-03-04T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "AI/ML"]
+    },
+    {
+        "id": "proj-048",
+        "name": "APIForge 48",
+        "slug": "apiforge-48",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Blockchain",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/apiforge-48-1/800/600",
+            "https://picsum.photos/seed/apiforge-48-2/800/600",
+            "https://picsum.photos/seed/apiforge-48-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/apiforge-48",
+        "docsUrl": "https://docs.example.com/apiforge-48",
+        "featured": false,
+        "createdAt": "2024-01-13T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Blockchain"]
+    },
+    {
+        "id": "proj-049",
+        "name": "WorkflowEngine 49",
+        "slug": "workflowengine-49",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "AI/ML",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/workflowengine-49-1/800/600",
+            "https://picsum.photos/seed/workflowengine-49-2/800/600",
+            "https://picsum.photos/seed/workflowengine-49-3/800/600"
+        ],
+        "demoUrl": "https://workflowengine-49.example.com",
+        "featured": false,
+        "createdAt": "2023-06-17T21:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "AI/ML"]
+    },
+    {
+        "id": "proj-050",
+        "name": "ABTesting 50",
+        "slug": "abtesting-50",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "DevOps",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/abtesting-50-1/800/600",
+            "https://picsum.photos/seed/abtesting-50-2/800/600",
+            "https://picsum.photos/seed/abtesting-50-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/abtesting-50",
+        "docsUrl": "https://docs.example.com/abtesting-50",
+        "featured": false,
+        "createdAt": "2023-08-22T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "DevOps"]
+    },
+    {
+        "id": "proj-051",
+        "name": "DataLake 51",
+        "slug": "datalake-51",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "CLI Tool",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/datalake-51-1/800/600",
+            "https://picsum.photos/seed/datalake-51-2/800/600",
+            "https://picsum.photos/seed/datalake-51-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/datalake-51",
+        "docsUrl": "https://docs.example.com/datalake-51",
+        "featured": false,
+        "createdAt": "2023-03-10T22:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "CLI Tool"]
+    },
+    {
+        "id": "proj-052",
+        "name": "DocConverter 52",
+        "slug": "docconverter-52",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "Other",
+        "techStack": ["Node.js", "Express", "PostgreSQL", "Redis"],
+        "images": [
+            "https://picsum.photos/seed/docconverter-52-1/800/600",
+            "https://picsum.photos/seed/docconverter-52-2/800/600",
+            "https://picsum.photos/seed/docconverter-52-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/docconverter-52",
+        "demoUrl": "https://docconverter-52.example.com",
+        "docsUrl": "https://docs.example.com/docconverter-52",
+        "featured": false,
+        "createdAt": "2024-04-08T21:00:00.000Z",
+        "tags": ["Node.js", "Express", "Other"]
+    },
+    {
+        "id": "proj-053",
+        "name": "QueueMaster 53",
+        "slug": "queuemaster-53",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "API",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/queuemaster-53-1/800/600",
+            "https://picsum.photos/seed/queuemaster-53-2/800/600",
+            "https://picsum.photos/seed/queuemaster-53-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/queuemaster-53",
+        "docsUrl": "https://docs.example.com/queuemaster-53",
+        "featured": false,
+        "createdAt": "2023-01-17T22:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "API"]
+    },
+    {
+        "id": "proj-054",
+        "name": "LogStream 54",
+        "slug": "logstream-54",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Mobile",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/logstream-54-1/800/600",
+            "https://picsum.photos/seed/logstream-54-2/800/600",
+            "https://picsum.photos/seed/logstream-54-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/logstream-54",
+        "demoUrl": "https://logstream-54.example.com",
+        "docsUrl": "https://docs.example.com/logstream-54",
+        "featured": true,
+        "createdAt": "2023-10-08T21:00:00.000Z",
+        "tags": ["Django", "Celery", "Mobile"]
+    },
+    {
+        "id": "proj-055",
+        "name": "ImageProcessor 55",
+        "slug": "imageprocessor-55",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Library",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/imageprocessor-55-1/800/600",
+            "https://picsum.photos/seed/imageprocessor-55-2/800/600",
+            "https://picsum.photos/seed/imageprocessor-55-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/imageprocessor-55",
+        "featured": false,
+        "createdAt": "2024-04-09T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "Library"]
+    },
+    {
+        "id": "proj-056",
+        "name": "ProxyServer 56",
+        "slug": "proxyserver-56",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "Library",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/proxyserver-56-1/800/600",
+            "https://picsum.photos/seed/proxyserver-56-2/800/600",
+            "https://picsum.photos/seed/proxyserver-56-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/proxyserver-56",
+        "docsUrl": "https://docs.example.com/proxyserver-56",
+        "featured": false,
+        "createdAt": "2024-06-08T21:00:00.000Z",
+        "tags": ["Flutter", "Dart", "Library"]
+    },
+    {
+        "id": "proj-057",
+        "name": "ConfigManager 57",
+        "slug": "configmanager-57",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "CLI Tool",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/configmanager-57-1/800/600",
+            "https://picsum.photos/seed/configmanager-57-2/800/600",
+            "https://picsum.photos/seed/configmanager-57-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/configmanager-57",
+        "demoUrl": "https://configmanager-57.example.com",
+        "docsUrl": "https://docs.example.com/configmanager-57",
+        "featured": false,
+        "createdAt": "2023-11-11T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "CLI Tool"]
+    },
+    {
+        "id": "proj-058",
+        "name": "SentimentAnalyzer 58",
+        "slug": "sentimentanalyzer-58",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Mobile",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/sentimentanalyzer-58-1/800/600",
+            "https://picsum.photos/seed/sentimentanalyzer-58-2/800/600",
+            "https://picsum.photos/seed/sentimentanalyzer-58-3/800/600"
+        ],
+        "demoUrl": "https://sentimentanalyzer-58.example.com",
+        "featured": false,
+        "createdAt": "2024-09-30T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "Mobile"]
+    },
+    {
+        "id": "proj-059",
+        "name": "ImageProcessor 59",
+        "slug": "imageprocessor-59",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "API",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/imageprocessor-59-1/800/600",
+            "https://picsum.photos/seed/imageprocessor-59-2/800/600",
+            "https://picsum.photos/seed/imageprocessor-59-3/800/600"
+        ],
+        "demoUrl": "https://imageprocessor-59.example.com",
+        "docsUrl": "https://docs.example.com/imageprocessor-59",
+        "featured": false,
+        "createdAt": "2024-11-13T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "API"]
+    },
+    {
+        "id": "proj-060",
+        "name": "DevMetrics 60",
+        "slug": "devmetrics-60",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Game",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/devmetrics-60-1/800/600",
+            "https://picsum.photos/seed/devmetrics-60-2/800/600",
+            "https://picsum.photos/seed/devmetrics-60-3/800/600"
+        ],
+        "demoUrl": "https://devmetrics-60.example.com",
+        "docsUrl": "https://docs.example.com/devmetrics-60",
+        "featured": false,
+        "createdAt": "2024-03-17T22:00:00.000Z",
+        "tags": ["Django", "Celery", "Game"]
+    },
+    {
+        "id": "proj-061",
+        "name": "FileProcessor 61",
+        "slug": "fileprocessor-61",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Game",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/fileprocessor-61-1/800/600",
+            "https://picsum.photos/seed/fileprocessor-61-2/800/600",
+            "https://picsum.photos/seed/fileprocessor-61-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/fileprocessor-61",
+        "demoUrl": "https://fileprocessor-61.example.com",
+        "docsUrl": "https://docs.example.com/fileprocessor-61",
+        "featured": false,
+        "createdAt": "2024-06-16T21:00:00.000Z",
+        "tags": ["Django", "Celery", "Game"]
+    },
+    {
+        "id": "proj-062",
+        "name": "SearchIndex 62",
+        "slug": "searchindex-62",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "Game",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/searchindex-62-1/800/600",
+            "https://picsum.photos/seed/searchindex-62-2/800/600",
+            "https://picsum.photos/seed/searchindex-62-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/searchindex-62",
+        "demoUrl": "https://searchindex-62.example.com",
+        "docsUrl": "https://docs.example.com/searchindex-62",
+        "featured": false,
+        "createdAt": "2023-12-03T22:00:00.000Z",
+        "tags": ["Flutter", "Dart", "Game"]
+    },
+    {
+        "id": "proj-063",
+        "name": "ConfigManager 63",
+        "slug": "configmanager-63",
+        "description": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scaling, and cost optimization features.",
+        "shortDescription": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scal...",
+        "category": "Mobile",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/configmanager-63-1/800/600",
+            "https://picsum.photos/seed/configmanager-63-2/800/600",
+            "https://picsum.photos/seed/configmanager-63-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/configmanager-63",
+        "demoUrl": "https://configmanager-63.example.com",
+        "featured": false,
+        "createdAt": "2024-01-12T22:00:00.000Z",
+        "tags": ["Go", "Gin", "Mobile"]
+    },
+    {
+        "id": "proj-064",
+        "name": "CDNManager 64",
+        "slug": "cdnmanager-64",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Other",
+        "techStack": ["Vue.js", "Nuxt", "Prisma", "GraphQL"],
+        "images": [
+            "https://picsum.photos/seed/cdnmanager-64-1/800/600",
+            "https://picsum.photos/seed/cdnmanager-64-2/800/600",
+            "https://picsum.photos/seed/cdnmanager-64-3/800/600"
+        ],
+        "demoUrl": "https://cdnmanager-64.example.com",
+        "docsUrl": "https://docs.example.com/cdnmanager-64",
+        "featured": false,
+        "createdAt": "2024-02-17T22:00:00.000Z",
+        "tags": ["Vue.js", "Nuxt", "Other"]
+    },
+    {
+        "id": "proj-065",
+        "name": "DNSResolver 65",
+        "slug": "dnsresolver-65",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "Blockchain",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/dnsresolver-65-1/800/600",
+            "https://picsum.photos/seed/dnsresolver-65-2/800/600",
+            "https://picsum.photos/seed/dnsresolver-65-3/800/600"
+        ],
+        "featured": false,
+        "createdAt": "2023-04-11T21:00:00.000Z",
+        "tags": ["Go", "Gin", "Blockchain"]
+    },
+    {
+        "id": "proj-066",
+        "name": "MonitorX 66",
+        "slug": "monitorx-66",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "CLI Tool",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/monitorx-66-1/800/600",
+            "https://picsum.photos/seed/monitorx-66-2/800/600",
+            "https://picsum.photos/seed/monitorx-66-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/monitorx-66",
+        "demoUrl": "https://monitorx-66.example.com",
+        "featured": false,
+        "createdAt": "2023-01-01T22:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "CLI Tool"]
+    },
+    {
+        "id": "proj-067",
+        "name": "LoadBalancer 67",
+        "slug": "loadbalancer-67",
+        "description": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scaling, and cost optimization features.",
+        "shortDescription": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scal...",
+        "category": "Library",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/loadbalancer-67-1/800/600",
+            "https://picsum.photos/seed/loadbalancer-67-2/800/600",
+            "https://picsum.photos/seed/loadbalancer-67-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/loadbalancer-67",
+        "demoUrl": "https://loadbalancer-67.example.com",
+        "featured": false,
+        "createdAt": "2023-08-10T21:00:00.000Z",
+        "tags": ["Go", "Gin", "Library"]
+    },
+    {
+        "id": "proj-068",
+        "name": "SecureAuth 68",
+        "slug": "secureauth-68",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Other",
+        "techStack": ["Node.js", "Express", "PostgreSQL", "Redis"],
+        "images": [
+            "https://picsum.photos/seed/secureauth-68-1/800/600",
+            "https://picsum.photos/seed/secureauth-68-2/800/600",
+            "https://picsum.photos/seed/secureauth-68-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/secureauth-68",
+        "demoUrl": "https://secureauth-68.example.com",
+        "featured": false,
+        "createdAt": "2023-01-10T22:00:00.000Z",
+        "tags": ["Node.js", "Express", "Other"]
+    },
+    {
+        "id": "proj-069",
+        "name": "APIForge 69",
+        "slug": "apiforge-69",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Blockchain",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/apiforge-69-1/800/600",
+            "https://picsum.photos/seed/apiforge-69-2/800/600",
+            "https://picsum.photos/seed/apiforge-69-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/apiforge-69",
+        "featured": false,
+        "createdAt": "2023-06-05T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "Blockchain"]
+    },
+    {
+        "id": "proj-070",
+        "name": "CloudSync Pro 70",
+        "slug": "cloudsync-pro-70",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Blockchain",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/cloudsync-pro-70-1/800/600",
+            "https://picsum.photos/seed/cloudsync-pro-70-2/800/600",
+            "https://picsum.photos/seed/cloudsync-pro-70-3/800/600"
+        ],
+        "demoUrl": "https://cloudsync-pro-70.example.com",
+        "docsUrl": "https://docs.example.com/cloudsync-pro-70",
+        "featured": false,
+        "createdAt": "2023-04-09T21:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Blockchain"]
+    },
+    {
+        "id": "proj-071",
+        "name": "TaskFlow 71",
+        "slug": "taskflow-71",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "Game",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/taskflow-71-1/800/600",
+            "https://picsum.photos/seed/taskflow-71-2/800/600",
+            "https://picsum.photos/seed/taskflow-71-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/taskflow-71",
+        "featured": false,
+        "createdAt": "2024-02-08T22:00:00.000Z",
+        "tags": ["Python", "FastAPI", "Game"]
+    },
+    {
+        "id": "proj-072",
+        "name": "CircuitBreaker 72",
+        "slug": "circuitbreaker-72",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Library",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/circuitbreaker-72-1/800/600",
+            "https://picsum.photos/seed/circuitbreaker-72-2/800/600",
+            "https://picsum.photos/seed/circuitbreaker-72-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/circuitbreaker-72",
+        "demoUrl": "https://circuitbreaker-72.example.com",
+        "featured": false,
+        "createdAt": "2024-01-06T22:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Library"]
+    },
+    {
+        "id": "proj-073",
+        "name": "ContainerOrch 73",
+        "slug": "containerorch-73",
+        "description": "Automated deployment platform supporting multiple environments, rollback capabilities, and deployment strategies.",
+        "shortDescription": "Automated deployment platform supporting multiple environments, rollback capabilities, and deploymen...",
+        "category": "AI/ML",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/containerorch-73-1/800/600",
+            "https://picsum.photos/seed/containerorch-73-2/800/600",
+            "https://picsum.photos/seed/containerorch-73-3/800/600"
+        ],
+        "demoUrl": "https://containerorch-73.example.com",
+        "docsUrl": "https://docs.example.com/containerorch-73",
+        "featured": false,
+        "createdAt": "2023-05-08T21:00:00.000Z",
+        "tags": ["Go", "Gin", "AI/ML"]
+    },
+    {
+        "id": "proj-074",
+        "name": "EmailTemplates 74",
+        "slug": "emailtemplates-74",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Web App",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/emailtemplates-74-1/800/600",
+            "https://picsum.photos/seed/emailtemplates-74-2/800/600",
+            "https://picsum.photos/seed/emailtemplates-74-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/emailtemplates-74",
+        "demoUrl": "https://emailtemplates-74.example.com",
+        "docsUrl": "https://docs.example.com/emailtemplates-74",
+        "featured": false,
+        "createdAt": "2023-08-10T21:00:00.000Z",
+        "tags": ["Django", "Celery", "Web App"]
+    },
+    {
+        "id": "proj-075",
+        "name": "SentimentAnalyzer 75",
+        "slug": "sentimentanalyzer-75",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "API",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/sentimentanalyzer-75-1/800/600",
+            "https://picsum.photos/seed/sentimentanalyzer-75-2/800/600",
+            "https://picsum.photos/seed/sentimentanalyzer-75-3/800/600"
+        ],
+        "demoUrl": "https://sentimentanalyzer-75.example.com",
+        "docsUrl": "https://docs.example.com/sentimentanalyzer-75",
+        "featured": true,
+        "createdAt": "2024-07-02T21:00:00.000Z",
+        "tags": ["Flutter", "Dart", "API"]
+    },
+    {
+        "id": "proj-076",
+        "name": "FileProcessor 76",
+        "slug": "fileprocessor-76",
+        "description": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident management.",
+        "shortDescription": "Infrastructure monitoring system with customizable dashboards, anomaly detection, and incident manag...",
+        "category": "API",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/fileprocessor-76-1/800/600",
+            "https://picsum.photos/seed/fileprocessor-76-2/800/600",
+            "https://picsum.photos/seed/fileprocessor-76-3/800/600"
+        ],
+        "demoUrl": "https://fileprocessor-76.example.com",
+        "docsUrl": "https://docs.example.com/fileprocessor-76",
+        "featured": false,
+        "createdAt": "2023-09-06T21:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "API"]
+    },
+    {
+        "id": "proj-077",
+        "name": "TaskFlow 77",
+        "slug": "taskflow-77",
+        "description": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scaling, and cost optimization features.",
+        "shortDescription": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scal...",
+        "category": "Other",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/taskflow-77-1/800/600",
+            "https://picsum.photos/seed/taskflow-77-2/800/600",
+            "https://picsum.photos/seed/taskflow-77-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/taskflow-77",
+        "demoUrl": "https://taskflow-77.example.com",
+        "featured": false,
+        "createdAt": "2023-04-17T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "Other"]
+    },
+    {
+        "id": "proj-078",
+        "name": "FileProcessor 78",
+        "slug": "fileprocessor-78",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Blockchain",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/fileprocessor-78-1/800/600",
+            "https://picsum.photos/seed/fileprocessor-78-2/800/600",
+            "https://picsum.photos/seed/fileprocessor-78-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/fileprocessor-78",
+        "demoUrl": "https://fileprocessor-78.example.com",
+        "featured": false,
+        "createdAt": "2023-08-06T21:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Blockchain"]
+    },
+    {
+        "id": "proj-079",
+        "name": "SSLCert 79",
+        "slug": "sslcert-79",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "AI/ML",
+        "techStack": ["Flutter", "Dart", "Firebase", "Riverpod"],
+        "images": [
+            "https://picsum.photos/seed/sslcert-79-1/800/600",
+            "https://picsum.photos/seed/sslcert-79-2/800/600",
+            "https://picsum.photos/seed/sslcert-79-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/sslcert-79",
+        "demoUrl": "https://sslcert-79.example.com",
+        "featured": true,
+        "createdAt": "2024-12-21T22:00:00.000Z",
+        "tags": ["Flutter", "Dart", "AI/ML"]
+    },
+    {
+        "id": "proj-080",
+        "name": "CircuitBreaker 80",
+        "slug": "circuitbreaker-80",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Library",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/circuitbreaker-80-1/800/600",
+            "https://picsum.photos/seed/circuitbreaker-80-2/800/600",
+            "https://picsum.photos/seed/circuitbreaker-80-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/circuitbreaker-80",
+        "demoUrl": "https://circuitbreaker-80.example.com",
+        "docsUrl": "https://docs.example.com/circuitbreaker-80",
+        "featured": false,
+        "createdAt": "2023-12-27T22:00:00.000Z",
+        "tags": ["Python", "FastAPI", "Library"]
+    },
+    {
+        "id": "proj-081",
+        "name": "AnalyticsDash 81",
+        "slug": "analyticsdash-81",
+        "description": "Project management tool with kanban boards, sprint planning, and team collaboration features.",
+        "shortDescription": "Project management tool with kanban boards, sprint planning, and team collaboration features....",
+        "category": "API",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/analyticsdash-81-1/800/600",
+            "https://picsum.photos/seed/analyticsdash-81-2/800/600",
+            "https://picsum.photos/seed/analyticsdash-81-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/analyticsdash-81",
+        "demoUrl": "https://analyticsdash-81.example.com",
+        "docsUrl": "https://docs.example.com/analyticsdash-81",
+        "featured": true,
+        "createdAt": "2024-11-15T22:00:00.000Z",
+        "tags": ["Django", "Celery", "API"]
+    },
+    {
+        "id": "proj-082",
+        "name": "SecretVault 82",
+        "slug": "secretvault-82",
+        "description": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scaling, and cost optimization features.",
+        "shortDescription": "A comprehensive solution for managing cloud infrastructure with real-time monitoring, automated scal...",
+        "category": "Mobile",
+        "techStack": ["Next.js", "tRPC", "Supabase", "Vercel"],
+        "images": [
+            "https://picsum.photos/seed/secretvault-82-1/800/600",
+            "https://picsum.photos/seed/secretvault-82-2/800/600",
+            "https://picsum.photos/seed/secretvault-82-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/secretvault-82",
+        "demoUrl": "https://secretvault-82.example.com",
+        "docsUrl": "https://docs.example.com/secretvault-82",
+        "featured": false,
+        "createdAt": "2023-05-20T21:00:00.000Z",
+        "tags": ["Next.js", "tRPC", "Mobile"]
+    },
+    {
+        "id": "proj-083",
+        "name": "VideoTranscoder 83",
+        "slug": "videotranscoder-83",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "CLI Tool",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/videotranscoder-83-1/800/600",
+            "https://picsum.photos/seed/videotranscoder-83-2/800/600",
+            "https://picsum.photos/seed/videotranscoder-83-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/videotranscoder-83",
+        "demoUrl": "https://videotranscoder-83.example.com",
+        "docsUrl": "https://docs.example.com/videotranscoder-83",
+        "featured": false,
+        "createdAt": "2023-04-27T21:00:00.000Z",
+        "tags": ["Go", "Gin", "CLI Tool"]
+    },
+    {
+        "id": "proj-084",
+        "name": "FraudDetect 84",
+        "slug": "frauddetect-84",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Library",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/frauddetect-84-1/800/600",
+            "https://picsum.photos/seed/frauddetect-84-2/800/600",
+            "https://picsum.photos/seed/frauddetect-84-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/frauddetect-84",
+        "docsUrl": "https://docs.example.com/frauddetect-84",
+        "featured": false,
+        "createdAt": "2023-03-18T22:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "Library"]
+    },
+    {
+        "id": "proj-085",
+        "name": "PaymentGateway 85",
+        "slug": "paymentgateway-85",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "AI/ML",
+        "techStack": ["Rust", "Actix", "SQLite", "WebAssembly"],
+        "images": [
+            "https://picsum.photos/seed/paymentgateway-85-1/800/600",
+            "https://picsum.photos/seed/paymentgateway-85-2/800/600",
+            "https://picsum.photos/seed/paymentgateway-85-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/paymentgateway-85",
+        "demoUrl": "https://paymentgateway-85.example.com",
+        "docsUrl": "https://docs.example.com/paymentgateway-85",
+        "featured": false,
+        "createdAt": "2023-07-10T21:00:00.000Z",
+        "tags": ["Rust", "Actix", "AI/ML"]
+    },
+    {
+        "id": "proj-086",
+        "name": "RecommendEngine 86",
+        "slug": "recommendengine-86",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Game",
+        "techStack": ["Node.js", "Express", "PostgreSQL", "Redis"],
+        "images": [
+            "https://picsum.photos/seed/recommendengine-86-1/800/600",
+            "https://picsum.photos/seed/recommendengine-86-2/800/600",
+            "https://picsum.photos/seed/recommendengine-86-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/recommendengine-86",
+        "demoUrl": "https://recommendengine-86.example.com",
+        "featured": false,
+        "createdAt": "2023-02-19T22:00:00.000Z",
+        "tags": ["Node.js", "Express", "Game"]
+    },
+    {
+        "id": "proj-087",
+        "name": "UserSegment 87",
+        "slug": "usersegment-87",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "Mobile",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/usersegment-87-1/800/600",
+            "https://picsum.photos/seed/usersegment-87-2/800/600",
+            "https://picsum.photos/seed/usersegment-87-3/800/600"
+        ],
+        "demoUrl": "https://usersegment-87.example.com",
+        "featured": false,
+        "createdAt": "2024-11-02T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Mobile"]
+    },
+    {
+        "id": "proj-088",
+        "name": "PaymentGateway 88",
+        "slug": "paymentgateway-88",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "Web App",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/paymentgateway-88-1/800/600",
+            "https://picsum.photos/seed/paymentgateway-88-2/800/600",
+            "https://picsum.photos/seed/paymentgateway-88-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/paymentgateway-88",
+        "demoUrl": "https://paymentgateway-88.example.com",
+        "docsUrl": "https://docs.example.com/paymentgateway-88",
+        "featured": false,
+        "createdAt": "2023-06-18T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "Web App"]
+    },
+    {
+        "id": "proj-089",
+        "name": "SMSGateway 89",
+        "slug": "smsgateway-89",
+        "description": "API development toolkit with automatic documentation, testing, and monitoring capabilities.",
+        "shortDescription": "API development toolkit with automatic documentation, testing, and monitoring capabilities....",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/smsgateway-89-1/800/600",
+            "https://picsum.photos/seed/smsgateway-89-2/800/600",
+            "https://picsum.photos/seed/smsgateway-89-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/smsgateway-89",
+        "demoUrl": "https://smsgateway-89.example.com",
+        "docsUrl": "https://docs.example.com/smsgateway-89",
+        "featured": false,
+        "createdAt": "2023-05-05T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "Web App"]
+    },
+    {
+        "id": "proj-090",
+        "name": "APIForge 90",
+        "slug": "apiforge-90",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Game",
+        "techStack": ["Node.js", "Express", "PostgreSQL", "Redis"],
+        "images": [
+            "https://picsum.photos/seed/apiforge-90-1/800/600",
+            "https://picsum.photos/seed/apiforge-90-2/800/600",
+            "https://picsum.photos/seed/apiforge-90-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/apiforge-90",
+        "docsUrl": "https://docs.example.com/apiforge-90",
+        "featured": true,
+        "createdAt": "2024-02-02T22:00:00.000Z",
+        "tags": ["Node.js", "Express", "Game"]
+    },
+    {
+        "id": "proj-091",
+        "name": "EmailTemplates 91",
+        "slug": "emailtemplates-91",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Mobile",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/emailtemplates-91-1/800/600",
+            "https://picsum.photos/seed/emailtemplates-91-2/800/600",
+            "https://picsum.photos/seed/emailtemplates-91-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/emailtemplates-91",
+        "docsUrl": "https://docs.example.com/emailtemplates-91",
+        "featured": false,
+        "createdAt": "2023-10-21T21:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "Mobile"]
+    },
+    {
+        "id": "proj-092",
+        "name": "WebhookHandler 92",
+        "slug": "webhookhandler-92",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Game",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/webhookhandler-92-1/800/600",
+            "https://picsum.photos/seed/webhookhandler-92-2/800/600",
+            "https://picsum.photos/seed/webhookhandler-92-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/webhookhandler-92",
+        "docsUrl": "https://docs.example.com/webhookhandler-92",
+        "featured": false,
+        "createdAt": "2023-01-21T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Game"]
+    },
+    {
+        "id": "proj-093",
+        "name": "ContainerOrch 93",
+        "slug": "containerorch-93",
+        "description": "Centralized logging solution with powerful search, filtering, and alerting mechanisms.",
+        "shortDescription": "Centralized logging solution with powerful search, filtering, and alerting mechanisms....",
+        "category": "Mobile",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/containerorch-93-1/800/600",
+            "https://picsum.photos/seed/containerorch-93-2/800/600",
+            "https://picsum.photos/seed/containerorch-93-3/800/600"
+        ],
+        "demoUrl": "https://containerorch-93.example.com",
+        "docsUrl": "https://docs.example.com/containerorch-93",
+        "featured": false,
+        "createdAt": "2024-09-10T21:00:00.000Z",
+        "tags": ["React", "TypeScript", "Mobile"]
+    },
+    {
+        "id": "proj-094",
+        "name": "RecommendEngine 94",
+        "slug": "recommendengine-94",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "AI/ML",
+        "techStack": ["Django", "Celery", "RabbitMQ", "AWS"],
+        "images": [
+            "https://picsum.photos/seed/recommendengine-94-1/800/600",
+            "https://picsum.photos/seed/recommendengine-94-2/800/600",
+            "https://picsum.photos/seed/recommendengine-94-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/recommendengine-94",
+        "demoUrl": "https://recommendengine-94.example.com",
+        "docsUrl": "https://docs.example.com/recommendengine-94",
+        "featured": false,
+        "createdAt": "2023-03-31T21:00:00.000Z",
+        "tags": ["Django", "Celery", "AI/ML"]
+    },
+    {
+        "id": "proj-095",
+        "name": "ChatEngine 95",
+        "slug": "chatengine-95",
+        "description": "Enterprise-grade analytics platform that provides deep insights into application performance, user behavior, and system health.",
+        "shortDescription": "Enterprise-grade analytics platform that provides deep insights into application performance, user b...",
+        "category": "Game",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/chatengine-95-1/800/600",
+            "https://picsum.photos/seed/chatengine-95-2/800/600",
+            "https://picsum.photos/seed/chatengine-95-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/chatengine-95",
+        "featured": false,
+        "createdAt": "2024-02-02T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Game"]
+    },
+    {
+        "id": "proj-096",
+        "name": "ProxyServer 96",
+        "slug": "proxyserver-96",
+        "description": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD integration.",
+        "shortDescription": "Secure version control system with advanced branching strategies, code review workflows, and CI/CD i...",
+        "category": "Game",
+        "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+        "images": [
+            "https://picsum.photos/seed/proxyserver-96-1/800/600",
+            "https://picsum.photos/seed/proxyserver-96-2/800/600",
+            "https://picsum.photos/seed/proxyserver-96-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/proxyserver-96",
+        "demoUrl": "https://proxyserver-96.example.com",
+        "featured": false,
+        "createdAt": "2024-03-12T22:00:00.000Z",
+        "tags": ["React", "TypeScript", "Game"]
+    },
+    {
+        "id": "proj-097",
+        "name": "DocConverter 97",
+        "slug": "docconverter-97",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "Web App",
+        "techStack": ["Go", "Gin", "MongoDB", "Kubernetes"],
+        "images": [
+            "https://picsum.photos/seed/docconverter-97-1/800/600",
+            "https://picsum.photos/seed/docconverter-97-2/800/600",
+            "https://picsum.photos/seed/docconverter-97-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/docconverter-97",
+        "demoUrl": "https://docconverter-97.example.com",
+        "docsUrl": "https://docs.example.com/docconverter-97",
+        "featured": false,
+        "createdAt": "2024-12-06T22:00:00.000Z",
+        "tags": ["Go", "Gin", "Web App"]
+    },
+    {
+        "id": "proj-098",
+        "name": "DecisionTree 98",
+        "slug": "decisiontree-98",
+        "description": "Git repository analytics providing insights into code quality, contributor statistics, and merge patterns.",
+        "shortDescription": "Git repository analytics providing insights into code quality, contributor statistics, and merge pat...",
+        "category": "Mobile",
+        "techStack": ["Spring Boot", "Kafka", "Elasticsearch", "Jenkins"],
+        "images": [
+            "https://picsum.photos/seed/decisiontree-98-1/800/600",
+            "https://picsum.photos/seed/decisiontree-98-2/800/600",
+            "https://picsum.photos/seed/decisiontree-98-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/decisiontree-98",
+        "demoUrl": "https://decisiontree-98.example.com",
+        "featured": false,
+        "createdAt": "2024-12-13T22:00:00.000Z",
+        "tags": ["Spring Boot", "Kafka", "Mobile"]
+    },
+    {
+        "id": "proj-099",
+        "name": "DocConverter 99",
+        "slug": "docconverter-99",
+        "description": "High-performance data processing pipeline supporting batch and stream processing with fault tolerance.",
+        "shortDescription": "High-performance data processing pipeline supporting batch and stream processing with fault toleranc...",
+        "category": "DevOps",
+        "techStack": ["Python", "FastAPI", "SQLAlchemy", "Docker"],
+        "images": [
+            "https://picsum.photos/seed/docconverter-99-1/800/600",
+            "https://picsum.photos/seed/docconverter-99-2/800/600",
+            "https://picsum.photos/seed/docconverter-99-3/800/600"
+        ],
+        "sourceUrl": "https://github.com/example/docconverter-99",
+        "docsUrl": "https://docs.example.com/docconverter-99",
+        "featured": false,
+        "createdAt": "2024-04-22T21:00:00.000Z",
+        "tags": ["Python", "FastAPI", "DevOps"]
+    }
+]
