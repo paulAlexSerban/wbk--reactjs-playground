@@ -1,52 +1,58 @@
 const fs = require('fs');
 const path = require('path');
+
 const source = path.join(__dirname, '../../..', 'package', 'apps');
 const dest = path.join(__dirname, '../../..', 'package', 'apps');
-const dotenv = require('dotenv');
-dotenv.config();
-const BASE_URL = process.env.BASE_URL;
-const templates = require('./templates');
-const utils = require('./utils');
 
 // if the destination directory does not exist, create it
 if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest);
 }
 
-const generateHTML = (componentLists) => {
-    const transformedComponentLists = Object.entries(componentLists).map(([dir, components]) => {
-        return components;
-    });
+const readJsonFile = async (filePath) => {
+    try {
+        const jsonContent = await fs.promises.readFile(filePath, 'utf8');
+        return JSON.parse(jsonContent);
+    } catch (err) {
+        console.error('Error reading the JSON file:', err);
+        return null;
+    }
+};
 
-    fs.promises.writeFile(`${dest}/index.json`, JSON.stringify(transformedComponentLists, null, 2));
+const processDirectories = async (source) => {
+    const componentLists = [];
+    try {
+        const files = await fs.promises.readdir(source);
+        for (const file of files) {
+            const dirPath = path.join(source, file);
+            const stats = await fs.promises.stat(dirPath);
 
-    const libraryHTML = transformedComponentLists.map((app) => templates.generateLibraryHTML(app, BASE_URL)).join('');
-
-    let htmlTemplate = `
-      <!DOCTYPE html>
-      <html lang="en">
-          ${templates.headHTML}
-          <body class="container">
-              ${templates.headerHTML}
-                <main class='row gx-3 gy-3'>
-                ${libraryHTML}
-                </main>
-              ${templates.footerHTML}
-          </body>
-      </html>
-    `;
-
-    return htmlTemplate;
+            if (stats.isDirectory()) {
+                const jsonFiles = (await fs.promises.readdir(dirPath)).filter((f) => {
+                    return path.extname(f).toLowerCase() === '.json';
+                });
+                if (jsonFiles.length > 0) {
+                    for (const jsonFile of jsonFiles) {
+                        const filePath = path.join(dirPath, jsonFile);
+                        const obj = await readJsonFile(filePath);
+                        if (obj) {
+                            componentLists.push(obj);
+                        }
+                    }
+                }
+            }
+        }
+    } catch (err) {
+        console.error('Error reading the directory:', err);
+    }
+    return componentLists;
 };
 
 const init = async () => {
     try {
         console.log('Generating index.html...');
-        const componentLists = await utils.processDirectories(source);
-        const htmlContent = generateHTML(componentLists);
-
-        await fs.promises.writeFile(`${dest}/index.html`, htmlContent);
-        console.log('index.html has been generated!');
+        const componentLists = await processDirectories(source);
+        fs.promises.writeFile(`${dest}/index.json`, JSON.stringify(componentLists, null, 2));
     } catch (err) {
         console.error('Error:', err);
     }
