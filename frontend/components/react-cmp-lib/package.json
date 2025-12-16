@@ -11,10 +11,8 @@
         "test": "echo 'Error: no test specified'",
         "test:update": "jest --verbose --coverage --updateSnapshot",
         "test:watch": "jest --watch",
-
         "start": "bash scripts/start.bash",
         "start:playgrounds": "bash scripts/start.bash",
-
         "lint": "echo \"No linting configured\"",
         "build:dev": "bash scripts/build-dev.bash",
         "build:prod": "bash scripts/build-prod.bash"

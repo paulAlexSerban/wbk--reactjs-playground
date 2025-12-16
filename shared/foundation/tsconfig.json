@@ -6,8 +6,8 @@
         "target": "esnext",
         "declaration": true,
         "moduleResolution": "node",
-        "preserveWatchOutput": true,
+        "preserveWatchOutput": true
     },
     "include": ["src/**/*", "tests"],
-    "exclude": ["node_modules", "lib", "tests"],
+    "exclude": ["node_modules", "lib", "tests"]
 }

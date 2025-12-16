@@ -14,8 +14,8 @@
         "noUnusedParameters": true,
         "declaration": true,
         "moduleResolution": "node",
-        "types": ["node", "jest"],
+        "types": ["node", "jest"]
     },
     "include": ["src"],
-    "exclude": ["node_modules", "lib"],
+    "exclude": ["node_modules", "lib"]
 }

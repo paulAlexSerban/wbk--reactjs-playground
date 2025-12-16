@@ -1,3 +1,3 @@
 # Elements
 
--   unclassed HTML elements (type selectors)
+- unclassed HTML elements (type selectors)
