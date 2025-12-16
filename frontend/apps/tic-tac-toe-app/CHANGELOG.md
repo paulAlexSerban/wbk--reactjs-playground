@@ -3,15 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/paulAlexSerban/wbk--fullstack/compare/@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.2.0...@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.3.0) (2025-12-16)
+
+### Features
+
+- **arch:** cleanup ([eaaacce](https://github.com/paulAlexSerban/wbk--fullstack/commit/eaaacceb69e3614d269b60cb944cca66b5a59e4c))
+- **arch:** scripts test ([984b6cd](https://github.com/paulAlexSerban/wbk--fullstack/commit/984b6cdbdcdd9cd32782a6889fa6ace1239f0454))
+- **duolingo app:** added ([0053373](https://github.com/paulAlexSerban/wbk--fullstack/commit/005337384b2ee24f746df522c95a0c8d5f505939))
+- **minesweeper:** added some tests ([6c33b61](https://github.com/paulAlexSerban/wbk--fullstack/commit/6c33b61e476d4c2b227d73c3898a3383d1464f11))
+- **solid:** move solid examples to single app ([6e417cd](https://github.com/paulAlexSerban/wbk--fullstack/commit/6e417cdd26d783d17f831a049e58f660d61be20a))
+- some cleanup ([7a07cee](https://github.com/paulAlexSerban/wbk--fullstack/commit/7a07cee4ec656ca6cfe3e9b9f0ddd02a9b351756))
+- some cleanup ([4b68ed0](https://github.com/paulAlexSerban/wbk--fullstack/commit/4b68ed0783d63bb638bb91c3faae7ec3d0344906))
+
+# [0.2.0](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/compare/@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.1.0...@wbk--reactjs-playground--typescript/tic-tac-toe-app@0.2.0) (2024-02-05)
+
+### Features
+
+- added ci-cd svg ([5ca152c](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/5ca152cfa6dc2b1548b7c2ed48d33d5debae9db7))
+- **added:** apps ([11dcfff](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/11dcfffcaab37b030fe7a13b728a76141978fa40))
+- fix ([cc368cc](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/cc368cc5b544cbb8c155359397154df97c467241))
+- **vite plugin:** implemenetd ([37d46fa](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/37d46fa94fb78ec7126690f942429a51d9ed511e))
+
 # 0.1.0 (2024-02-02)
 
 ### Features
 
--   **ci-cd:** init implementation ([b3b04f0](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/b3b04f00180259d571bf54bfe34dc66a78352e9e))
--   **cleanup:** remove duloingo app ([3ea8f7d](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/3ea8f7d47da9759c9ea8f62599a8aa4250b38c3c))
--   **develop:** aws ([96f726f](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/96f726f064733ad5ee05405640fc2b69ff8c6f8f))
--   **rename:** done ([15a0f92](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/15a0f92f47690da6021269d43d7489cb72cdc514))
--   small adjustments ([7f2081c](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/7f2081cac29b105fa29850fe3abd94b309f82c8d))
--   styled compoennts work ([5cf9cae](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/5cf9cae09ec5f9b36f10b44435678947f4bb2f7e))
--   **tic tac toe:** mvp app ([f3a8887](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/f3a88872ae21cfd2fb32f451089c0f3e880c0574))
--   **tic-tac-toe-app:** init ([b709fc9](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/b709fc949cfd19076b702d9781a5e93fb423095b))
+- **ci-cd:** init implementation ([b3b04f0](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/b3b04f00180259d571bf54bfe34dc66a78352e9e))
+- **cleanup:** remove duloingo app ([3ea8f7d](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/3ea8f7d47da9759c9ea8f62599a8aa4250b38c3c))
+- **develop:** aws ([96f726f](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/96f726f064733ad5ee05405640fc2b69ff8c6f8f))
+- **rename:** done ([15a0f92](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/15a0f92f47690da6021269d43d7489cb72cdc514))
+- small adjustments ([7f2081c](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/7f2081cac29b105fa29850fe3abd94b309f82c8d))
+- styled compoennts work ([5cf9cae](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/5cf9cae09ec5f9b36f10b44435678947f4bb2f7e))
+- **tic tac toe:** mvp app ([f3a8887](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/f3a88872ae21cfd2fb32f451089c0f3e880c0574))
+- **tic-tac-toe-app:** init ([b709fc9](https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript/commit/b709fc949cfd19076b702d9781a5e93fb423095b))

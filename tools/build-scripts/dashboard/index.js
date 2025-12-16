@@ -30,10 +30,9 @@ const generateHTML = (componentLists) => {
               ${templates.headerHTML}
                 <main class='row gx-3 gy-3'>
                 ${libraryHTML}
-
                 </main>
               ${templates.footerHTML}
-          </body
+          </body>
       </html>
     `;
 
