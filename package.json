@@ -14,7 +14,7 @@
         "formats:write": "yarn prettier --write .",
         "lint": "lerna run lint --concurrency=5",
         "test": "yarn lerna run test --stream --parallel",
-        "package": "rm -rfv ./package/* && lerna run package --stream --parallel && node tools/build-scripts/dashboard",
+        "package": "rm -rfv ./package/* && lerna run package --stream --parallel && node tools/build-scripts/dashboard && lerna run build:dashboard:prod && cp -R dashboard/dist/* ./package/",
         "prepare": "husky install",
         "version:modules": "bash tools/build-scripts/version.bash",
         "start:package": "npx serve package"

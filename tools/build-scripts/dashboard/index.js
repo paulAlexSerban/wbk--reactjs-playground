@@ -3,6 +3,7 @@ const path = require('path');
 
 const source = path.join(__dirname, '../../..', 'package', 'apps');
 const dest = path.join(__dirname, '../../..', 'package', 'apps');
+const dashboardDest = path.join(__dirname, '../../..', 'dashboard', 'src', 'data');
 
 // if the destination directory does not exist, create it
 if (!fs.existsSync(dest)) {
@@ -52,7 +53,7 @@ const init = async () => {
     try {
         console.log('Generating index.html...');
         const componentLists = await processDirectories(source);
-        fs.promises.writeFile(`${dest}/index.json`, JSON.stringify(componentLists, null, 2));
+        fs.promises.writeFile(`${dashboardDest}/projects.json`, JSON.stringify(componentLists, null, 2));
     } catch (err) {
         console.error('Error:', err);
     }

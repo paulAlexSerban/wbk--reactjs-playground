@@ -4,11 +4,12 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "build:dev": "vite build --mode development",
+        "build:dashboard:dev": "export NODE_ENV=development && tsc && vite build",
+        "build:dashboard:prod": "export NODE_ENV=production && tsc && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
+        "//": "DEV SCRIPTS",
+        "dev": "vite",
         "generate:projects": "tsx scripts/generate-projects.ts"
     },
     "dependencies": {
@@ -68,7 +69,7 @@
         "@types/node": "^22.16.5",
         "@types/react": "^18.3.23",
         "@types/react-dom": "^18.3.7",
-        "@vitejs/plugin-react-swc": "^3.11.0",
+        "@vitejs/plugin-react": "^4.0.3",
         "autoprefixer": "^10.4.21",
         "eslint": "^9.32.0",
         "eslint-plugin-react-hooks": "^5.2.0",

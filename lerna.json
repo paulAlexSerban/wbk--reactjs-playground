@@ -13,7 +13,7 @@
         "shared/*",
         "shared/**/*",
         "tools/*",
-        "dashboard/*"
+        "dashboard"
     ],
     "npmClient": "yarn",
     "stream": true,
