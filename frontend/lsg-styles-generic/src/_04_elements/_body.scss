@@ -1,8 +1,0 @@
-@use '../_02_settings_tools/index.scss' as settings;
-
-body {
-    font-family: settings.$body-font-family;
-    font-size: settings.$body-font-size;
-    font-weight: settings.$body-font-weight;
-    line-height: inherit;
-}
