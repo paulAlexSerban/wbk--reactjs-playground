@@ -6,12 +6,12 @@
     "version": "0.2.0",
     "type": "module",
     "scripts": {
-        "develop:apps": "vite",
-        "build:dev:apps": "export NODE_ENV=development && tsc && vite build",
-        "build:prod:apps": "export NODE_ENV=production && tsc && vite build",
-        "lint:apps": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "preview:apps": "vite preview",
-        "package:apps": "bash scripts/package.bash"
+        "develop": "vite",
+        "build:dev": "export NODE_ENV=development && tsc && vite build",
+        "build:prod": "export NODE_ENV=production && tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "package": "bash scripts/package.bash"
     },
     "dependencies": {
         "react": "^18.2.0",
