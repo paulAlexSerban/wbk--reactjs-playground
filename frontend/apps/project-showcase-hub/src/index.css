@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Developer Theme - Code Editor Aesthetics */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+    :root {
+        --background: 220 14% 96%;
+        --foreground: 220 20% 15%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 220 20% 15%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 20% 15%;
+
+        --primary: 210 100% 50%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 220 14% 90%;
+        --secondary-foreground: 220 20% 15%;
+
+        --muted: 220 14% 92%;
+        --muted-foreground: 220 10% 45%;
+
+        --accent: 160 84% 39%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 220 13% 87%;
+        --input: 220 13% 87%;
+        --ring: 210 100% 50%;
+
+        --radius: 0.5rem;
+
+        /* Syntax highlighting colors */
+        --syntax-keyword: 280 68% 60%;
+        --syntax-string: 160 84% 39%;
+        --syntax-function: 210 100% 60%;
+        --syntax-variable: 35 90% 55%;
+        --syntax-comment: 220 10% 55%;
+
+        /* Custom gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(280 68% 60%));
+        --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 220 20% 15%;
+        --sidebar-primary: 210 100% 50%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 220 14% 92%;
+        --sidebar-accent-foreground: 220 20% 15%;
+        --sidebar-border: 220 13% 87%;
+        --sidebar-ring: 210 100% 50%;
+    }
+
+    .dark {
+        --background: 220 20% 10%;
+        --foreground: 220 14% 92%;
+
+        --card: 220 20% 13%;
+        --card-foreground: 220 14% 92%;
+
+        --popover: 220 20% 13%;
+        --popover-foreground: 220 14% 92%;
+
+        --primary: 210 100% 55%;
+        --primary-foreground: 220 20% 10%;
+
+        --secondary: 220 20% 18%;
+        --secondary-foreground: 220 14% 92%;
+
+        --muted: 220 20% 18%;
+        --muted-foreground: 220 14% 65%;
+
+        --accent: 160 84% 45%;
+        --accent-foreground: 220 20% 10%;
+
+        --destructive: 0 62% 45%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 220 20% 20%;
+        --input: 220 20% 20%;
+        --ring: 210 100% 55%;
+
+        /* Syntax highlighting colors - dark */
+        --syntax-keyword: 280 68% 70%;
+        --syntax-string: 160 84% 55%;
+        --syntax-function: 210 100% 70%;
+        --syntax-variable: 35 90% 65%;
+        --syntax-comment: 220 14% 50%;
+
+        /* Custom gradients - dark */
+        --gradient-primary: linear-gradient(135deg, hsl(210 100% 55%), hsl(280 68% 60%));
+        --gradient-card: linear-gradient(180deg, hsl(220 20% 13%), hsl(220 20% 11%));
+
+        --sidebar-background: 220 20% 10%;
+        --sidebar-foreground: 220 14% 92%;
+        --sidebar-primary: 210 100% 55%;
+        --sidebar-primary-foreground: 220 20% 10%;
+        --sidebar-accent: 220 20% 18%;
+        --sidebar-accent-foreground: 220 14% 92%;
+        --sidebar-border: 220 20% 20%;
+        --sidebar-ring: 210 100% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+    }
+}
+
+@layer components {
+    .tech-badge {
+        @apply inline-flex items-center px-2 py-0.5 text-xs font-mono font-medium rounded-md;
+        @apply bg-secondary text-secondary-foreground border border-border;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:shadow-lg hover:border-primary/30;
+    }
+
+    .gradient-text {
+        @apply bg-clip-text text-transparent;
+        background-image: var(--gradient-primary);
+    }
+}
+
+@layer utilities {
+    .scrollbar-thin {
+        scrollbar-width: thin;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        @apply bg-muted rounded-full;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        @apply bg-border rounded-full hover:bg-muted-foreground/50;
+    }
+}
