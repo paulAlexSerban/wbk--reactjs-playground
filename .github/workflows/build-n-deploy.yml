@@ -7,6 +7,7 @@ on:
 
 env:
     NODE_VERSION: 24.12.0
+    REPO_NAME: wbk--reactjs-playground
 
 permissions:
     contents: write
@@ -49,7 +50,7 @@ jobs:
               uses: actions/upload-artifact@v6
               with:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
-                  path: './package/wbk--reactjs-playground'
+                  path: './package/${{ env.REPO_NAME }}'
                   retention-days: 30
 
     deploy:
