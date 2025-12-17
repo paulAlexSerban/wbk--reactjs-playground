@@ -8,6 +8,9 @@ on:
 env:
     NODE_VERSION: 24.12.0
 
+permissions:
+    contents: write
+
 jobs:
     build-n-package:
         name: 'Build & Package'
@@ -48,3 +51,19 @@ jobs:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
                   path: './package'
                   retention-days: 30
+
+    deploy:
+        name: 'Deploy to GitHub Pages'
+        needs: build-n-package
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Download apps artifact'
+              uses: actions/download-artifact@v7
+              with:
+                  name: package-${{ github.run_number }}-${{ github.run_id }}
+
+            - name: 'Deploy to GitHub Pages'
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./package
