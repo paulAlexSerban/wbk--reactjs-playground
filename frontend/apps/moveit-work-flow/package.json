@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground--typescript/moveit-work-flow",
+    "name": "@wbk--reactjs-playground/moveit-work-flow",
     "id": "moveit-work-flow-01",
     "formattedName": "MoveIt Work Flow",
     "description": "A comprehensive work flow application built with React and TypeScript, featuring task management, scheduling, and progress tracking functionalities.",

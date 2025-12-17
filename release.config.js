@@ -1,6 +1,6 @@
 module.exports = {
     branches: 'release',
-    repositoryUrl: 'https://github.com/paulAlexSerban/wbk--reactjs-playground--typescript',
+    repositoryUrl: 'https://github.com/paulAlexSerban/wbk--reactjs-playground',
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',

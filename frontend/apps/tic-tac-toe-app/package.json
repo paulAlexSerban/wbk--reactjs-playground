@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground--typescript/tic-tac-toe-app",
+    "name": "@wbk--reactjs-playground/tic-tac-toe-app",
     "id": "tic-tac-toe-app-01",
     "formattedName": "Tic Tac Toe App",
     "description": "A simple tic-tac-toe game built with React and TypeScript to practice frontend development skills.",

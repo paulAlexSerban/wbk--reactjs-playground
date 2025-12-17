@@ -1,9 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const source = path.join(__dirname, '../../..', 'package', 'apps');
-const dest = path.join(__dirname, '../../..', 'package', 'apps');
-const dashboardDest = path.join(__dirname, '../../..', 'dashboard', 'src', 'data');
+const source = path.join(__dirname, '..', 'package', 'wbk--reactjs-playground', 'apps');
+const dest = path.join(__dirname, '..', 'package', 'wbk--reactjs-playground', 'apps');
+const dashboardDest = path.join(__dirname, '..', 'dashboard', 'src', 'data');
+const serveConfigPath = path.join(__dirname, '..', 'package', 'serve.json');
+
+const BASE_PATH = '/wbk--reactjs-playground/apps/';
 
 // if the destination directory does not exist, create it
 if (!fs.existsSync(dest)) {
@@ -36,7 +39,7 @@ const processDirectories = async (source) => {
                     for (const jsonFile of jsonFiles) {
                         const filePath = path.join(dirPath, jsonFile);
                         const obj = await readJsonFile(filePath);
-                        obj.demoUrl = obj.demoUrl === '' ? `/apps/${obj.slug}/` : obj.demoUrl;
+                        obj.demoUrl = obj.demoUrl === '' ? path.join(BASE_PATH, `${obj.slug}/`) : obj.demoUrl;
                         if (obj) {
                             componentLists.push(obj);
                         }
@@ -54,8 +57,8 @@ const generateServeConfig = (componentLists) => {
     const rewrites = componentLists.map((component) => {
         const slug = component.slug;
         return {
-            source: `/apps/${slug}/**`,
-            destination: `/apps/${slug}/index.html`,
+            source: path.join(BASE_PATH, `${slug}/**`),
+            destination: path.join(BASE_PATH, `${slug}/index.html`),
         };
     });
     return { rewrites };
@@ -71,7 +74,7 @@ const init = async () => {
 
         // Generate and write serve.json for routing
         const serveConfig = generateServeConfig(componentLists);
-        const serveConfigPath = path.join(__dirname, '../../..', 'package', 'serve.json');
+
         await fs.promises.writeFile(serveConfigPath, JSON.stringify(serveConfig, null, 2));
 
         console.log(

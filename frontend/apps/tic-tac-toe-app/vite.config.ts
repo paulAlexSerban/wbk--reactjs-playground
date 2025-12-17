@@ -8,7 +8,7 @@ const SLUG = packageJson.name.split('/').pop();
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
-    const DOMAIN_PATH = command === 'serve' ? '/' : `/apps/${SLUG}`;
+    const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-playground/apps/${SLUG}`;
 
     const config = {
         plugins: [react(), writeMetaPlugin()],

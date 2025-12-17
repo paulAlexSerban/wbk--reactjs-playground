@@ -1,10 +1,10 @@
 #!/bin/bash
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
-yarn --cwd ../../ lerna version --no-push --yes
+yarn --cwd ../ lerna version --no-push --yes
 
 # format checngelogs
-yarn --cwd ../../ formats:write
+yarn --cwd ../ formats:write
 
 # Add changes to the staging area
 git add .

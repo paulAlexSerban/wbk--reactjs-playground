@@ -1,23 +1,28 @@
 {
-    "name": "@wbk--reactjs-playground--typescript/core",
+    "name": "@wbk--reactjs-playground/core",
     "version": "0.0.0",
     "main": "index.js",
     "author": "paulAlexSerban <paul.alex.serban@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "build:dev": "rm -rfv .parcel-cache && lerna run build:dev",
-        "build:prod": "rm -rfv .parcel-cache && lerna run build:prod",
-        "commit": "yarn git-cz",
-        "develop:boilerplates": "rm -rfv .parcel-cache && yarn lerna run develop:boilerplates --stream --parallel",
-        "develop": "rm -rfv .parcel-cache && yarn lerna run develop --stream --parallel",
+        "build:apps:dev": "rm -rfv .parcel-cache && lerna run build:dev",
+        "///": "CI PRODUCTION BUILDS",
+        "build:full": "yarn build:apps:prod && yarn package:apps && yarn dashboard:deps && yarn build:dashboard:prod && yarn package:dashboard",
+        "build:apps:prod": "rm -rfv .parcel-cache && lerna run build:prod",
+        "package:apps": "rm -rfv ./package/* && bash scripts/package-apps.bash ",
+        "dashboard:deps": "node scripts/dashboard-deps.js",
+        "build:dashboard:prod": "lerna run build:dashboard:prod",
+        "package:dashboard": "bash scripts/package-dashboard.bash",
+        "//": "LOCAL SERVER",
+        "start:package": "npx serve package",
+        "/": "TOOLS",
         "formats:check": "yarn prettier --check .",
         "formats:write": "yarn prettier --write .",
         "lint": "lerna run lint --concurrency=5",
         "test": "yarn lerna run test --stream --parallel",
-        "package": "rm -rfv ./package/* && lerna run package --stream --parallel && node tools/build-scripts/dashboard && lerna run build:dashboard:prod && cp -R dashboard/dist/* ./package/",
-        "prepare": "husky install",
-        "version:modules": "bash tools/build-scripts/version.bash",
-        "start:package": "npx serve package"
+        "commit": "yarn git-cz",
+        "version:modules": "bash scripts/version.bash",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.7.2",
@@ -42,7 +47,7 @@
             "frontend/**/*",
             "shared/*",
             "shared/**/*",
-            "tools/*",
+            "scripts/*",
             "dashboard/*"
         ],
         "nohoist": [

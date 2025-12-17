@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground--typescript/learn-quizer",
+    "name": "@wbk--reactjs-playground/learn-quizer",
     "id": "learn-quizer-01",
     "formattedName": "Learn Quizer",
     "description": "An interactive quiz application built with React and TypeScript, designed to help users learn and test their knowledge across various subjects.",
