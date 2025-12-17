@@ -10,22 +10,26 @@ import NotFound from './pages/NotFound';
 
 const queryClient = new QueryClient();
 
-const App = () => (
-    <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-            <QuizProvider>
-                <Toaster />
-                <Sonner />
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Index />} />
-                        <Route path="/post/:slug" element={<Post />} />
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                </BrowserRouter>
-            </QuizProvider>
-        </TooltipProvider>
-    </QueryClientProvider>
-);
+const App = () => {
+    const DOMAIN_PATH = import.meta.env.VITE_DOMAIN_PATH;
+    console.log('DOMAIN_PATH:', DOMAIN_PATH);
+    return (
+        <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+                <QuizProvider>
+                    <Toaster />
+                    <Sonner />
+                    <BrowserRouter basename={DOMAIN_PATH}>
+                        <Routes>
+                            <Route path="/" element={<Index />} />
+                            <Route path="/post/:slug" element={<Post />} />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                    </BrowserRouter>
+                </QuizProvider>
+            </TooltipProvider>
+        </QueryClientProvider>
+    );
+};
 
 export default App;
