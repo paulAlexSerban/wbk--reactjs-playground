@@ -4,24 +4,24 @@ import { writeMetaPlugin } from './writeMeta.plugin';
 import path from 'path';
 import packageJson from './package.json';
 
-const PROJECT_NAME = packageJson.name.split('/').pop();
-const BASE_URL = process.env.BASE_URL || '/';
+const SLUG = packageJson.name.split('/').pop();
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
+    const DOMAIN_PATH = command === 'serve' ? '/' : `/apps/${SLUG}`;
+
     const config = {
         plugins: [react(), writeMetaPlugin()],
-        base: '/',
+        base: DOMAIN_PATH,
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),
             },
         },
+        define: {
+            'import.meta.env.VITE_DOMAIN_PATH': JSON.stringify(DOMAIN_PATH),
+        },
     };
-
-    if (command !== 'serve') {
-        config.base = `${BASE_URL}apps/${PROJECT_NAME}`;
-    }
 
     return config;
 });

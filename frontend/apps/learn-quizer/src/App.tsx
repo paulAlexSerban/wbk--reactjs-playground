@@ -12,7 +12,6 @@ const queryClient = new QueryClient();
 
 const App = () => {
     const DOMAIN_PATH = import.meta.env.VITE_DOMAIN_PATH;
-    console.log('DOMAIN_PATH:', DOMAIN_PATH);
     return (
         <QueryClientProvider client={queryClient}>
             <TooltipProvider>
