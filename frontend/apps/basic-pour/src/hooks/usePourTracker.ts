@@ -15,7 +15,7 @@ interface PourTrackerConfig {
 }
 
 export function usePourTracker(beta: number | null, config: PourTrackerConfig = {}) {
-    const { pourRateMlPerSec = 30, tiltStartDeg = 40, tiltEndDeg = 25 } = config;
+    const { pourRateMlPerSec = 15, tiltStartDeg = 40, tiltEndDeg = 25 } = config;
 
     const [pouring, setPouring] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
