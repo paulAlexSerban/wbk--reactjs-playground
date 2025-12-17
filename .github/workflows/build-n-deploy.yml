@@ -61,6 +61,7 @@ jobs:
               uses: actions/download-artifact@v7
               with:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
+                  path: ./package
 
             - name: 'Deploy to GitHub Pages'
               uses: peaceiris/actions-gh-pages@v4
