@@ -34,6 +34,48 @@
         "tags": ["workflow", "react", "typescript", "frontend", "productivity", "blockchain", "web3", "sui"]
     },
     {
+        "name": "Jigger Free - Master Free Pouring",
+        "short_name": "Jigger Free",
+        "description": "Practice bartending free pour techniques with real-time motion feedback",
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#141619",
+        "theme_color": "#141619",
+        "orientation": "portrait",
+        "icons": [
+            {
+                "src": "/icons/icon-192.png",
+                "sizes": "192x192",
+                "type": "image/png",
+                "purpose": "any maskable"
+            },
+            {
+                "src": "/icons/icon-512.png",
+                "sizes": "512x512",
+                "type": "image/png",
+                "purpose": "any maskable"
+            }
+        ],
+        "categories": ["lifestyle", "education", "utilities"]
+    },
+    {
+        "name": "Pour Perfect",
+        "version": "0.0.0",
+        "description": "A mobile-first practice application that enables aspiring bartenders to develop and refine free pouring skills using device motion sensors. The application simulates real-world pouring scenarios with immediate feedback, helping users master the precision counting techniques required in professional bartending environments.",
+        "slug": "pour-perfect",
+        "id": "pour-perfect-01",
+        "shortDescription": "A mobile-first app to practice bartending free pouring skills using device motion sensors.",
+        "category": "Mobile Web App",
+        "techStack": ["React", "TypeScript", "Vite"],
+        "images": ["pour-perfect__screenshot-1-1080_1920.webp"],
+        "sourceUrl": "",
+        "demoUrl": "/wbk--reactjs-playground/apps/pour-perfect/",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "2025-12-17T00:00:00.000Z",
+        "tags": ["bartending", "free pouring", "mobile", "react", "typescript", "frontend"]
+    },
+    {
         "name": "Tic Tac Toe App",
         "version": "0.3.0",
         "description": "A simple tic-tac-toe game built with React and TypeScript to practice frontend development skills.",
