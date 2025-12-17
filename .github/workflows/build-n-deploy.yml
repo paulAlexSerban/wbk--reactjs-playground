@@ -49,7 +49,7 @@ jobs:
               uses: actions/upload-artifact@v6
               with:
                   name: package-${{ github.run_number }}-${{ github.run_id }}
-                  path: './package'
+                  path: './package/wbk--reactjs-playground'
                   retention-days: 30
 
     deploy:
