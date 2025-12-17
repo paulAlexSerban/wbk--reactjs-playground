@@ -1,0 +1,30 @@
+{
+  "name": "AbcBar Tilt Pour Trainer",
+  "version": "0.3.0",
+  "description": "A mobile pour training application using device orientation sensors to help practice bartending pour precision.",
+  "slug": "basic-pour",
+  "id": "basic-pour-01",
+  "shortDescription": "A mobile pour training application using device orientation sensors.",
+  "category": "Mobile App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "basic-pour__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "mobile",
+    "pouring",
+    "bartending",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
