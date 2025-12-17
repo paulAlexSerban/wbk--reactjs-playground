@@ -11,7 +11,9 @@
     "TypeScript",
     "Vite"
   ],
-  "images": [],
+  "images": [
+    "tic-tac-toe-app__screenshot-1-1920_1440.webp"
+  ],
   "sourceUrl": "",
   "demoUrl": "",
   "docsUrl": "",
