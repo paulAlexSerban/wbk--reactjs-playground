@@ -33,7 +33,7 @@ const processDirectories = async (source) => {
 
             if (stats.isDirectory()) {
                 const jsonFiles = (await fs.promises.readdir(dirPath)).filter((f) => {
-                    return path.extname(f).toLowerCase() === '.json';
+                    return path.basename(f) === 'meta.json';
                 });
                 if (jsonFiles.length > 0) {
                     for (const jsonFile of jsonFiles) {
