@@ -42,7 +42,7 @@
         "shortDescription": "A mobile-first app to practice bartending free pouring skills using device motion sensors.",
         "category": "Mobile Web App",
         "techStack": ["React", "TypeScript", "Vite"],
-        "images": ["pour-perfect__screenshot-1-1080_1920.webp"],
+        "images": ["pour-perfect__screenshot-1-1920_1440.webp", "pour-perfect__screenshot-2-1920_1440.webp"],
         "sourceUrl": "",
         "demoUrl": "/wbk--reactjs-playground/apps/pour-perfect/",
         "docsUrl": "",

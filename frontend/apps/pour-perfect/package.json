@@ -11,7 +11,7 @@
         "Vite"
     ],
     "images": [
-        "pour-perfect__screenshot-1-1080_1920.webp"
+        "pour-perfect__screenshot-1-1920_1440.webp"
     ],
     "sourceUrl": "",
     "demoUrl": "",
@@ -30,7 +30,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --host --port 8080",
         "build:dev": "export NODE_ENV=development && tsc && vite build",
         "build:prod": "export NODE_ENV=production && tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

@@ -1,0 +1,30 @@
+import { Home, Target, BookOpen, Trophy, Settings } from 'lucide-react';
+import { NavLink } from '@/components/NavLink';
+
+const navItems = [
+    { to: '/', icon: Home, label: 'Home' },
+    { to: '/practice/free', icon: Target, label: 'Practice' },
+    { to: '/practice/recipe', icon: BookOpen, label: 'Recipes' },
+    { to: '/challenges', icon: Trophy, label: 'Challenges' },
+    { to: '/settings', icon: Settings, label: 'Settings' },
+];
+
+export function BottomNav() {
+    return (
+        <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-t border-border safe-area-bottom">
+            <div className="flex items-center justify-around h-16 max-w-lg mx-auto px-2">
+                {navItems.map((item) => (
+                    <NavLink
+                        key={item.to}
+                        to={item.to}
+                        className="flex flex-col items-center justify-center gap-1 py-2 px-3 rounded-lg text-muted-foreground transition-colors"
+                        activeClassName="text-primary bg-primary/10"
+                    >
+                        <item.icon className="h-5 w-5" />
+                        <span className="text-[10px] font-medium">{item.label}</span>
+                    </NavLink>
+                ))}
+            </div>
+        </nav>
+    );
+}

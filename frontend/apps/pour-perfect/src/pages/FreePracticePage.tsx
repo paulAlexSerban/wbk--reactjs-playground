@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Play, Square, RotateCcw } from 'lucide-react';
+import { useState, useCallback } from 'react';
+import { Play, Square, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { useDeviceMotion } from '@/hooks/useDeviceMotion';
 import { useHaptics } from '@/hooks/useHaptics';
 import { useAppState } from '@/hooks/useAppState';
@@ -12,13 +12,11 @@ import type { PourSession } from '@/types';
 const VOLUMES = [1, 1.5, 2];
 
 export default function FreePracticePage() {
-    const navigate = useNavigate();
     const { currentProfile, preferences } = useAppState();
     const haptics = useHaptics();
 
     const [targetVolume, setTargetVolume] = useState(1.5);
     const [lastResult, setLastResult] = useState<{ accuracy: number; volume: number } | null>(null);
-    const [isReady, setIsReady] = useState(false);
 
     const handlePourStart = useCallback(() => {
         haptics.pourStart();
@@ -43,7 +41,6 @@ export default function FreePracticePage() {
                 haptics.warning();
             }
 
-            // Save session
             const session: PourSession = {
                 id: `pour-${Date.now()}`,
                 timestamp: Date.now(),
@@ -61,11 +58,10 @@ export default function FreePracticePage() {
         [targetVolume, currentProfile, preferences, haptics]
     );
 
-    const { isSupported, permissionGranted, requestPermission, pourState, startManualPour, stopManualPour } =
-        useDeviceMotion({
-            onPourStart: handlePourStart,
-            onPourEnd: handlePourEnd,
-        });
+    const { pourState, startManualPour, stopManualPour } = useDeviceMotion({
+        onPourStart: handlePourStart,
+        onPourEnd: handlePourEnd,
+    });
 
     const getAccuracyColor = (accuracy: number) => {
         if (accuracy >= 90) return 'text-success';
@@ -78,19 +74,11 @@ export default function FreePracticePage() {
         progressPercent <= 100 ? 'stroke-success' : progressPercent <= 120 ? 'stroke-warning' : 'stroke-destructive';
 
     return (
-        <div className="min-h-screen bg-background safe-top safe-bottom flex flex-col">
-            {/* Header */}
-            <header className="px-6 pt-6 pb-4">
-                <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
-                        <ArrowLeft className="w-6 h-6" />
-                    </Button>
-                    <h1 className="text-xl font-bold">Free Practice</h1>
-                </div>
-            </header>
+        <AppLayout>
+            <PageHeader title="Free Practice" showBack />
 
             {/* Volume Selector */}
-            <div className="px-6 mb-6">
+            <div className="px-6 py-4">
                 <p className="text-sm text-muted-foreground mb-2">Target Volume</p>
                 <div className="flex gap-2">
                     {VOLUMES.map((vol) => (
@@ -107,9 +95,8 @@ export default function FreePracticePage() {
             </div>
 
             {/* Pour Visualization */}
-            <main className="flex-1 flex flex-col items-center justify-center px-6">
+            <div className="flex-1 flex flex-col items-center justify-center px-6 py-8">
                 <div className="relative w-64 h-64">
-                    {/* Progress Ring */}
                     <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="45" fill="none" stroke="hsl(var(--secondary))" strokeWidth="8" />
                         <circle
@@ -125,7 +112,6 @@ export default function FreePracticePage() {
                         />
                     </svg>
 
-                    {/* Center Content */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         {pourState.isPouring ? (
                             <>
@@ -153,14 +139,13 @@ export default function FreePracticePage() {
                     </div>
                 </div>
 
-                {/* Instructions */}
                 <p className="text-center text-muted-foreground mt-8 max-w-xs">
                     {pourState.isPouring ? 'Pouring... level the bottle to stop' : 'Tilt your device to start pouring'}
                 </p>
-            </main>
+            </div>
 
-            {/* Manual Controls (for testing) */}
-            <footer className="px-6 pb-8">
+            {/* Manual Controls */}
+            <div className="px-6 pb-24">
                 <div className="flex gap-4">
                     {!pourState.isPouring ? (
                         <Button size="lg" className="flex-1 touch-target" onClick={startManualPour}>
@@ -184,7 +169,7 @@ export default function FreePracticePage() {
                         </Button>
                     )}
                 </div>
-            </footer>
-        </div>
+            </div>
+        </AppLayout>
     );
 }

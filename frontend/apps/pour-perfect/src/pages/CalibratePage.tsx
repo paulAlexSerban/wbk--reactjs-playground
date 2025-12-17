@@ -1,9 +1,11 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Check, Smartphone, Hand, Droplets } from 'lucide-react';
+import { Smartphone, Hand, Droplets } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+import { AppLayout } from '@/components/AppLayout';
+import { PageHeader } from '@/components/PageHeader';
 import { useDeviceMotion } from '@/hooks/useDeviceMotion';
 import { useHaptics } from '@/hooks/useHaptics';
 import { useAppState } from '@/hooks/useAppState';
@@ -48,21 +50,19 @@ export default function CalibratePage() {
 
         const interval = setInterval(() => {
             const elapsed = Date.now() - startTime;
-            const progress = Math.min((elapsed / duration) * 100, 100);
-            setCaptureProgress(progress);
+            const prog = Math.min((elapsed / duration) * 100, 100);
+            setCaptureProgress(prog);
 
             if (elapsed >= duration) {
                 clearInterval(interval);
                 setIsCapturing(false);
                 haptics.success();
 
-                // Save calibration data for this step
                 setCalibrationData((prev: any) => ({
                     ...prev,
                     [step.id]: motionData || { alpha: 0, beta: 0, gamma: 0 },
                 }));
 
-                // Move to next step or finish
                 if (currentStep < STEPS.length - 1) {
                     setCurrentStep(currentStep + 1);
                 } else {
@@ -73,8 +73,7 @@ export default function CalibratePage() {
     }, [step, currentStep, motionData, haptics]);
 
     const finishCalibration = async () => {
-        // Calculate calibration factor from pour durations
-        const calibrationFactor = 0.5; // oz per second (simplified)
+        const calibrationFactor = 0.5;
 
         const profile: CalibrationProfile = {
             id: `profile-${Date.now()}`,
@@ -94,39 +93,31 @@ export default function CalibratePage() {
 
     if (!isSupported) {
         return (
-            <div className="min-h-screen bg-background p-6 flex flex-col items-center justify-center">
-                <Card className="p-6 text-center max-w-sm">
-                    <Smartphone className="w-16 h-16 text-destructive mx-auto mb-4" />
-                    <h2 className="text-xl font-bold mb-2">Motion Sensors Not Available</h2>
-                    <p className="text-muted-foreground mb-4">
-                        Your device doesn't support motion sensors. You can still use manual timing mode.
-                    </p>
-                    <Button onClick={() => navigate('/')}>Continue Anyway</Button>
-                </Card>
-            </div>
+            <AppLayout>
+                <PageHeader title="Calibration" showBack />
+                <div className="flex-1 flex items-center justify-center p-6">
+                    <Card className="p-6 text-center max-w-sm">
+                        <Smartphone className="w-16 h-16 text-destructive mx-auto mb-4" />
+                        <h2 className="text-xl font-bold mb-2">Motion Sensors Not Available</h2>
+                        <p className="text-muted-foreground mb-4">
+                            Your device doesn't support motion sensors. You can still use manual timing mode.
+                        </p>
+                        <Button onClick={() => navigate('/')}>Continue Anyway</Button>
+                    </Card>
+                </div>
+            </AppLayout>
         );
     }
 
     return (
-        <div className="min-h-screen bg-background safe-top safe-bottom">
-            {/* Header */}
-            <header className="px-6 pt-6 pb-4">
-                <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
-                        <ArrowLeft className="w-6 h-6" />
-                    </Button>
-                    <div className="flex-1">
-                        <h1 className="text-xl font-bold">Calibration</h1>
-                        <p className="text-sm text-muted-foreground">
-                            Step {currentStep + 1} of {STEPS.length}
-                        </p>
-                    </div>
-                </div>
-                <Progress value={progress} className="mt-4 h-2" />
-            </header>
+        <AppLayout>
+            <PageHeader title={`Calibration (${currentStep + 1}/${STEPS.length})`} showBack />
 
-            {/* Main Content */}
-            <main className="px-6 flex-1 flex flex-col items-center justify-center py-12">
+            <div className="px-6 pt-2">
+                <Progress value={progress} className="h-2" />
+            </div>
+
+            <main className="flex-1 flex flex-col items-center justify-center px-6 py-8">
                 {!permissionGranted ? (
                     <Card className="p-8 text-center max-w-sm">
                         <Smartphone className="w-20 h-20 text-primary mx-auto mb-6" />
@@ -167,8 +158,7 @@ export default function CalibratePage() {
                 )}
             </main>
 
-            {/* Step indicators */}
-            <footer className="px-6 pb-8">
+            <footer className="px-6 pb-24">
                 <div className="flex justify-center gap-2">
                     {STEPS.map((s, i) => (
                         <div
@@ -180,6 +170,6 @@ export default function CalibratePage() {
                     ))}
                 </div>
             </footer>
-        </div>
+        </AppLayout>
     );
 }
