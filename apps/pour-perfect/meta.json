@@ -1,0 +1,30 @@
+{
+  "name": "Pour Perfect",
+  "version": "0.0.0",
+  "description": "A mobile-first practice application that enables aspiring bartenders to develop and refine free pouring skills using device motion sensors. The application simulates real-world pouring scenarios with immediate feedback, helping users master the precision counting techniques required in professional bartending environments.",
+  "slug": "pour-perfect",
+  "id": "pour-perfect-01",
+  "shortDescription": "A mobile-first app to practice bartending free pouring skills using device motion sensors.",
+  "category": "Mobile Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "pour-perfect__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "bartending",
+    "free pouring",
+    "mobile",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
