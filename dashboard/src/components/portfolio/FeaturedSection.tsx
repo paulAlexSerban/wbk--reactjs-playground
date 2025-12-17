@@ -31,7 +31,7 @@ export function FeaturedSection({ onProjectClick }: FeaturedSectionProps) {
                             className={`relative overflow-hidden bg-muted ${index === 0 ? 'aspect-video md:aspect-[2/1]' : 'aspect-video'}`}
                         >
                             <img
-                                src={project.images[0]}
+                                src={`${project.demoUrl}${project.images[0]}`}
                                 alt={project.name}
                                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />

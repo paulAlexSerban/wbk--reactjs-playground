@@ -31,7 +31,7 @@ export function ProjectModal({ project, open, onClose }: ProjectModalProps) {
                 {/* Image Gallery */}
                 <div className="relative aspect-video bg-muted">
                     <img
-                        src={project.images[currentImageIndex]}
+                        src={`${project.demoUrl}${project.images[currentImageIndex]}`}
                         alt={`${project.name} screenshot ${currentImageIndex + 1}`}
                         className="h-full w-full object-cover"
                     />

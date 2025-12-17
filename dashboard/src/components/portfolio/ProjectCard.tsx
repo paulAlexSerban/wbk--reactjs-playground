@@ -28,7 +28,7 @@ function GridCard({ project, onClick }: { project: Project; onClick: () => void 
         <Card className="group cursor-pointer overflow-hidden card-hover animate-fade-in" onClick={onClick}>
             <div className="relative aspect-video overflow-hidden bg-muted">
                 <img
-                    src={project.images[0]}
+                    src={`${project.demoUrl}${project.images[0]}`}
                     alt={project.name}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
@@ -72,7 +72,7 @@ function ListCard({ project, onClick }: { project: Project; onClick: () => void 
             <div className="flex gap-4 p-4">
                 <div className="relative h-24 w-40 shrink-0 overflow-hidden rounded-md bg-muted">
                     <img
-                        src={project.images[0]}
+                        src={`${project.demoUrl}${project.images[0]}`}
                         alt={project.name}
                         className="h-full w-full object-cover"
                         loading="lazy"
@@ -131,7 +131,7 @@ function CompactCard({ project, onClick }: { project: Project; onClick: () => vo
         <Card className="group cursor-pointer card-hover animate-fade-in" onClick={onClick}>
             <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <img
-                    src={project.images[0]}
+                    src={`${project.demoUrl}${project.images[0]}`}
                     alt={project.name}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"

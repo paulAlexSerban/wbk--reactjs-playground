@@ -10,9 +10,11 @@
         "TypeScript",
         "Vite"
     ],
-    "images": [],
+    "images": [
+        "learn-quizer__screenshot-1-1920_1440.webp"
+    ],
     "sourceUrl": "",
-    "demoUrl": "/apps/learn-quizer/",
+    "demoUrl": "",
     "docsUrl": "",
     "featured": false,
     "createdAt": "2025-06-19T00:00:00.000Z",

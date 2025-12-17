@@ -11,7 +11,9 @@
         "Vite",
         "Blockchain"
     ],
-    "images": [],
+    "images": [
+        "moveit-work-flow__screenshot-1-1920_1440.webp"
+    ],
     "sourceUrl": "",
     "demoUrl": "",
     "docsUrl": "",

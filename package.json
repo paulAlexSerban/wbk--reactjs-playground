@@ -6,6 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build:apps:dev": "rm -rfv .parcel-cache && lerna run build:dev",
+        "process:assets-media": "lerna run process",
         "///": "CI PRODUCTION BUILDS",
         "build:full": "yarn build:apps:prod && yarn package:apps && yarn dashboard:deps && yarn build:dashboard:prod && yarn package:dashboard",
         "build:apps:prod": "rm -rfv .parcel-cache && lerna run build:prod",
