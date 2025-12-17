@@ -36,6 +36,7 @@ const processDirectories = async (source) => {
                     for (const jsonFile of jsonFiles) {
                         const filePath = path.join(dirPath, jsonFile);
                         const obj = await readJsonFile(filePath);
+                        obj.demoUrl = obj.demoUrl === '' ? `/apps/${obj.slug}/` : obj.demoUrl;
                         if (obj) {
                             componentLists.push(obj);
                         }
@@ -49,11 +50,34 @@ const processDirectories = async (source) => {
     return componentLists;
 };
 
+const generateServeConfig = (componentLists) => {
+    const rewrites = componentLists.map((component) => {
+        const slug = component.slug;
+        return {
+            source: `/apps/${slug}/**`,
+            destination: `/apps/${slug}/index.html`,
+        };
+    });
+    return { rewrites };
+};
+
 const init = async () => {
     try {
-        console.log('Generating index.html...');
+        console.log('Generating projects.json and serve.json...');
         const componentLists = await processDirectories(source);
-        fs.promises.writeFile(`${dashboardDest}/projects.json`, JSON.stringify(componentLists, null, 2));
+
+        // Write projects.json for dashboard
+        await fs.promises.writeFile(`${dashboardDest}/projects.json`, JSON.stringify(componentLists, null, 2));
+
+        // Generate and write serve.json for routing
+        const serveConfig = generateServeConfig(componentLists);
+        const serveConfigPath = path.join(__dirname, '../../..', 'package', 'serve.json');
+        await fs.promises.writeFile(serveConfigPath, JSON.stringify(serveConfig, null, 2));
+
+        console.log(
+            'Generated serve.json with rewrites for:',
+            componentLists.map((c) => c.name.split('/').pop()).join(', ')
+        );
     } catch (err) {
         console.error('Error:', err);
     }
