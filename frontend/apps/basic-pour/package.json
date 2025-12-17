@@ -1,0 +1,57 @@
+{
+    "name": "@wbk--reactjs-playground/basic-pour",
+    "id": "basic-pour-01",
+    "formattedName": "AbcBar Tilt Pour Trainer",
+    "description": "A mobile pour training application using device orientation sensors to help practice bartending pour precision.",
+    "shortDescription": "A mobile pour training application using device orientation sensors.",
+    "category": "Mobile App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "basic-pour__screenshot-1-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2025-12-17T00:00:00.000Z",
+    "tags": [
+        "mobile",
+        "pouring",
+        "bartending",
+        "react",
+        "typescript",
+        "frontend"
+    ],
+    "private": true,
+    "version": "0.3.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host --port 8080",
+        "build:dev": "export NODE_ENV=development && tsc && vite build",
+        "build:prod": "export NODE_ENV=production && tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "package": "bash scripts/package.bash"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.23",
+        "@types/react-dom": "^18.3.7",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "@vitejs/plugin-react": "^4.0.3",
+        "eslint": "^9.32.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "sass": "^1.69.5",
+        "typescript": "^5.8.3",
+        "vite": "^5.4.19"
+    }
+}

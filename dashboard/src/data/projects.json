@@ -1,5 +1,22 @@
 [
     {
+        "name": "AbcBar Tilt Pour Trainer",
+        "version": "0.3.0",
+        "description": "A mobile pour training application using device orientation sensors to help practice bartending pour precision.",
+        "slug": "basic-pour",
+        "id": "basic-pour-01",
+        "shortDescription": "A mobile pour training application using device orientation sensors.",
+        "category": "Mobile App",
+        "techStack": ["React", "TypeScript", "Vite"],
+        "images": ["basic-pour__screenshot-1-1920_1440.webp"],
+        "sourceUrl": "",
+        "demoUrl": "/wbk--reactjs-playground/apps/basic-pour/",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "2025-12-17T00:00:00.000Z",
+        "tags": ["mobile", "pouring", "bartending", "react", "typescript", "frontend"]
+    },
+    {
         "name": "Learn Quizer",
         "version": "0.0.0",
         "description": "An interactive quiz application built with React and TypeScript, designed to help users learn and test their knowledge across various subjects.",
@@ -42,7 +59,7 @@
         "shortDescription": "A mobile-first app to practice bartending free pouring skills using device motion sensors.",
         "category": "Mobile Web App",
         "techStack": ["React", "TypeScript", "Vite"],
-        "images": ["pour-perfect__screenshot-1-1920_1440.webp", "pour-perfect__screenshot-2-1920_1440.webp"],
+        "images": ["pour-perfect__screenshot-1-1920_1440.webp"],
         "sourceUrl": "",
         "demoUrl": "/wbk--reactjs-playground/apps/pour-perfect/",
         "docsUrl": "",

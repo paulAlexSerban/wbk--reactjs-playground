@@ -1,0 +1,90 @@
+.app {
+    max-width: 480px;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-top: 16px;
+}
+
+.card {
+    background: #1d1d1d;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.status {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 6px;
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+button {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #f5b400;
+    color: #111;
+    margin-top: 8px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+select {
+    background: #111;
+    color: #f5f5f5;
+    border-radius: 999px;
+    border: 1px solid #444;
+    padding: 4px 8px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+li {
+    padding: 4px 0;
+    border-bottom: 1px solid #333;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.hint {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 8px;
+}
