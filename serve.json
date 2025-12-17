@@ -1,16 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/apps/learn-quizer/**",
-      "destination": "/apps/learn-quizer/index.html"
+      "source": "/wbk--reactjs-playground/apps/learn-quizer/**",
+      "destination": "/wbk--reactjs-playground/apps/learn-quizer/index.html"
     },
     {
-      "source": "/apps/moveit-work-flow/**",
-      "destination": "/apps/moveit-work-flow/index.html"
+      "source": "/wbk--reactjs-playground/apps/moveit-work-flow/**",
+      "destination": "/wbk--reactjs-playground/apps/moveit-work-flow/index.html"
     },
     {
-      "source": "/apps/tic-tac-toe-app/**",
-      "destination": "/apps/tic-tac-toe-app/index.html"
+      "source": "/wbk--reactjs-playground/apps/tic-tac-toe-app/**",
+      "destination": "/wbk--reactjs-playground/apps/tic-tac-toe-app/index.html"
     }
   ]
 }
