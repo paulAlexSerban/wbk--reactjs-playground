@@ -1,9 +1,9 @@
 {
-    "name": "@wbk--reactjs-playground/blogpost-gallery-app",
-    "id": "blogpost-gallery-app-01",
-    "formattedName": "Blogpost Gallery App",
-    "description": "A simple blogpost gallery app built with ReactJS and TypeScript.",
-    "shortDescription": "A simple blogpost gallery app built with ReactJS and TypeScript.",
+    "name": "@wbk--reactjs-playground/booking-management-app",
+    "id": "booking-management-app-01",
+    "formattedName": "Booking Management Application",
+    "description": "A booking management app built with ReactJS and TypeScript.",
+    "shortDescription": "A booking management app built with ReactJS and TypeScript.",
     "category": "Web App",
     "techStack": [
         "React",
@@ -11,7 +11,8 @@
         "Vite"
     ],
     "images": [
-        "blogpost-gallery-app__screenshot-1-1920_1440.webp"
+        "booking-management-app__screenshot-1-1920_1440.webp",
+        "booking-management-app__screenshot-2-1920_1440.webp"
     ],
     "private": true,
     "version": "0.3.0",
@@ -20,10 +21,10 @@
     "demoUrl": "",
     "docsUrl": "",
     "featured": false,
-    "createdAt": "2023-11-17T00:00:00.000Z",
+    "createdAt": "2023-11-18T00:00:00.000Z",
     "tags": [
-        "blog",
-        "gallery",
+        "booking",
+        "management",
         "react",
         "typescript",
         "frontend"
@@ -46,6 +47,7 @@
         "eslint-plugin-react-refresh": "^0.4.20",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "react-router-dom": "^6.16.0",
         "sass": "^1.69.5",
         "typescript": "^5.8.3",
         "vite": "^5.4.19"
