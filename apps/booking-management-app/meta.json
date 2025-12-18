@@ -1,0 +1,30 @@
+{
+  "name": "Booking Management Application",
+  "version": "0.3.0",
+  "description": "A booking management app built with ReactJS and TypeScript.",
+  "slug": "booking-management-app",
+  "id": "booking-management-app-01",
+  "shortDescription": "A booking management app built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "booking-management-app__screenshot-1-1920_1440.webp",
+    "booking-management-app__screenshot-2-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-18T00:00:00.000Z",
+  "tags": [
+    "booking",
+    "management",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
