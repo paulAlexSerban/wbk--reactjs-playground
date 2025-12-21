@@ -7,16 +7,19 @@ import { useDeviceMotion } from '@/hooks/useDeviceMotion';
 import { useHaptics } from '@/hooks/useHaptics';
 import { useAppState } from '@/hooks/useAppState';
 import { sessionsDB } from '@/lib/db';
+import { convertVolume, formatVolume, getUnitLabel } from '@/lib/volume-utils';
 import type { PourSession } from '@/types';
 
-const VOLUMES = [1, 1.5, 2];
+const VOLUMES_OZ = [1, 1.5, 2];
 
 export default function FreePracticePage() {
     const { currentProfile, preferences } = useAppState();
     const haptics = useHaptics();
 
-    const [targetVolume, setTargetVolume] = useState(1.5);
+    const [targetVolumeOz, setTargetVolumeOz] = useState(1.5);
     const [lastResult, setLastResult] = useState<{ accuracy: number; volume: number } | null>(null);
+
+    const unit = preferences?.volume_unit || 'oz';
 
     const handlePourStart = useCallback(() => {
         haptics.pourStart();
@@ -29,7 +32,7 @@ export default function FreePracticePage() {
 
             const calibrationFactor = currentProfile?.calibration_factor || 0.5;
             const actualVolume = duration * calibrationFactor;
-            const accuracy = Math.max(0, 100 - (Math.abs(actualVolume - targetVolume) / targetVolume) * 100);
+            const accuracy = Math.max(0, 100 - (Math.abs(actualVolume - targetVolumeOz) / targetVolumeOz) * 100);
 
             setLastResult({ accuracy, volume: actualVolume });
 
@@ -45,7 +48,7 @@ export default function FreePracticePage() {
                 id: `pour-${Date.now()}`,
                 timestamp: Date.now(),
                 volume_actual: actualVolume,
-                volume_target: targetVolume,
+                volume_target: targetVolumeOz,
                 accuracy_percentage: accuracy,
                 pour_duration: duration,
                 ingredient_name: 'Free Practice',
@@ -55,7 +58,7 @@ export default function FreePracticePage() {
             };
             await sessionsDB.save(session);
         },
-        [targetVolume, currentProfile, preferences, haptics]
+        [targetVolumeOz, currentProfile, preferences, haptics]
     );
 
     const { pourState, startManualPour, stopManualPour } = useDeviceMotion({
@@ -69,7 +72,7 @@ export default function FreePracticePage() {
         return 'text-destructive';
     };
 
-    const progressPercent = Math.min((pourState.estimatedVolume / targetVolume) * 100, 150);
+    const progressPercent = Math.min((pourState.estimatedVolume / targetVolumeOz) * 100, 150);
     const progressColor =
         progressPercent <= 100 ? 'stroke-success' : progressPercent <= 120 ? 'stroke-warning' : 'stroke-destructive';
 
@@ -81,14 +84,14 @@ export default function FreePracticePage() {
             <div className="px-6 py-4">
                 <p className="text-sm text-muted-foreground mb-2">Target Volume</p>
                 <div className="flex gap-2">
-                    {VOLUMES.map((vol) => (
+                    {VOLUMES_OZ.map((vol) => (
                         <Button
                             key={vol}
-                            variant={targetVolume === vol ? 'default' : 'secondary'}
+                            variant={targetVolumeOz === vol ? 'default' : 'secondary'}
                             className="flex-1"
-                            onClick={() => setTargetVolume(vol)}
+                            onClick={() => setTargetVolumeOz(vol)}
                         >
-                            {vol}oz
+                            {formatVolume(vol, unit, unit === 'ml' ? 0 : 1)}
                         </Button>
                     ))}
                 </div>
@@ -116,9 +119,11 @@ export default function FreePracticePage() {
                         {pourState.isPouring ? (
                             <>
                                 <p className="text-4xl font-bold text-foreground">
-                                    {pourState.estimatedVolume.toFixed(2)}
+                                    {unit === 'ml'
+                                        ? Math.round(convertVolume(pourState.estimatedVolume, unit))
+                                        : convertVolume(pourState.estimatedVolume, unit).toFixed(2)}
                                 </p>
-                                <p className="text-muted-foreground">oz</p>
+                                <p className="text-muted-foreground">{getUnitLabel(unit)}</p>
                                 <p className="text-sm text-muted-foreground mt-2">{pourState.duration.toFixed(1)}s</p>
                             </>
                         ) : lastResult ? (
@@ -127,13 +132,15 @@ export default function FreePracticePage() {
                                     {lastResult.accuracy.toFixed(0)}%
                                 </p>
                                 <p className="text-muted-foreground">
-                                    {lastResult.volume.toFixed(2)}oz / {targetVolume}oz
+                                    {formatVolume(lastResult.volume, unit)} / {formatVolume(targetVolumeOz, unit)}
                                 </p>
                             </>
                         ) : (
                             <>
-                                <p className="text-5xl font-bold text-foreground">{targetVolume}</p>
-                                <p className="text-muted-foreground">oz target</p>
+                                <p className="text-5xl font-bold text-foreground">
+                                    {unit === 'ml' ? Math.round(convertVolume(targetVolumeOz, unit)) : targetVolumeOz}
+                                </p>
+                                <p className="text-muted-foreground">{getUnitLabel(unit)} target</p>
                             </>
                         )}
                     </div>

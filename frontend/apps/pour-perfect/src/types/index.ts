@@ -1,6 +1,7 @@
 export type Handedness = 'left' | 'right';
 export type CountingMethod = '1-and-a-2' | 'beats' | 'seconds';
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced' | 'expert' | 'master';
+export type VolumeUnit = 'oz' | 'ml';
 
 export interface CalibrationProfile {
     id: string;
@@ -70,6 +71,7 @@ export interface UserPreferences {
     current_profile_id?: string;
     high_contrast: boolean;
     haptic_enabled: boolean;
+    volume_unit: VolumeUnit;
 }
 
 export interface SpoutType {

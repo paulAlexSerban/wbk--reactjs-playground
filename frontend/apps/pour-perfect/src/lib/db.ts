@@ -211,6 +211,7 @@ export const preferencesDB = {
       spout_id: 'standard',
       high_contrast: false,
       haptic_enabled: true,
+      volume_unit: 'oz',
     };
   },
   async save(prefs: UserPreferences): Promise<void> {

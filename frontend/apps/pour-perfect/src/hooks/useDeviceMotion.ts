@@ -15,12 +15,17 @@ interface DeviceMotionState {
     pourState: PourState;
 }
 
-// Pour detection thresholds
-const POUR_START_VELOCITY = 50; // deg/sec
-const POUR_START_ANGLE = 45; // degrees
-const POUR_START_DURATION = 200; // ms
-const POUR_END_VELOCITY = 10; // deg/sec
-const POUR_END_DURATION = 300; // ms
+// Pour detection thresholds - optimized for bottle-like pouring motion
+const POUR_START_VELOCITY = 30; // deg/sec - lowered for smoother detection
+const POUR_START_ANGLE = 35; // degrees - bottle tip threshold (forward tilt)
+const POUR_START_DURATION = 150; // ms - faster response
+const POUR_END_VELOCITY = 8; // deg/sec - more sensitive end detection
+const POUR_END_DURATION = 250; // ms
+
+// Bottle-like motion constraints
+const MIN_BETA_ANGLE = 30; // Minimum forward tilt (like tipping a bottle)
+const MAX_GAMMA_ANGLE = 45; // Maximum side tilt allowed (prevents sideways detection)
+const BOTTLE_ORIENTATION_TOLERANCE = 20; // degrees of acceptable deviation
 
 export function useDeviceMotion(options: UseDeviceMotionOptions = {}) {
     const { pollRate = 100, onPourStart, onPourEnd } = options;
@@ -81,7 +86,23 @@ export function useDeviceMotion(options: UseDeviceMotionOptions = {}) {
 
     const calculateTiltAngle = useCallback((beta: number, gamma: number) => {
         // Calculate effective tilt angle for pour position
+        // Beta = forward/backward tilt (what we want for bottle pouring)
+        // Gamma = left/right tilt (should be minimal for proper bottle motion)
         return Math.sqrt(beta * beta + gamma * gamma);
+    }, []);
+
+    // Check if motion is bottle-like (primarily forward tilt, not sideways)
+    const isBottleLikeMotion = useCallback((beta: number, gamma: number) => {
+        // Beta should be positive (tilting forward like pouring from a bottle)
+        // Gamma should be relatively small (not tilting sideways too much)
+        const isForwardTilt = beta > MIN_BETA_ANGLE;
+        const isNotSideways = Math.abs(gamma) < MAX_GAMMA_ANGLE;
+
+        // The ratio of forward tilt to side tilt should favor forward tilt
+        const tiltRatio = Math.abs(beta) / (Math.abs(gamma) + 1);
+        const isProperRatio = tiltRatio > 1.5; // Forward tilt should dominate
+
+        return isForwardTilt && isNotSideways && isProperRatio;
     }, []);
 
     const calculateVelocity = useCallback((current: MotionData, previous: MotionData) => {
@@ -110,9 +131,10 @@ export function useDeviceMotion(options: UseDeviceMotionOptions = {}) {
                 const now = Date.now();
                 let newPourState = { ...s.pourState, tiltAngle, velocity };
 
-                // Pour start detection
+                // Pour start detection - requires bottle-like motion
                 if (!s.pourState.isPouring) {
-                    if (velocity > POUR_START_VELOCITY && tiltAngle > POUR_START_ANGLE) {
+                    const bottleLike = isBottleLikeMotion(motionData.beta, motionData.gamma);
+                    if (velocity > POUR_START_VELOCITY && tiltAngle > POUR_START_ANGLE && bottleLike) {
                         if (!pourStartTimeRef.current) {
                             pourStartTimeRef.current = now;
                         } else if (now - pourStartTimeRef.current > POUR_START_DURATION) {

@@ -5,18 +5,27 @@ import { Button } from '@/components/ui/button';
 interface PageHeaderProps {
     title: string;
     showBack?: boolean;
+    onBack?: () => void;
     rightAction?: React.ReactNode;
 }
 
-export function PageHeader({ title, showBack = false, rightAction }: PageHeaderProps) {
+export function PageHeader({ title, showBack = false, onBack, rightAction }: PageHeaderProps) {
     const navigate = useNavigate();
+
+    const handleBack = () => {
+        if (onBack) {
+            onBack();
+        } else {
+            navigate(-1);
+        }
+    };
 
     return (
         <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-lg border-b border-border">
             <div className="flex items-center justify-between h-14 px-4 max-w-lg mx-auto">
                 <div className="w-10">
                     {showBack && (
-                        <Button variant="ghost" size="icon" onClick={() => navigate(-1)} className="h-10 w-10">
+                        <Button variant="ghost" size="icon" onClick={handleBack} className="h-10 w-10">
                             <ArrowLeft className="h-5 w-5" />
                         </Button>
                     )}
