@@ -1,0 +1,54 @@
+{
+    "name": "@wbk--reactjs-playground/counter-basic-app",
+    "id": "counter-basic-app-01",
+    "formattedName": "Counter",
+    "description": "A simple counter app to demonstrate the use of ReactJS with TypeScript.",
+    "shortDescription": "A simple counter app to demonstrate the use of ReactJS with TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "counter-basic-app__screenshot-1-1920_1440.webp"
+    ],
+    "private": true,
+    "version": "0.3.0",
+    "type": "module",
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2023-11-18T00:00:00.000Z",
+    "tags": [
+        "counter",
+        "react",
+        "typescript",
+        "frontend"
+    ],
+    "scripts": {
+        "dev": "vite --host --port 8080",
+        "build:dev": "export NODE_ENV=development && tsc && vite build",
+        "build:prod": "export NODE_ENV=production && tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.23",
+        "@types/react-dom": "^18.3.7",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "@vitejs/plugin-react": "^4.0.3",
+        "eslint": "^9.32.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "sass": "^1.69.5",
+        "typescript": "^5.8.3",
+        "vite": "^5.4.19"
+    }
+}
