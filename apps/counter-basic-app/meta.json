@@ -1,0 +1,28 @@
+{
+  "name": "Counter",
+  "version": "0.3.0",
+  "description": "A simple counter app to demonstrate the use of ReactJS with TypeScript.",
+  "slug": "counter-basic-app",
+  "id": "counter-basic-app-01",
+  "shortDescription": "A simple counter app to demonstrate the use of ReactJS with TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "counter-basic-app__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-18T00:00:00.000Z",
+  "tags": [
+    "counter",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}

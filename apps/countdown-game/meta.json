@@ -1,0 +1,29 @@
+{
+  "name": "Countdown Game",
+  "version": "0.3.0",
+  "description": "A simple countdown game",
+  "slug": "countdown-game",
+  "id": "countdown-game-01",
+  "shortDescription": "A simple countdown game",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "countdown-game__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-18T00:00:00.000Z",
+  "tags": [
+    "countdown",
+    "game",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
