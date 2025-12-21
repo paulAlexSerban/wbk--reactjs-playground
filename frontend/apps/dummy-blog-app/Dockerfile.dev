@@ -1,0 +1,12 @@
+FROM wbk--mern-playground__core:latest as builder
+
+COPY ./frontend/apps/dummy-blog-app ./frontend/apps/dummy-blog-app
+
+ARG CONTAINER_PORT
+ENV PORT=$CONTAINER_PORT
+EXPOSE $CONTAINER_PORT
+
+RUN yarn install
+
+# NOTE: this script is available in the base image
+CMD [ "yarn", "develop:dummy-blog-app"]
