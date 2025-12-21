@@ -24,6 +24,7 @@ const POUR_END_DURATION = 250; // ms
 
 // Bottle-like motion constraints
 const MIN_BETA_ANGLE = 30; // Minimum forward tilt (like tipping a bottle)
+const MAX_BETA_ANGLE = 85; // Maximum forward tilt (prevents upright position detection)
 const MAX_GAMMA_ANGLE = 45; // Maximum side tilt allowed (prevents sideways detection)
 const BOTTLE_ORIENTATION_TOLERANCE = 20; // degrees of acceptable deviation
 
@@ -93,9 +94,10 @@ export function useDeviceMotion(options: UseDeviceMotionOptions = {}) {
 
     // Check if motion is bottle-like (primarily forward tilt, not sideways)
     const isBottleLikeMotion = useCallback((beta: number, gamma: number) => {
-        // Beta should be positive (tilting forward like pouring from a bottle)
-        // Gamma should be relatively small (not tilting sideways too much)
-        const isForwardTilt = beta > MIN_BETA_ANGLE;
+        // Beta should be positive and in the pouring range (not too upright)
+        // When bottle is upright (ready position), beta is typically 70-90°
+        // When pouring, beta should be 30-85° (tilted forward but not vertical)
+        const isForwardTilt = beta > MIN_BETA_ANGLE && beta < MAX_BETA_ANGLE;
         const isNotSideways = Math.abs(gamma) < MAX_GAMMA_ANGLE;
 
         // The ratio of forward tilt to side tilt should favor forward tilt

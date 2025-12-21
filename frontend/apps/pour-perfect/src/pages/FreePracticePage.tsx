@@ -106,12 +106,14 @@ export default function FreePracticePage() {
     // Calculate debug values
     const calculateBottleLikeMotion = (beta: number, gamma: number) => {
         const MIN_BETA_ANGLE = 30;
+        const MAX_BETA_ANGLE = 85;
         const MAX_GAMMA_ANGLE = 45;
-        const isForwardTilt = beta > MIN_BETA_ANGLE;
+        const isForwardTilt = beta > MIN_BETA_ANGLE && beta < MAX_BETA_ANGLE;
         const isNotSideways = Math.abs(gamma) < MAX_GAMMA_ANGLE;
         const tiltRatio = Math.abs(beta) / (Math.abs(gamma) + 1);
         const isProperRatio = tiltRatio > 1.5;
-        return { isForwardTilt, isNotSideways, isProperRatio, tiltRatio };
+        const isNotTooUpright = beta < MAX_BETA_ANGLE;
+        return { isForwardTilt, isNotSideways, isProperRatio, tiltRatio, isNotTooUpright };
     };
 
     const debugInfo = motionData ? calculateBottleLikeMotion(motionData.beta, motionData.gamma) : null;
@@ -323,8 +325,8 @@ export default function FreePracticePage() {
                                     <span className="font-mono font-bold">150ms</span>
                                 </div>
                                 <div className="flex justify-between p-2 bg-secondary rounded">
-                                    <span>Min Forward Tilt (Beta):</span>
-                                    <span className="font-mono font-bold">30°</span>
+                                    <span>Beta Range (Forward Tilt):</span>
+                                    <span className="font-mono font-bold">30° - 85°</span>
                                 </div>
                                 <div className="flex justify-between p-2 bg-secondary rounded">
                                     <span>Max Sideways (Gamma):</span>
@@ -339,9 +341,15 @@ export default function FreePracticePage() {
                                 <h3 className="font-semibold text-sm">Bottle-Like Motion Check</h3>
                                 <div className="space-y-1 text-xs">
                                     <div className="flex justify-between p-2 bg-secondary rounded">
-                                        <span>Forward Tilt (Beta &gt; 30°):</span>
+                                        <span>In Pour Range (30° &lt; Beta &lt; 85°):</span>
                                         <Badge variant={debugInfo.isForwardTilt ? 'default' : 'destructive'}>
                                             {debugInfo.isForwardTilt ? '✓ Pass' : '✗ Fail'}
+                                        </Badge>
+                                    </div>
+                                    <div className="flex justify-between p-2 bg-secondary rounded">
+                                        <span>Not Too Upright (Beta &lt; 85°):</span>
+                                        <Badge variant={debugInfo.isNotTooUpright ? 'default' : 'destructive'}>
+                                            {debugInfo.isNotTooUpright ? '✓ Pass' : '✗ Fail'}
                                         </Badge>
                                     </div>
                                     <div className="flex justify-between p-2 bg-secondary rounded">
@@ -367,12 +375,15 @@ export default function FreePracticePage() {
                             </h3>
                             <ul className="text-xs space-y-1 text-muted-foreground">
                                 <li>
-                                    1. Tilt phone <strong>forward</strong> (like pouring from a bottle) &gt; 35°
+                                    1. Start with phone <strong>upright</strong> (bottle neck up, Beta ~70-90°)
                                 </li>
-                                <li>2. Move with velocity &gt; 30°/s (smooth, deliberate motion)</li>
-                                <li>3. Maintain forward tilt with minimal sideways tilt</li>
-                                <li>4. Hold conditions for 150ms to start pour</li>
-                                <li>5. Level phone (velocity &lt; 8°/s) for 250ms to stop</li>
+                                <li>
+                                    2. Tilt <strong>forward</strong> to pour position (Beta 30-85°)
+                                </li>
+                                <li>3. Move with velocity &gt; 30°/s (smooth, deliberate motion)</li>
+                                <li>4. Keep minimal sideways tilt (|Gamma| &lt; 45°)</li>
+                                <li>5. Hold conditions for 150ms → pour starts!</li>
+                                <li>6. Level phone (velocity &lt; 8°/s) for 250ms → pour stops!</li>
                             </ul>
                         </div>
 
