@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { Play, Square, RotateCcw } from 'lucide-react';
+import { useState, useCallback, useEffect } from 'react';
+import { Play, Square, RotateCcw, Bug } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AppLayout } from '@/components/AppLayout';
 import { PageHeader } from '@/components/PageHeader';
@@ -8,6 +8,8 @@ import { useHaptics } from '@/hooks/useHaptics';
 import { useAppState } from '@/hooks/useAppState';
 import { sessionsDB } from '@/lib/db';
 import { convertVolume, formatVolume, getUnitLabel } from '@/lib/volume-utils';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Badge } from '@/components/ui/badge';
 import type { PourSession } from '@/types';
 
 const VOLUMES_OZ = [1, 1.5, 2];
@@ -18,6 +20,7 @@ export default function FreePracticePage() {
 
     const [targetVolumeOz, setTargetVolumeOz] = useState(1.5);
     const [lastResult, setLastResult] = useState<{ accuracy: number; volume: number } | null>(null);
+    const [showDebug, setShowDebug] = useState(false);
 
     const unit = preferences?.volume_unit || 'oz';
 
@@ -61,10 +64,34 @@ export default function FreePracticePage() {
         [targetVolumeOz, currentProfile, preferences, haptics]
     );
 
-    const { pourState, startManualPour, stopManualPour } = useDeviceMotion({
+    const {
+        pourState,
+        startManualPour,
+        stopManualPour,
+        requestPermission,
+        permissionGranted,
+        isSupported,
+        motionData,
+        startListening,
+    } = useDeviceMotion({
         onPourStart: handlePourStart,
         onPourEnd: handlePourEnd,
     });
+
+    // Enable automatic pour detection when permission is granted
+    useEffect(() => {
+        if (permissionGranted && isSupported) {
+            const cleanup = startListening();
+            return cleanup;
+        }
+    }, [permissionGranted, isSupported, startListening]);
+
+    // Auto-request permission on mount
+    useEffect(() => {
+        if (isSupported && !permissionGranted) {
+            requestPermission();
+        }
+    }, [isSupported, permissionGranted, requestPermission]);
 
     const getAccuracyColor = (accuracy: number) => {
         if (accuracy >= 90) return 'text-success';
@@ -75,6 +102,19 @@ export default function FreePracticePage() {
     const progressPercent = Math.min((pourState.estimatedVolume / targetVolumeOz) * 100, 150);
     const progressColor =
         progressPercent <= 100 ? 'stroke-success' : progressPercent <= 120 ? 'stroke-warning' : 'stroke-destructive';
+
+    // Calculate debug values
+    const calculateBottleLikeMotion = (beta: number, gamma: number) => {
+        const MIN_BETA_ANGLE = 30;
+        const MAX_GAMMA_ANGLE = 45;
+        const isForwardTilt = beta > MIN_BETA_ANGLE;
+        const isNotSideways = Math.abs(gamma) < MAX_GAMMA_ANGLE;
+        const tiltRatio = Math.abs(beta) / (Math.abs(gamma) + 1);
+        const isProperRatio = tiltRatio > 1.5;
+        return { isForwardTilt, isNotSideways, isProperRatio, tiltRatio };
+    };
+
+    const debugInfo = motionData ? calculateBottleLikeMotion(motionData.beta, motionData.gamma) : null;
 
     return (
         <AppLayout>
@@ -147,8 +187,18 @@ export default function FreePracticePage() {
                 </div>
 
                 <p className="text-center text-muted-foreground mt-8 max-w-xs">
-                    {pourState.isPouring ? 'Pouring... level the bottle to stop' : 'Tilt your device to start pouring'}
+                    {pourState.isPouring
+                        ? 'Pouring... level the bottle to stop'
+                        : permissionGranted
+                          ? 'Tilt your device forward to auto-start pouring'
+                          : 'Enable motion sensors to auto-detect pours'}
                 </p>
+
+                {/* Debug Button */}
+                <Button size="sm" variant="outline" className="mt-4" onClick={() => setShowDebug(!showDebug)}>
+                    <Bug className="w-4 h-4 mr-2" />
+                    Debug Sensors
+                </Button>
             </div>
 
             {/* Manual Controls */}
@@ -157,7 +207,7 @@ export default function FreePracticePage() {
                     {!pourState.isPouring ? (
                         <Button size="lg" className="flex-1 touch-target" onClick={startManualPour}>
                             <Play className="w-5 h-5 mr-2" />
-                            Start Pour
+                            Manual Start
                         </Button>
                     ) : (
                         <Button
@@ -177,6 +227,163 @@ export default function FreePracticePage() {
                     )}
                 </div>
             </div>
+
+            {/* Debug Modal */}
+            <Dialog open={showDebug} onOpenChange={setShowDebug}>
+                <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                        <DialogTitle className="flex items-center gap-2">
+                            <Bug className="w-5 h-5" />
+                            Motion Sensor Debug
+                        </DialogTitle>
+                    </DialogHeader>
+
+                    <div className="space-y-4">
+                        {/* System Status */}
+                        <div className="space-y-2">
+                            <h3 className="font-semibold text-sm">System Status</h3>
+                            <div className="grid grid-cols-2 gap-2">
+                                <div className="flex items-center justify-between p-2 bg-secondary rounded">
+                                    <span className="text-xs">Sensors Supported:</span>
+                                    <Badge variant={isSupported ? 'default' : 'destructive'}>
+                                        {isSupported ? 'Yes' : 'No'}
+                                    </Badge>
+                                </div>
+                                <div className="flex items-center justify-between p-2 bg-secondary rounded">
+                                    <span className="text-xs">Permission:</span>
+                                    <Badge variant={permissionGranted ? 'default' : 'secondary'}>
+                                        {permissionGranted ? 'Granted' : 'Denied'}
+                                    </Badge>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Current Motion Data */}
+                        {motionData && (
+                            <div className="space-y-2">
+                                <h3 className="font-semibold text-sm">Current Motion Data</h3>
+                                <div className="grid grid-cols-3 gap-2 text-xs">
+                                    <div className="p-2 bg-secondary rounded">
+                                        <div className="text-muted-foreground">Alpha (Z)</div>
+                                        <div className="font-mono font-bold">{motionData.alpha.toFixed(1)}°</div>
+                                    </div>
+                                    <div className="p-2 bg-secondary rounded">
+                                        <div className="text-muted-foreground">Beta (X)</div>
+                                        <div className="font-mono font-bold">{motionData.beta.toFixed(1)}°</div>
+                                    </div>
+                                    <div className="p-2 bg-secondary rounded">
+                                        <div className="text-muted-foreground">Gamma (Y)</div>
+                                        <div className="font-mono font-bold">{motionData.gamma.toFixed(1)}°</div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Pour State */}
+                        <div className="space-y-2">
+                            <h3 className="font-semibold text-sm">Pour State</h3>
+                            <div className="grid grid-cols-2 gap-2 text-xs">
+                                <div className="p-2 bg-secondary rounded">
+                                    <div className="text-muted-foreground">Pouring:</div>
+                                    <div className="font-bold">
+                                        <Badge variant={pourState.isPouring ? 'default' : 'secondary'}>
+                                            {pourState.isPouring ? 'YES' : 'NO'}
+                                        </Badge>
+                                    </div>
+                                </div>
+                                <div className="p-2 bg-secondary rounded">
+                                    <div className="text-muted-foreground">Tilt Angle:</div>
+                                    <div className="font-mono font-bold">{pourState.tiltAngle.toFixed(1)}°</div>
+                                </div>
+                                <div className="p-2 bg-secondary rounded">
+                                    <div className="text-muted-foreground">Velocity:</div>
+                                    <div className="font-mono font-bold">{pourState.velocity.toFixed(1)} °/s</div>
+                                </div>
+                                <div className="p-2 bg-secondary rounded">
+                                    <div className="text-muted-foreground">Duration:</div>
+                                    <div className="font-mono font-bold">{pourState.duration.toFixed(2)}s</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Detection Thresholds */}
+                        <div className="space-y-2">
+                            <h3 className="font-semibold text-sm">Auto-Detection Thresholds</h3>
+                            <div className="space-y-1 text-xs">
+                                <div className="flex justify-between p-2 bg-secondary rounded">
+                                    <span>Start Velocity Required:</span>
+                                    <span className="font-mono font-bold">30 °/s</span>
+                                </div>
+                                <div className="flex justify-between p-2 bg-secondary rounded">
+                                    <span>Start Angle Required:</span>
+                                    <span className="font-mono font-bold">35°</span>
+                                </div>
+                                <div className="flex justify-between p-2 bg-secondary rounded">
+                                    <span>Start Duration:</span>
+                                    <span className="font-mono font-bold">150ms</span>
+                                </div>
+                                <div className="flex justify-between p-2 bg-secondary rounded">
+                                    <span>Min Forward Tilt (Beta):</span>
+                                    <span className="font-mono font-bold">30°</span>
+                                </div>
+                                <div className="flex justify-between p-2 bg-secondary rounded">
+                                    <span>Max Sideways (Gamma):</span>
+                                    <span className="font-mono font-bold">±45°</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Bottle-Like Motion Check */}
+                        {motionData && debugInfo && (
+                            <div className="space-y-2">
+                                <h3 className="font-semibold text-sm">Bottle-Like Motion Check</h3>
+                                <div className="space-y-1 text-xs">
+                                    <div className="flex justify-between p-2 bg-secondary rounded">
+                                        <span>Forward Tilt (Beta &gt; 30°):</span>
+                                        <Badge variant={debugInfo.isForwardTilt ? 'default' : 'destructive'}>
+                                            {debugInfo.isForwardTilt ? '✓ Pass' : '✗ Fail'}
+                                        </Badge>
+                                    </div>
+                                    <div className="flex justify-between p-2 bg-secondary rounded">
+                                        <span>Not Sideways (|Gamma| &lt; 45°):</span>
+                                        <Badge variant={debugInfo.isNotSideways ? 'default' : 'destructive'}>
+                                            {debugInfo.isNotSideways ? '✓ Pass' : '✗ Fail'}
+                                        </Badge>
+                                    </div>
+                                    <div className="flex justify-between p-2 bg-secondary rounded">
+                                        <span>Tilt Ratio (Beta/Gamma &gt; 1.5):</span>
+                                        <Badge variant={debugInfo.isProperRatio ? 'default' : 'destructive'}>
+                                            {debugInfo.tiltRatio.toFixed(2)} {debugInfo.isProperRatio ? '✓' : '✗'}
+                                        </Badge>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Instructions */}
+                        <div className="space-y-2 bg-blue-500/10 border border-blue-500/20 rounded p-3">
+                            <h3 className="font-semibold text-sm text-blue-600 dark:text-blue-400">
+                                How Auto-Detection Works
+                            </h3>
+                            <ul className="text-xs space-y-1 text-muted-foreground">
+                                <li>
+                                    1. Tilt phone <strong>forward</strong> (like pouring from a bottle) &gt; 35°
+                                </li>
+                                <li>2. Move with velocity &gt; 30°/s (smooth, deliberate motion)</li>
+                                <li>3. Maintain forward tilt with minimal sideways tilt</li>
+                                <li>4. Hold conditions for 150ms to start pour</li>
+                                <li>5. Level phone (velocity &lt; 8°/s) for 250ms to stop</li>
+                            </ul>
+                        </div>
+
+                        {!permissionGranted && (
+                            <Button onClick={requestPermission} className="w-full">
+                                Grant Motion Permission
+                            </Button>
+                        )}
+                    </div>
+                </DialogContent>
+            </Dialog>
         </AppLayout>
     );
 }
