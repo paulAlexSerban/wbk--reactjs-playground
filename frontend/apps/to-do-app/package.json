@@ -1,0 +1,59 @@
+{
+    "name": "@wbk--reactjs-playground/to-do-app",
+    "id": "to-do-app-01",
+    "formattedName": "To-Do App",
+    "description": "A feature-rich to-do list application built with React and TypeScript, designed to help users manage tasks efficiently with a clean and intuitive interface.",
+    "shortDescription": "A feature-rich to-do list application built with React and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Axios"
+    ],
+    "images": [
+        "to-do-app__screenshot-1-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-20T00:00:00.000Z",
+    "tags": [
+        "to-do",
+        "task-manager",
+        "react",
+        "typescript",
+        "frontend"
+    ],
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host --port 8080",
+        "build:dev": "export NODE_ENV=development && tsc && vite build",
+        "build:prod": "export NODE_ENV=production && tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@types/axios": "^0.14.0",
+        "axios": "^1.6.7",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-icons": "^5.3.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.23",
+        "@types/react-dom": "^18.3.7",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "@vitejs/plugin-react": "^4.0.3",
+        "eslint": "^9.32.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "sass": "^1.69.5",
+        "typescript": "^5.8.3",
+        "vite": "^5.4.19"
+    }
+}
