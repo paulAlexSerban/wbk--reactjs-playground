@@ -24,15 +24,19 @@ export function ProjectCard({ project, viewMode, onClick }: ProjectCardProps) {
 }
 
 function GridCard({ project, onClick }: { project: Project; onClick: () => void }) {
+    const imageUrl = project.images?.[0] ? `${project.demoUrl}${project.images[0]}` : undefined;
+
     return (
         <Card className="group cursor-pointer overflow-hidden card-hover animate-fade-in" onClick={onClick}>
             <div className="relative aspect-video overflow-hidden bg-muted">
-                <img
-                    src={`${project.demoUrl}${project.images[0]}`}
-                    alt={project.name}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                />
+                {imageUrl && (
+                    <img
+                        src={imageUrl}
+                        alt={project.name}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                    />
+                )}
                 {project.featured && (
                     <div className="absolute top-2 right-2">
                         <Badge className="gap-1 bg-syntax-variable text-background">
@@ -50,14 +54,18 @@ function GridCard({ project, onClick }: { project: Project; onClick: () => void 
                         {project.category}
                     </Badge>
                 </div>
-                <p className="mb-3 text-sm text-muted-foreground line-clamp-2">{project.shortDescription}</p>
+                <p className="mb-3 text-sm text-muted-foreground line-clamp-2">
+                    {project.shortDescription ? project.shortDescription : ''}
+                </p>
                 <div className="flex flex-wrap gap-1">
-                    {project.techStack.slice(0, 3).map((tech) => (
-                        <span key={tech} className="tech-badge">
-                            {tech}
-                        </span>
-                    ))}
-                    {project.techStack.length > 3 && (
+                    {project.techStack
+                        ? project.techStack.slice(0, 3).map((tech) => (
+                              <span key={tech} className="tech-badge">
+                                  {tech}
+                              </span>
+                          ))
+                        : null}
+                    {project.techStack && project.techStack.length > 3 && (
                         <span className="tech-badge">+{project.techStack.length - 3}</span>
                     )}
                 </div>
@@ -67,16 +75,15 @@ function GridCard({ project, onClick }: { project: Project; onClick: () => void 
 }
 
 function ListCard({ project, onClick }: { project: Project; onClick: () => void }) {
+    const imageUrl = project.images?.[0] ? `${project.demoUrl}${project.images[0]}` : undefined;
+
     return (
         <Card className="group cursor-pointer card-hover animate-fade-in" onClick={onClick}>
             <div className="flex gap-4 p-4">
                 <div className="relative h-24 w-40 shrink-0 overflow-hidden rounded-md bg-muted">
-                    <img
-                        src={`${project.demoUrl}${project.images[0]}`}
-                        alt={project.name}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                    />
+                    {imageUrl && (
+                        <img src={imageUrl} alt={project.name} className="h-full w-full object-cover" loading="lazy" />
+                    )}
                     {project.featured && <Star className="absolute top-1 right-1 h-4 w-4 text-syntax-variable" />}
                 </div>
                 <div className="flex flex-1 flex-col justify-between">
@@ -127,15 +134,24 @@ function ListCard({ project, onClick }: { project: Project; onClick: () => void 
 }
 
 function CompactCard({ project, onClick }: { project: Project; onClick: () => void }) {
+    const imageUrl = project.images?.[0] ? `${project.demoUrl}${project.images[0]}` : undefined;
+
     return (
         <Card className="group cursor-pointer card-hover animate-fade-in" onClick={onClick}>
             <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                <img
-                    src={`${project.demoUrl}${project.images[0]}`}
-                    alt={project.name}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                />
+                {imageUrl && (
+                    <img
+                        src={imageUrl}
+                        alt={project.name}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                    />
+                )}
+                {!imageUrl && (
+                    <div className="h-full w-full flex items-center justify-center text-muted-foreground">
+                        <FileText className="h-12 w-12" />
+                    </div>
+                )}
                 {project.featured && (
                     <Star className="absolute top-2 right-2 h-4 w-4 text-syntax-variable drop-shadow-md" />
                 )}

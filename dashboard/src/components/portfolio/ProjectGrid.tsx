@@ -28,9 +28,9 @@ export function ProjectGrid({ projects, viewMode, onProjectClick }: ProjectGridP
                 viewMode === 'compact' && 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
             )}
         >
-            {projects.map((project) => (
+            {projects.map((project, index) => (
                 <ProjectCard
-                    key={project.id}
+                    key={project.id || index}
                     project={project}
                     viewMode={viewMode}
                     onClick={() => onProjectClick(project)}

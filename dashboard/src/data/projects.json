@@ -25,13 +25,34 @@
         "shortDescription": "A simple blogpost gallery app built with ReactJS and TypeScript.",
         "category": "Web App",
         "techStack": ["React", "TypeScript", "Vite"],
-        "images": [],
+        "images": ["blogpost-gallery-app__screenshot-1-1920_1440.webp"],
         "sourceUrl": "",
         "demoUrl": "/wbk--reactjs-playground/apps/blogpost-gallery-app/",
         "docsUrl": "",
         "featured": false,
         "createdAt": "2023-11-17T00:00:00.000Z",
-        "tags": []
+        "tags": ["blog", "gallery", "react", "typescript", "frontend"]
+    },
+    {
+        "name": "Bloom Period Tracker",
+        "version": "0.0.0",
+        "description": "Your private, supportive period tracking companion. Track your cycle, symptoms, and get personalized insights - all stored locally on your device.",
+        "slug": "bloom-cycle-tracker",
+        "id": "bloom-cycle-tracker-01",
+        "shortDescription": "Your private, supportive period tracking companion. Track your cycle, symptoms, and get personalized insights - all stored locally on your device.",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Vite", "TailwindCSS", "Shadcn UI"],
+        "images": [
+            "bloom-cycle-tracker__screenshot-1-1920_1440.webp",
+            "bloom-cycle-tracker__screenshot-2-1920_1440.webp",
+            "bloom-cycle-tracker__screenshot-3-1920_1440.webp"
+        ],
+        "sourceUrl": "",
+        "demoUrl": "/wbk--reactjs-playground/apps/bloom-cycle-tracker/",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "2023-11-18T00:00:00.000Z",
+        "tags": ["bloom", "cycle", "tracker", "period", "react", "typescript", "frontend"]
     },
     {
         "name": "Booking Management Application",
@@ -85,21 +106,42 @@
         "tags": ["counter", "react", "typescript", "frontend"]
     },
     {
+        "name": "Duolingo Clone",
+        "version": "0.3.0",
+        "description": "A clone of the Duolingo app.",
+        "slug": "duolingo-clone",
+        "id": "duolingo-clone-01",
+        "shortDescription": "A clone of the Duolingo app.",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Vite", "Redux Toolkit", "React Router"],
+        "images": [
+            "duolingo-clone__screenshot-1-1920_1440.webp",
+            "duolingo-clone__screenshot-2-1920_1440.webp",
+            "duolingo-clone__screenshot-3-1920_1440.webp"
+        ],
+        "sourceUrl": "",
+        "demoUrl": "/wbk--reactjs-playground/apps/duolingo-clone/",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "2025-12-17T00:00:00.000Z",
+        "tags": ["duolingo", "language learning", "react", "typescript", "redux", "frontend"]
+    },
+    {
         "name": "Form Login App",
         "version": "0.3.0",
         "description": "A simple form login app using ReactJS and TypeScript",
         "slug": "form-login-app",
-        "id": "",
-        "shortDescription": "",
-        "category": "Other",
-        "techStack": [],
-        "images": [],
+        "id": "form-login-app-01",
+        "shortDescription": "A simple form login app",
+        "category": "Web App",
+        "techStack": ["React", "TypeScript", "Vite", "Styled Components"],
+        "images": ["form-login-app__screenshot-1-1920_1440.webp"],
         "sourceUrl": "",
         "demoUrl": "/wbk--reactjs-playground/apps/form-login-app/",
         "docsUrl": "",
         "featured": false,
-        "createdAt": "2025-12-18T11:47:53.494Z",
-        "tags": []
+        "createdAt": "2023-11-19T00:00:00.000Z",
+        "tags": ["form", "login", "react", "typescript", "frontend"]
     },
     {
         "name": "Form Login App Tailwind",

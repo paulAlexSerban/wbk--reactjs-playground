@@ -41,7 +41,7 @@ export function useProjects() {
                 (project) =>
                     fuzzyMatch(project.name, filters.search) ||
                     fuzzyMatch(project.description, filters.search) ||
-                    project.techStack.some((tech) => fuzzyMatch(tech, filters.search))
+                    (project.techStack?.some((tech) => fuzzyMatch(tech, filters.search)) ?? false)
             );
         }
 
@@ -52,7 +52,9 @@ export function useProjects() {
 
         // Tech stack filter
         if (filters.techStack.length > 0) {
-            result = result.filter((project) => filters.techStack.some((tech) => project.techStack.includes(tech)));
+            result = result.filter((project) =>
+                filters.techStack.some((tech) => project.techStack?.includes(tech) ?? false)
+            );
         }
 
         // Sorting

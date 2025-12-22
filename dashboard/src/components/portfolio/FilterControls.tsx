@@ -62,9 +62,9 @@ export function FilterControls({ filters, updateFilter, resetFilters, totalResul
                 <DropdownMenuContent align="start" className="w-48">
                     <DropdownMenuLabel>Categories</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    {allCategories.map((category) => (
+                    {allCategories.map((category, index) => (
                         <DropdownMenuCheckboxItem
-                            key={category}
+                            key={index}
                             checked={filters.categories.includes(category)}
                             onCheckedChange={() => toggleCategory(category)}
                         >
@@ -90,9 +90,9 @@ export function FilterControls({ filters, updateFilter, resetFilters, totalResul
                 <DropdownMenuContent align="start" className="w-48 max-h-64 overflow-y-auto">
                     <DropdownMenuLabel>Technologies</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    {allTechStacks.map((tech) => (
+                    {allTechStacks.map((tech, index) => (
                         <DropdownMenuCheckboxItem
-                            key={tech}
+                            key={index}
                             checked={filters.techStack.includes(tech)}
                             onCheckedChange={() => toggleTech(tech)}
                         >
@@ -111,8 +111,8 @@ export function FilterControls({ filters, updateFilter, resetFilters, totalResul
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
-                    {sortOptions.map((option) => (
-                        <DropdownMenuItem key={option.value} onClick={() => updateFilter('sortBy', option.value)}>
+                    {sortOptions.map((option, index) => (
+                        <DropdownMenuItem key={index} onClick={() => updateFilter('sortBy', option.value)}>
                             {option.label}
                         </DropdownMenuItem>
                     ))}
