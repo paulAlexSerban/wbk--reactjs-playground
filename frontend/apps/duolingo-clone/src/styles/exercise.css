@@ -1,0 +1,40 @@
+.exercise__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question__container {
+    font-style: italic;
+    font-size: 1em;
+    border-bottom: 1px dashed black;
+}
+
+.option {
+    cursor: pointer;
+    margin: 1em 0;
+    padding: 1em 4em;
+    border-radius: 5px;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.option:hover {
+    border: 1px solid #6d61c6;
+    color: white;
+    background-color: #6d61c6;
+}
+
+.active {
+    border: 1px solid #52489c;
+    color: white;
+    background-color: #52489c;
+}
+
+.error {
+    border: 1px solid #c25632;
+    color: white;
+    background-color: #c25632;
+}

@@ -1,0 +1,24 @@
+.status_bar__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-top: 1px solid #e3e3e3;
+    padding: 1em 0;
+}
+
+.status_bar__container h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 1rem 0;
+    line-height: 1;
+    margin: 0;
+}
+
+.status_bar__container li {
+    padding: 0.5em 0;
+}
+
+.status_bar__container li span {
+    font-weight: 700;
+}

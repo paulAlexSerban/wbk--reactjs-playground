@@ -1,0 +1,45 @@
+.lesson_module__container {
+    width: 30rem;
+    display: flex;
+    border: solid 1px #e3e3e3;
+    margin: 1em;
+}
+
+.lesson_module__container h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.lesson_module__container img {
+    display: block;
+    width: 15rem;
+    margin-right: 2rem;
+}
+
+.heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.heading img {
+    width: 32px;
+    height: 32px;
+}
+
+.lesson_module__container a {
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    gap: 1rem;
+    color: white;
+}
+
+.enabled {
+    background-color: hsl(224, 98%, 58%);
+}
+
+.disabled {
+    background-color: #e3e3e3;
+}

@@ -1,0 +1,42 @@
+h2,
+h3 {
+    margin: 0.2em;
+}
+
+#unit__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.unit__header {
+    padding: 1rem 1rem;
+    background-color: #52489c;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.lessons__container {
+    margin-inline: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.disable {
+    background-color: #bebebe;
+}
+
+.finished {
+    background-color: #59c759;
+}
