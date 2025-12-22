@@ -1,0 +1,34 @@
+{
+  "name": "Duolingo Clone",
+  "version": "0.3.0",
+  "description": "A clone of the Duolingo app.",
+  "slug": "duolingo-clone",
+  "id": "duolingo-clone-01",
+  "shortDescription": "A clone of the Duolingo app.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Redux Toolkit",
+    "React Router"
+  ],
+  "images": [
+    "duolingo-clone__screenshot-1-1920_1440.webp",
+    "duolingo-clone__screenshot-2-1920_1440.webp",
+    "duolingo-clone__screenshot-3-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "duolingo",
+    "language learning",
+    "react",
+    "typescript",
+    "redux",
+    "frontend"
+  ]
+}

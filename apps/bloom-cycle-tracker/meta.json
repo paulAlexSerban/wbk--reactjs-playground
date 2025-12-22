@@ -1,0 +1,35 @@
+{
+  "name": "Bloom Period Tracker",
+  "version": "0.0.0",
+  "description": "Your private, supportive period tracking companion. Track your cycle, symptoms, and get personalized insights - all stored locally on your device.",
+  "slug": "bloom-cycle-tracker",
+  "id": "bloom-cycle-tracker-01",
+  "shortDescription": "Your private, supportive period tracking companion. Track your cycle, symptoms, and get personalized insights - all stored locally on your device.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "TailwindCSS",
+    "Shadcn UI"
+  ],
+  "images": [
+    "bloom-cycle-tracker__screenshot-1-1920_1440.webp",
+    "bloom-cycle-tracker__screenshot-2-1920_1440.webp",
+    "bloom-cycle-tracker__screenshot-3-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-18T00:00:00.000Z",
+  "tags": [
+    "bloom",
+    "cycle",
+    "tracker",
+    "period",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}

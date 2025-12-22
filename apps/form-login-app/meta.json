@@ -1,0 +1,30 @@
+{
+  "name": "Form Login App",
+  "version": "0.3.0",
+  "description": "A simple form login app using ReactJS and TypeScript",
+  "slug": "form-login-app",
+  "id": "form-login-app-01",
+  "shortDescription": "A simple form login app",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Styled Components"
+  ],
+  "images": [
+    "form-login-app__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-19T00:00:00.000Z",
+  "tags": [
+    "form",
+    "login",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
