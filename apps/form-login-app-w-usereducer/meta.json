@@ -1,0 +1,31 @@
+{
+  "name": "Form Login App w/ useReducer",
+  "version": "0.3.0",
+  "description": "A simple form login app using ReactJS and TypeScript with useReducer",
+  "slug": "form-login-app-w-usereducer",
+  "id": "form-login-app-w-usereducer-01",
+  "shortDescription": "A simple form login app with useReducer",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "form-login-app-w-usereducer__screenshot-1-1920_1440.webp",
+    "form-login-app-w-usereducer__screenshot-2-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-19T00:00:00.000Z",
+  "tags": [
+    "form",
+    "login",
+    "react",
+    "typescript",
+    "frontend",
+    "usereducer"
+  ]
+}

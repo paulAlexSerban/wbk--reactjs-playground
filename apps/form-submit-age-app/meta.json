@@ -1,0 +1,30 @@
+{
+  "name": "Form Submit Age App",
+  "version": "0.3.0",
+  "description": "A simple form submit age app",
+  "slug": "form-submit-age-app",
+  "id": "form-submit-age-app-01",
+  "shortDescription": "A simple form submit age app",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "form-submit-age-app__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-20T00:00:00.000Z",
+  "tags": [
+    "form",
+    "submit",
+    "age",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
