@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/wbk--reactjs-playground/apps/bloom-cycle-tracker/sw.js', { scope: '/wbk--reactjs-playground/apps/bloom-cycle-tracker/' })})}
