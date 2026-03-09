@@ -1,0 +1,30 @@
+{
+  "name": "Investment Calculator App",
+  "version": "0.3.3",
+  "description": "Investment Calculator App",
+  "slug": "investment-calculator-app",
+  "id": "investment-calculator-app-01",
+  "shortDescription": "A simple investment calculator app built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "investment-calculator-app__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "web",
+    "investment",
+    "calculator",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}

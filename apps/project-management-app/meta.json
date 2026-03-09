@@ -1,0 +1,32 @@
+{
+  "name": "Project Management App",
+  "version": "0.3.0",
+  "description": "A project management app built with ReactJS, TypeScript, and TailwindCSS.",
+  "slug": "project-management-app",
+  "id": "project-management-app-01",
+  "shortDescription": "A project management app built with ReactJS, TypeScript, and TailwindCSS.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "TailwindCSS",
+    "Vite"
+  ],
+  "images": [
+    "project-management-app__screenshot-1-1920_1440.webp",
+    "project-management-app__screenshot-2-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "web",
+    "project management",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "frontend"
+  ]
+}

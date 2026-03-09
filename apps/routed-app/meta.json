@@ -1,0 +1,32 @@
+{
+  "name": "Routed App",
+  "version": "0.3.0",
+  "description": "A simple routed app built with React, TypeScript, and Vite.",
+  "slug": "routed-app",
+  "id": "routed-app-01",
+  "shortDescription": "A simple routed app built with React, TypeScript, and Vite.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "routed-app__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "web",
+    "react",
+    "typescript",
+    "vite",
+    "eslint",
+    "prettier",
+    "sass",
+    "frontend"
+  ]
+}
