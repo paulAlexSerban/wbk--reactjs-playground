@@ -9,7 +9,7 @@
         "process:assets-media": "lerna run process",
         "///": "CI PRODUCTION BUILDS",
         "build:full": "yarn build:apps:prod && yarn package:apps && yarn dashboard:deps && yarn build:dashboard:prod && yarn package:dashboard",
-        "build:apps:prod": "rm -rfv .parcel-cache && lerna run build:prod",
+        "build:apps:prod": "rm -rfv .parcel-cache && rm -rfv ./frontend/apps/*/dist && lerna run build:prod",
         "package:apps": "rm -rfv ./package/* && bash scripts/package-apps.bash ",
         "dashboard:deps": "node scripts/dashboard-deps.js",
         "build:dashboard:prod": "lerna run build:dashboard:prod",
