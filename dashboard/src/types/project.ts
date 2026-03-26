@@ -5,6 +5,7 @@ export interface Project {
     description: string;
     shortDescription: string;
     category: ProjectCategory;
+    sourceType: 'app' | 'experiment';
     techStack: string[];
     images: string[];
     sourceUrl?: string;
@@ -37,4 +38,5 @@ export interface FilterState {
     techStack: string[];
     sortBy: SortOption;
     sortOrder: 'asc' | 'desc';
+    sourceType: 'all' | 'app' | 'experiment';
 }

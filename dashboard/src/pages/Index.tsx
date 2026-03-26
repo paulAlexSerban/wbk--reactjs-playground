@@ -7,6 +7,8 @@ import { FeaturedSection } from '@/components/portfolio/FeaturedSection';
 import { ProjectGrid } from '@/components/portfolio/ProjectGrid';
 import { ProjectModal } from '@/components/portfolio/ProjectModal';
 import { Pagination } from '@/components/portfolio/Pagination';
+import { SourceTypeTabs } from '@/components/portfolio/SourceTypeTabs';
+import { ExperimentsInfo } from '@/components/portfolio/ExperimentsInfo';
 import { useProjects } from '@/hooks/useProjects';
 import { Project } from '@/types/project';
 
@@ -37,13 +39,23 @@ const Index = () => {
         setSelectedProject(null);
     };
 
-    const showFeatured = !filters.search && filters.categories.length === 0 && filters.techStack.length === 0;
+    const showFeatured =
+        filters.sourceType !== 'experiment' &&
+        !filters.search &&
+        filters.categories.length === 0 &&
+        filters.techStack.length === 0;
 
     return (
         <div className="min-h-screen bg-background">
             <Header />
 
             <main className="container py-8">
+                {/* Source type tabs: All / Apps / Experiments */}
+                <SourceTypeTabs value={filters.sourceType} onChange={(val) => updateFilter('sourceType', val)} />
+
+                {/* Experiments info banner */}
+                {filters.sourceType === 'experiment' && <ExperimentsInfo />}
+
                 {/* Featured Section */}
                 {showFeatured && <FeaturedSection onProjectClick={handleProjectClick} />}
 

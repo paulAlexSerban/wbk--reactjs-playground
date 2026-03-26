@@ -28,12 +28,18 @@ export function useProjects() {
         techStack: [],
         sortBy: 'featured',
         sortOrder: 'desc',
+        sourceType: 'all',
     });
     const [viewMode, setViewMode] = useState<ViewMode>('grid');
     const [currentPage, setCurrentPage] = useState(1);
 
     const filteredProjects = useMemo(() => {
         let result = [...allProjects];
+
+        // Source type filter (apps vs experiments)
+        if (filters.sourceType !== 'all') {
+            result = result.filter((project) => project.sourceType === filters.sourceType);
+        }
 
         // Fuzzy search
         if (filters.search) {
@@ -96,6 +102,7 @@ export function useProjects() {
             techStack: [],
             sortBy: 'featured',
             sortOrder: 'desc',
+            sourceType: 'all',
         });
         setCurrentPage(1);
     };

@@ -10,7 +10,7 @@
         "preview": "vite preview",
         "//": "DEV SCRIPTS",
         "dev": "vite",
-        "generate:projects": "tsx scripts/generate-projects.ts"
+        "generate:projects": "node ../scripts/dashboard-deps.js"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.10.0",
