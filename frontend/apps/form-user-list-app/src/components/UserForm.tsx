@@ -36,7 +36,13 @@ const UserForm: FC<UserFormProps> = ({ onUserAdd }) => {
                 <label htmlFor="email" className="form-label">
                     Enter Email
                 </label>
-                <input id="email" value={email} onChange={handleEmailChange} aria-label="Email" className="form-input" />
+                <input
+                    id="email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    aria-label="Email"
+                    className="form-input"
+                />
             </div>
             <button className="form-button">Add User</button>
         </form>

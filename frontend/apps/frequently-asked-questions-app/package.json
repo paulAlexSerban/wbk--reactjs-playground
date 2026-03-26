@@ -27,7 +27,7 @@
         "typescript",
         "frontend",
         "vite"
-    ],  
+    ],
     "private": true,
     "version": "0.2.1",
     "type": "module",
