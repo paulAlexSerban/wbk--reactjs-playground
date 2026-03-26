@@ -33,7 +33,7 @@ export function ProjectModal({ project, open, onClose }: ProjectModalProps) {
                     <img
                         src={`${project.demoUrl}${project.images[currentImageIndex]}`}
                         alt={`${project.name} screenshot ${currentImageIndex + 1}`}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover object-top"
                     />
 
                     {project.images.length > 1 && (

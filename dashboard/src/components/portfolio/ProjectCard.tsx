@@ -33,7 +33,7 @@ function GridCard({ project, onClick }: { project: Project; onClick: () => void 
                     <img
                         src={imageUrl}
                         alt={project.name}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
                     />
                 )}
