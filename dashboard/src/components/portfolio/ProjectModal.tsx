@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { X, ExternalLink, Github, FileText, ChevronLeft, ChevronRight, Calendar, Tag } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -14,15 +14,27 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, open, onClose }: ProjectModalProps) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [imageError, setImageError] = useState(false);
+
+    useEffect(() => {
+        setCurrentImageIndex(0);
+        setImageError(false);
+    }, [project?.id, open]);
 
     if (!project) return null;
 
+    const hasImages = project.images.length > 0;
+    const currentImage = hasImages ? project.images[currentImageIndex] : undefined;
+    const imageUrl = currentImage && project.demoUrl ? `${project.demoUrl}${currentImage}` : undefined;
+
     const nextImage = () => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+        setImageError(false);
     };
 
     const prevImage = () => {
         setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+        setImageError(false);
     };
 
     return (
@@ -30,13 +42,25 @@ export function ProjectModal({ project, open, onClose }: ProjectModalProps) {
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden p-0">
                 {/* Image Gallery */}
                 <div className="relative aspect-video bg-muted">
-                    <img
-                        src={`${project.demoUrl}${project.images[currentImageIndex]}`}
-                        alt={`${project.name} screenshot ${currentImageIndex + 1}`}
-                        className="h-full w-full object-cover object-top"
-                    />
+                    {imageUrl && !imageError ? (
+                        <img
+                            src={imageUrl}
+                            alt={`${project.name} screenshot ${currentImageIndex + 1}`}
+                            className="h-full w-full object-cover object-top"
+                            onError={() => setImageError(true)}
+                        />
+                    ) : (
+                        <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
+                            <FileText className="h-12 w-12" />
+                            <p className="px-2 text-center text-sm font-mono">
+                                {project.sourceType === 'experiment'
+                                    ? 'No screenshots available for this experiment yet'
+                                    : 'No screenshots available for this project'}
+                            </p>
+                        </div>
+                    )}
 
-                    {project.images.length > 1 && (
+                    {project.images.length > 1 && imageUrl && (
                         <>
                             <Button
                                 variant="ghost"

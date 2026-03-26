@@ -8,6 +8,7 @@
         "build:dashboard:prod": "export NODE_ENV=production && tsc && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
+        "test": "tsx --test src/**/*.test.ts",
         "//": "DEV SCRIPTS",
         "dev": "vite",
         "generate:projects": "node ../scripts/dashboard-deps.js"

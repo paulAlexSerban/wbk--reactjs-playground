@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ExternalLink, Github, FileText, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -23,19 +24,40 @@ export function ProjectCard({ project, viewMode, onClick }: ProjectCardProps) {
     return <GridCard project={project} onClick={onClick} />;
 }
 
+function getProjectImageUrl(project: Project, index = 0) {
+    const imageName = project.images?.[index];
+    if (!imageName || !project.demoUrl) return undefined;
+    return `${project.demoUrl}${imageName}`;
+}
+
+function PreviewFallback({ sourceType }: { sourceType: Project['sourceType'] }) {
+    return (
+        <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
+            <FileText className="h-10 w-10" />
+            <p className="px-2 text-center text-xs font-mono">
+                {sourceType === 'experiment' ? 'No preview for this experiment yet' : 'Preview unavailable'}
+            </p>
+        </div>
+    );
+}
+
 function GridCard({ project, onClick }: { project: Project; onClick: () => void }) {
-    const imageUrl = project.images?.[0] ? `${project.demoUrl}${project.images[0]}` : undefined;
+    const [imageError, setImageError] = useState(false);
+    const imageUrl = getProjectImageUrl(project, 0);
 
     return (
         <Card className="group cursor-pointer overflow-hidden card-hover animate-fade-in" onClick={onClick}>
             <div className="relative aspect-video overflow-hidden bg-muted">
-                {imageUrl && (
+                {imageUrl && !imageError ? (
                     <img
                         src={imageUrl}
                         alt={project.name}
                         className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
+                        onError={() => setImageError(true)}
                     />
+                ) : (
+                    <PreviewFallback sourceType={project.sourceType} />
                 )}
                 {project.featured && (
                     <div className="absolute top-2 right-2">
@@ -75,14 +97,23 @@ function GridCard({ project, onClick }: { project: Project; onClick: () => void 
 }
 
 function ListCard({ project, onClick }: { project: Project; onClick: () => void }) {
-    const imageUrl = project.images?.[0] ? `${project.demoUrl}${project.images[0]}` : undefined;
+    const [imageError, setImageError] = useState(false);
+    const imageUrl = getProjectImageUrl(project, 0);
 
     return (
         <Card className="group cursor-pointer card-hover animate-fade-in" onClick={onClick}>
             <div className="flex gap-4 p-4">
                 <div className="relative h-24 w-40 shrink-0 overflow-hidden rounded-md bg-muted">
-                    {imageUrl && (
-                        <img src={imageUrl} alt={project.name} className="h-full w-full object-cover" loading="lazy" />
+                    {imageUrl && !imageError ? (
+                        <img
+                            src={imageUrl}
+                            alt={project.name}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                            onError={() => setImageError(true)}
+                        />
+                    ) : (
+                        <PreviewFallback sourceType={project.sourceType} />
                     )}
                     {project.featured && <Star className="absolute top-1 right-1 h-4 w-4 text-syntax-variable" />}
                 </div>
@@ -106,23 +137,27 @@ function ListCard({ project, onClick }: { project: Project; onClick: () => void 
                         </div>
                         <div className="flex gap-1">
                             {project.sourceUrl && (
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="h-8 w-8"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    <Github className="h-4 w-4" />
+                                <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+                                    <a
+                                        href={project.sourceUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Github className="h-4 w-4" />
+                                    </a>
                                 </Button>
                             )}
                             {project.demoUrl && (
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="h-8 w-8"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    <ExternalLink className="h-4 w-4" />
+                                <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+                                    <a
+                                        href={project.demoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <ExternalLink className="h-4 w-4" />
+                                    </a>
                                 </Button>
                             )}
                         </div>
@@ -134,23 +169,22 @@ function ListCard({ project, onClick }: { project: Project; onClick: () => void 
 }
 
 function CompactCard({ project, onClick }: { project: Project; onClick: () => void }) {
-    const imageUrl = project.images?.[0] ? `${project.demoUrl}${project.images[0]}` : undefined;
+    const [imageError, setImageError] = useState(false);
+    const imageUrl = getProjectImageUrl(project, 0);
 
     return (
         <Card className="group cursor-pointer card-hover animate-fade-in" onClick={onClick}>
             <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                {imageUrl && (
+                {imageUrl && !imageError ? (
                     <img
                         src={imageUrl}
                         alt={project.name}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
+                        onError={() => setImageError(true)}
                     />
-                )}
-                {!imageUrl && (
-                    <div className="h-full w-full flex items-center justify-center text-muted-foreground">
-                        <FileText className="h-12 w-12" />
-                    </div>
+                ) : (
+                    <PreviewFallback sourceType={project.sourceType} />
                 )}
                 {project.featured && (
                     <Star className="absolute top-2 right-2 h-4 w-4 text-syntax-variable drop-shadow-md" />

@@ -126,9 +126,9 @@ yarn build:full
 
 3. **Dependency Generation** (`yarn dashboard:deps`)
     - Runs `scripts/dashboard-deps.js`
-    - Scans packaged apps and extracts metadata
-    - Generates `projects.json` for dashboard consumption
-    - Creates `serve.json` with routing rules for SPA support
+    - Scans `frontend/apps/*/package.json` and `frontend/experiments/*/package.json`
+    - Generates `dashboard/src/data/projects.json` for dashboard consumption
+    - Creates `package/serve.json` rewrites for app SPA routing
 
 4. **Dashboard Build** (`yarn build:dashboard:prod`)
     - Compiles portfolio dashboard application
@@ -281,13 +281,13 @@ yarn start:package
 
 ### Project Scripts
 
-| Command                | Description                                |
-| ---------------------- | ------------------------------------------ |
-| `yarn build:full`      | Execute complete production build pipeline |
-| `yarn build:apps:prod` | Build all applications only                |
-| `yarn package:apps`    | Package apps for deployment                |
-| `yarn dashboard:deps`  | Generate dashboard metadata                |
-| `yarn start:package`   | Serve production build locally             |
+| Command                | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| `yarn build:full`      | Execute complete production build pipeline  |
+| `yarn build:apps:prod` | Build all applications only                 |
+| `yarn package:apps`    | Package apps for deployment                 |
+| `yarn dashboard:deps`  | Generate projects metadata + serve rewrites |
+| `yarn start:package`   | Serve production build locally              |
 
 ---
 

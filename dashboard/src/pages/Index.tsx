@@ -10,6 +10,7 @@ import { Pagination } from '@/components/portfolio/Pagination';
 import { SourceTypeTabs } from '@/components/portfolio/SourceTypeTabs';
 import { ExperimentsInfo } from '@/components/portfolio/ExperimentsInfo';
 import { useProjects } from '@/hooks/useProjects';
+import { projects as allProjectsCatalog } from '@/data/projects';
 import { Project } from '@/types/project';
 
 const Index = () => {
@@ -44,6 +45,11 @@ const Index = () => {
         !filters.search &&
         filters.categories.length === 0 &&
         filters.techStack.length === 0;
+    const hasActiveFilters = Boolean(filters.search) || filters.categories.length > 0 || filters.techStack.length > 0;
+    const totalProjectsInScope =
+        filters.sourceType === 'all'
+            ? allProjectsCatalog.length
+            : allProjectsCatalog.filter((project) => project.sourceType === filters.sourceType).length;
 
     return (
         <div className="min-h-screen bg-background">
@@ -74,7 +80,20 @@ const Index = () => {
                 </div>
 
                 {/* Project Grid */}
-                <ProjectGrid projects={projects} viewMode={viewMode} onProjectClick={handleProjectClick} />
+                <div
+                    id={`source-type-panel-${filters.sourceType}`}
+                    role="tabpanel"
+                    aria-labelledby={`source-type-tab-${filters.sourceType}`}
+                >
+                    <ProjectGrid
+                        projects={projects}
+                        viewMode={viewMode}
+                        onProjectClick={handleProjectClick}
+                        sourceType={filters.sourceType}
+                        hasActiveFilters={hasActiveFilters}
+                        totalProjectsInScope={totalProjectsInScope}
+                    />
+                </div>
 
                 {/* Pagination */}
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />

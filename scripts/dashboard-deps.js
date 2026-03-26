@@ -7,6 +7,20 @@ const frontendAppsSource = path.join(__dirname, '..', 'frontend', 'apps');
 const frontendExperimentsSource = path.join(__dirname, '..', 'frontend', 'experiments');
 
 const BASE_PATH = '/wbk--reactjs-playground/apps/';
+const DEFAULT_CREATED_AT = new Date(0).toISOString();
+const ALLOWED_CATEGORIES = new Set([
+    'Web App',
+    'API',
+    'Mobile',
+    'Mobile App',
+    'CLI Tool',
+    'Library',
+    'DevOps',
+    'AI/ML',
+    'Blockchain',
+    'Game',
+    'Other',
+]);
 
 const readJsonFile = async (filePath) => {
     try {
@@ -18,36 +32,112 @@ const readJsonFile = async (filePath) => {
     }
 };
 
-const normalizeArray = (value) => {
-    return Array.isArray(value) ? value : [];
+const normalizeString = (value, fallback = '') => {
+    if (typeof value !== 'string') return fallback;
+    const normalized = value.trim();
+    return normalized || fallback;
 };
 
-const buildProjectFromPackage = (pkg, fallbackSlug, sourceType) => {
-    const slug = pkg.slug || fallbackSlug;
+const normalizeStringArray = (value) => {
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map((item) => normalizeString(item)).filter(Boolean))];
+};
+
+const isValidIsoDate = (value) => {
+    return typeof value === 'string' && !Number.isNaN(Date.parse(value));
+};
+
+const normalizeBoolean = (value) => {
+    if (typeof value === 'boolean') return value;
+    if (typeof value === 'string') {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === 'true') return true;
+        if (normalized === 'false') return false;
+    }
+    return Boolean(value);
+};
+
+const pushWarning = (warnings, warning) => {
+    warnings.push(warning);
+};
+
+const normalizeCategory = (value, context, warnings) => {
+    const category = normalizeString(value);
+    if (!category) {
+        pushWarning(warnings, `${context}: missing category. Falling back to "Web App".`);
+        return 'Web App';
+    }
+    if (!ALLOWED_CATEGORIES.has(category)) {
+        pushWarning(
+            warnings,
+            `${context}: unsupported category "${category}". Keeping original value; consider standardizing.`
+        );
+    }
+    return category;
+};
+
+const normalizeCreatedAt = (value, context, warnings) => {
+    if (!isValidIsoDate(value)) {
+        pushWarning(warnings, `${context}: invalid or missing createdAt. Falling back to ${DEFAULT_CREATED_AT}.`);
+        return DEFAULT_CREATED_AT;
+    }
+    return value;
+};
+
+const normalizeId = (value, slug, context, warnings) => {
+    const normalized = normalizeString(value);
+    if (!normalized) {
+        const fallback = `${slug}-01`;
+        pushWarning(warnings, `${context}: missing id. Falling back to "${fallback}".`);
+        return fallback;
+    }
+    return normalized;
+};
+
+const normalizeSlug = (value, fallbackSlug, context, warnings) => {
+    const slug = normalizeString(value, fallbackSlug);
+    if (!slug) {
+        pushWarning(warnings, `${context}: missing slug and folder fallback.`);
+    }
+    return slug;
+};
+
+const buildProjectFromPackage = (pkg, fallbackSlug, sourceType, warnings) => {
+    const context = `${sourceType}/${fallbackSlug}`;
+    const slug = normalizeSlug(pkg.slug, fallbackSlug, context, warnings);
     const isApp = sourceType === 'app';
+    const name = normalizeString(pkg.formattedName || pkg.name || slug, slug);
+    const version = normalizeString(pkg.version, '0.0.0');
+    const description = normalizeString(pkg.description);
+    const shortDescription = normalizeString(pkg.shortDescription, description);
+    const techStack = normalizeStringArray(pkg.techStack);
+    const images = normalizeStringArray(pkg.images);
+    const tags = normalizeStringArray(pkg.tags);
+    const demoUrl = isApp ? normalizeString(pkg.demoUrl, path.join(BASE_PATH, `${slug}/`)) : '';
 
     return {
-        name: pkg.formattedName || pkg.name || slug,
-        version: pkg.version || '0.0.0',
-        description: pkg.description || '',
+        name,
+        version,
+        description,
         slug,
-        id: pkg.id || `${slug}-01`,
-        shortDescription: pkg.shortDescription || pkg.description || '',
-        category: pkg.category || 'Web App',
+        id: normalizeId(pkg.id, slug, context, warnings),
+        shortDescription,
+        category: normalizeCategory(pkg.category, context, warnings),
         sourceType,
-        techStack: normalizeArray(pkg.techStack),
-        images: normalizeArray(pkg.images),
-        sourceUrl: pkg.sourceUrl || '',
-        demoUrl: isApp ? pkg.demoUrl || path.join(BASE_PATH, `${slug}/`) : '',
-        docsUrl: pkg.docsUrl || '',
-        featured: Boolean(pkg.featured),
-        createdAt: pkg.createdAt || new Date(0).toISOString(),
-        tags: normalizeArray(pkg.tags),
+        techStack,
+        images,
+        sourceUrl: normalizeString(pkg.sourceUrl),
+        demoUrl,
+        docsUrl: normalizeString(pkg.docsUrl),
+        featured: normalizeBoolean(pkg.featured),
+        createdAt: normalizeCreatedAt(pkg.createdAt, context, warnings),
+        tags,
     };
 };
 
 const processDirectories = async (source, sourceType) => {
     const projects = [];
+    const warnings = [];
     try {
         const files = await fs.promises.readdir(source);
         for (const file of files) {
@@ -59,15 +149,17 @@ const processDirectories = async (source, sourceType) => {
                 if (fs.existsSync(packageJsonPath)) {
                     const pkg = await readJsonFile(packageJsonPath);
                     if (pkg) {
-                        projects.push(buildProjectFromPackage(pkg, file, sourceType));
+                        projects.push(buildProjectFromPackage(pkg, file, sourceType, warnings));
                     }
+                } else {
+                    pushWarning(warnings, `${sourceType}/${file}: missing package.json, skipped.`);
                 }
             }
         }
     } catch (err) {
         console.error('Error reading the directory:', err);
     }
-    return projects;
+    return { projects, warnings };
 };
 
 const generateServeConfig = (appProjects) => {
@@ -83,12 +175,25 @@ const generateServeConfig = (appProjects) => {
 
 const init = async () => {
     try {
-        console.log('Generating projects.json and serve.json...');
-        const appProjects = await processDirectories(frontendAppsSource, 'app');
-        const experimentProjects = await processDirectories(frontendExperimentsSource, 'experiment');
+        console.log('Generating dashboard metadata and serve.json...');
+        const { projects: appProjects, warnings: appWarnings } = await processDirectories(frontendAppsSource, 'app');
+        const { projects: experimentProjects, warnings: experimentWarnings } = await processDirectories(
+            frontendExperimentsSource,
+            'experiment'
+        );
+        const warnings = [...appWarnings, ...experimentWarnings];
+        const sortedApps = [...appProjects].sort((a, b) => a.name.localeCompare(b.name));
+        const sortedExperiments = [...experimentProjects].sort((a, b) => a.name.localeCompare(b.name));
         const projects = [...appProjects, ...experimentProjects].sort((a, b) => a.name.localeCompare(b.name));
 
-        // Write projects.json for dashboard
+        // Write split metadata for scalable loading strategies.
+        await fs.promises.writeFile(`${dashboardDest}/projects.apps.json`, JSON.stringify(sortedApps, null, 2));
+        await fs.promises.writeFile(
+            `${dashboardDest}/projects.experiments.json`,
+            JSON.stringify(sortedExperiments, null, 2)
+        );
+
+        // Write merged projects.json for backward compatibility.
         await fs.promises.writeFile(`${dashboardDest}/projects.json`, JSON.stringify(projects, null, 2));
 
         // Generate and write serve.json for routing
@@ -98,8 +203,14 @@ const init = async () => {
 
         console.log('Generated serve.json with rewrites for:', appProjects.map((c) => c.slug).join(', '));
         console.log(
-            `Generated projects.json with ${projects.length} total projects (${appProjects.length} apps, ${experimentProjects.length} experiments).`
+            `Generated metadata files: projects.json, projects.apps.json, projects.experiments.json (${projects.length} total projects).`
         );
+        if (warnings.length > 0) {
+            console.warn(`Metadata normalization warnings (${warnings.length}):`);
+            for (const warning of warnings) {
+                console.warn(` - ${warning}`);
+            }
+        }
     } catch (err) {
         console.error('Error:', err);
     }

@@ -1,145 +1,169 @@
-# Dashboard Enhancement: Showcase Apps + Experiments
+# Dashboard Architecture Notes and Execution Plan
 
-## Current State
+## 1. Observed Project Structure, Architecture, and Patterns
 
-The dashboard at `/dashboard/` currently:
+### Monorepo Structure (Observed)
 
-- Showcases **33 apps** from `frontend/apps/` via `projects.json`
-- Has **no concept of "experiments"** — the 5 projects in `frontend/experiments/` are entirely absent
-- Is missing **2 apps** that exist in `frontend/apps/` but are not in `projects.json`: `to-do-app`, `dummy-blog-app`
-- Provides no visual distinction between production apps and experimental R&D projects
+```text
+wbk--reactjs-playground/
+|-- frontend/
+|   |-- apps/                 # deployable app workspaces
+|   |-- experiments/          # exploratory app workspaces
+|   `-- _boilerplates/
+|-- dashboard/                # portfolio UI that lists projects
+|   |-- src/
+|   |   |-- pages/            # route pages
+|   |   |-- components/
+|   |   |   |-- portfolio/    # dashboard-specific UI
+|   |   |   `-- ui/           # shadcn/radix primitives
+|   |   |-- hooks/            # local state + filtering logic
+|   |   |-- data/             # projects.json + selectors
+|   |   `-- types/
+|-- scripts/
+|   `-- dashboard-deps.js     # projects.json + serve.json generator
+|-- package/
+|   `-- wbk--reactjs-playground/
+|       `-- apps/             # packaged build outputs
+`-- _docs/
+```
 
----
+### Runtime Architecture (Dashboard)
 
-## Goal
+- Routing:
+- `dashboard/src/App.tsx` uses `react-router-dom` with `BrowserRouter` + `basename` from `VITE_DOMAIN_PATH`.
+- Currently a single functional route (`/`) + `NotFound` fallback.
+- State and Data Flow:
+- Source-of-truth data comes from `dashboard/src/data/projects.json`.
+- `dashboard/src/data/projects.ts` normalizes project records and derives selectors (`projects`, `appProjects`, `experimentProjects`, categories, tech stacks).
+- `dashboard/src/hooks/useProjects.ts` performs filtering, sorting, and pagination.
+- UI Composition:
+- `dashboard/src/pages/Index.tsx` composes: `Header` -> `SourceTypeTabs` -> optional `ExperimentsInfo` -> `FeaturedSection` -> controls -> `ProjectGrid` -> `Pagination` -> `ProjectModal`.
+- UX Patterns:
+- Search, faceted filters, sort modes, view modes, pagination, modal details.
+- Conditional layout behavior (featured hidden in experiments mode).
+- Styling and Components:
+- Tailwind + shadcn/ui + Radix primitives.
+- Utility function pattern with `cn()` in `dashboard/src/lib/utils.ts`.
 
-Extend the dashboard to showcase **all 40 projects** (35 apps + 5 experiments) from both
-`frontend/apps/` and `frontend/experiments/`, with a clear UX distinction between the two.
+### Build and Metadata Generation Pattern (Observed)
 
----
+- Current metadata generation is done by `scripts/dashboard-deps.js`.
+- Generator reads `frontend/apps/*/package.json` and `frontend/experiments/*/package.json`, builds normalized project objects, writes:
+- `dashboard/src/data/projects.json`
+- `package/serve.json` rewrites for app routes.
+- Defensive runtime normalization exists in `dashboard/src/data/projects.ts` to infer `sourceType` if missing.
 
-## Observations
+### Architectural Strengths
 
-### Dashboard Architecture
+- Clear separation between UI shell (`pages/components`) and data orchestration (`hooks/data`).
+- Monorepo structure scales for many projects.
+- Generator-based metadata avoids manual sync drift.
+- Design system consistency via shared UI primitives.
 
-- **Entry**: `src/pages/Index.tsx` renders Header → FeaturedSection → Controls (Search + ViewToggle + FilterControls) → ProjectGrid → Pagination
-- **Data**: `src/data/projects.json` → typed via `src/types/project.ts` → filtered/sorted/paginated by `src/hooks/useProjects.ts`
-- **UI library**: shadcn/ui (Radix + Tailwind) with a dark/light theme toggle
-- **View modes**: Grid (3-col) · List · Compact (5-col)
-- **Filtering**: fuzzy-search by name/description/tech · category dropdown · tech-stack dropdown · sort (featured/name/date)
-- **Featured section**: Renders first 3 projects with `featured: true` in a hero layout (hidden when any filter active)
+### Risks and Gaps
 
-### Frontend Apps — 35 total
+- Schema contract is implicit; no formal runtime validation in generation step.
+- Some repo docs still describe older generation behavior.
+- Source type count UI depends on static import-time calculations in tabs component.
+- Dashboard currently bundles all metadata directly into frontend bundle.
 
-All live under `frontend/apps/`, built with React + TypeScript + Vite.
-33 currently in `projects.json`; 2 missing (`to-do-app`, `dummy-blog-app`).
-Demo URLs follow the pattern `/wbk--reactjs-playground/apps/<slug>/`.
+## 2. Suggested Plan (Architecture, System Design, Patterns, UX/UI)
 
-### Frontend Experiments — 5 total
+### P1. Data Contract and Generation Hardening
 
-All live under `frontend/experiments/`:
-| Folder | What it is |
-|---|---|
-| `form-login-app-tailwind` | Login form variant exploring TailwindCSS + Styled Components |
-| `form-login-app-w-useReducer` | Login form variant with `useReducer` state management |
-| `json-to-excel-app` | R&D: rendering structured JSON datasets, likely JSON→Excel export |
-| `rendering-large-lists-windowing-virtualization` | Perf experiment: react-window, react-virtualized, react-viewport-list, infinite scroll, pagination |
-| `rnd-axios-http-app` | R&D sandbox: Axios interceptors and HTTP patterns |
+1. Introduce a canonical `ProjectMetadata` schema in `dashboard/src/types/project.ts` (or shared package).
+2. Add generator-side validation and defaults in `scripts/dashboard-deps.js`.
+3. Add generator warnings report for malformed `package.json` metadata (missing `id`, `createdAt`, `techStack`, etc.).
+4. Optionally add `generatedAt` and `source` fields in `projects.json` metadata header pattern (if switching to envelope format later).
 
-Experiments are **not packaged/served** (no `experiments/` folder in `package/wbk--reactjs-playground/`), so `demoUrl` will be `""` for all experiments.
+Expected outcome: deterministic and debuggable metadata pipeline.
 
----
+### P2. Source-of-Truth and Build Pipeline Consistency
 
-## Implementation Plan
+1. Keep `scripts/dashboard-deps.js` as the single metadata source.
+2. Update root `README.md` and dashboard docs to reflect real behavior (apps + experiments scan).
+3. Add CI check to fail if `dashboard/src/data/projects.json` is stale versus generator output.
 
-### Phase 1 — Data Layer (3 files)
+Expected outcome: no documentation drift and no stale generated artifacts.
 
-#### 1a. `src/types/project.ts`
+### P3. Dashboard Domain Layer Refinement
 
-- Add `sourceType: 'app' | 'experiment'` field to the `Project` interface
-- Add `'sourceType'` key to `FilterState` as `'all' | 'app' | 'experiment'`
+1. Move filtering/sorting/pagination pure logic from hook into testable utility functions.
+2. Keep hook for orchestration and state only.
+3. Add unit tests for fuzzy search, source type split, and sorting determinism.
 
-#### 1b. `src/data/projects.json`
+Expected outcome: easier maintenance and safer future feature additions.
 
-- Add `"sourceType": "app"` to all 33 existing entries
-- Add 2 missing app entries:
-    - `to-do-app` (`sourceType: "app"`)
-    - `dummy-blog-app` (`sourceType: "app"`)
-- Add 5 experiment entries (`sourceType: "experiment"`):
-    - `form-login-app-tailwind`
-    - `form-login-app-w-useReducer`
-    - `json-to-excel-app`
-    - `rendering-large-lists-windowing-virtualization`
-    - `rnd-axios-http-app`
+### P4. UX and UI Improvements
 
-#### 1c. `src/data/projects.ts`
+1. Add an explicit empty-state taxonomy:
 
-- Add `experimentProjects` named export (filtered list of experiments)
-- Total: `allProjects` → 40 items
+- no projects in dataset
+- no results for current filters
+- experiments with no screenshots/demo
 
----
+2. Show resilient media placeholders when `images.length === 0` or image load fails.
+3. Add a compact metadata health chip in admin/dev mode (optional): counts by `sourceType`, missing images, missing demo links.
+4. Improve tabs accessibility:
 
-### Phase 2 — Hook Layer (1 file)
+- `role="tablist"`, `role="tab"`, keyboard navigation, `aria-selected`.
 
-#### 2a. `src/hooks/useProjects.ts`
+Expected outcome: clearer behavior, better accessibility, fewer visual dead ends.
 
-- Add `sourceType: 'all' | 'app' | 'experiment'` to default filter state
-- Add a `sourceType` filter pass before existing category/tech filters:
-    ```ts
-    if (filters.sourceType !== 'all') {
-        result = result.filter((p) => p.sourceType === filters.sourceType);
-    }
-    ```
-- Expose `sourceType` in the return value (already part of `filters`)
+### P5. System Design Evolution (Optional Next Stage)
 
----
+1. Split generated output into:
 
-### Phase 3 — UI Layer (2 new files + 1 edited)
+- `projects.apps.json`
+- `projects.experiments.json`
+- optional merged view generated in dashboard build step
 
-#### 3a. `src/components/portfolio/SourceTypeTabs.tsx` _(new)_
+2. Support lazy loading of metadata if dataset scales beyond current size.
 
-A **tab bar** shown above the search/filter controls with three tabs:
+Expected outcome: scalable metadata strategy without changing current UX.
 
-- **All** — shows all 40 projects
-- **Apps** — shows 35 app projects only
-- **Experiments** — shows 5 experiment projects only
+## 3. Critique: Plan vs Observed Architecture (Does It Make Sense?)
 
-Each tab shows a count badge. Active tab is highlighted. Switching tabs resets pagination to page 1.
+### Alignment Check
 
-#### 3b. `src/components/portfolio/ExperimentsInfo.tsx` _(new)_
+- P1 fits current architecture well because metadata generation is already centralized.
+- P2 is mandatory and low-risk due current doc/behavior mismatch.
+- P3 respects existing separation by extracting pure logic without changing UI behavior.
+- P4 aligns with existing card/modal and source-type UX.
+- P5 should be deferred because 40 records does not justify extra complexity yet.
 
-A subtle **info banner** shown only when `sourceType === 'experiment'`. Explains that experiments are R&D sandboxes, may lack screenshots or live demos, and link to source code (when available). Styled with muted background + beaker/flask icon.
+### Trade-offs
 
-#### 3c. `src/pages/Index.tsx` _(edit)_
+- Strict validation may surface many metadata warnings initially.
+- Accessibility improvements increase component code size slightly, but with strong UX gains.
+- Splitting metadata files is premature unless growth requires it.
 
-1. Import `SourceTypeTabs` and `ExperimentsInfo`
-2. Render `<SourceTypeTabs>` between the `<Header>` and `<main>` content (inside the container, above the featured section)
-3. Conditionally render `<ExperimentsInfo>` when `sourceType === 'experiment'`
-4. Conditionally render `<FeaturedSection>` only when `sourceType !== 'experiment'` (experiments have no featured items)
+### Recommended Priority Order
 
----
+1. P2 (docs + pipeline consistency)
+2. P1 (schema hardening)
+3. P4 (UX resilience + accessibility)
+4. P3 (testability extraction)
+5. P5 (only if scale demands)
 
-## File Change Summary
+Conclusion: the plan is coherent with current architecture and avoids over-engineering.
 
-| File                                           | Change                                                      |
-| ---------------------------------------------- | ----------------------------------------------------------- |
-| `src/types/project.ts`                         | Add `sourceType` to `Project` and `FilterState`             |
-| `src/data/projects.json`                       | Add `sourceType` to all, add 2 missing apps + 5 experiments |
-| `src/data/projects.ts`                         | Add `experimentProjects` export                             |
-| `src/hooks/useProjects.ts`                     | Add `sourceType` filter pass                                |
-| `src/components/portfolio/SourceTypeTabs.tsx`  | **New** — tab switcher component                            |
-| `src/components/portfolio/ExperimentsInfo.tsx` | **New** — info banner for experiments view                  |
-| `src/pages/Index.tsx`                          | Integrate tabs + experiments info                           |
+## 4. Approval-Gated Todo List
 
-**Total new projects:** 35 apps + 5 experiments = **40 projects**  
-**Net additions to projects.json:** +7 entries (2 apps + 5 experiments)  
-**Net new source code files:** 2
+Execution proceeds only after explicit approval per step.
 
----
-
-## Non-Goals (out of scope)
-
-- Packaging/serving experiments (they have no built output)
-- Adding screenshots for experiments (none exist)
-- Changing the existing app entries' data beyond adding `sourceType`
-- Adding a GitHub source URL (all are `""` in source data)
+- [x] Step A: Documentation alignment update
+- Update `README.md` pipeline section to reflect apps+experiments metadata generation.
+- Approval gate: "Approve Step A"
+- [x] Step B: Metadata schema hardening in generator
+- Add stricter normalization + warnings in `scripts/dashboard-deps.js`.
+- Approval gate: "Approve Step B"
+- [x] Step C: UX robustness pass
+- Improve empty states, missing media handling, and tabs accessibility.
+- Approval gate: "Approve Step C"
+- [x] Step D: Logic extraction and tests
+- Extract filter/sort utilities and add focused tests.
+- Approval gate: "Approve Step D"
+- [x] Step E: Optional scale design
+- Evaluate and implement split metadata files only if needed.
+- Approval gate: "Approve Step E"
