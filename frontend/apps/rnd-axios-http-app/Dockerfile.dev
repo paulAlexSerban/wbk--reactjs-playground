@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/rnd-axios-http-app ./frontend/apps/rnd-axios-http-app
+RUN yarn install
+CMD [ "yarn", "develop:rnd-axios-http-app"]

@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/json-to-excel-app ./frontend/apps/json-to-excel-app
+RUN yarn install
+CMD [ "yarn", "develop:json-to-excel-app"]

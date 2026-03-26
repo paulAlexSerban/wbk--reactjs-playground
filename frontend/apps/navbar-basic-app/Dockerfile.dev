@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/navbar-basic-app ./frontend/apps/navbar-basic-app
+RUN yarn install
+CMD [ "yarn", "develop:navbar-basic-app"]

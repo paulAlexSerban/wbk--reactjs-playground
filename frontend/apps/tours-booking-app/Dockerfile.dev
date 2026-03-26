@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/tours-booking-app ./frontend/apps/tours-booking-app
+RUN yarn install
+CMD [ "yarn", "develop:tours-booking-app"]

@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/sidebar-tabs-app ./frontend/apps/sidebar-tabs-app
+RUN yarn install
+CMD [ "yarn", "develop:sidebar-tabs-app"]

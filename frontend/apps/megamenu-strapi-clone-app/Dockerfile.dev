@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/megamenu-strapi-clone-app ./frontend/apps/megamenu-strapi-clone-app
+RUN yarn install
+CMD [ "yarn", "develop:megamenu-strapi-clone-app"]

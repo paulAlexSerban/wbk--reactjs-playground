@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/reviews-app ./frontend/apps/reviews-app
+RUN yarn install
+CMD [ "yarn", "develop:reviews-app"]

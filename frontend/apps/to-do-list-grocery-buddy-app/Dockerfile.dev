@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/to-do-list-grocery-buddy-app ./frontend/apps/to-do-list-grocery-buddy-app
+RUN yarn install
+CMD [ "yarn", "develop:to-do-list-grocery-buddy-app"]

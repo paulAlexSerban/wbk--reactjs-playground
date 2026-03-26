@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/form-user-list-app ./frontend/apps/form-user-list-app
+RUN yarn install
+CMD [ "yarn", "develop:form-user-list-app"]

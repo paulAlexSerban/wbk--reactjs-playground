@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/sidebar-and-modal-basic-app ./frontend/apps/sidebar-and-modal-basic-app
+RUN yarn install
+CMD [ "yarn", "develop:sidebar-and-modal-basic-app"]

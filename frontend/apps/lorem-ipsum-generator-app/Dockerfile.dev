@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/lorem-ipsum-generator-app ./frontend/apps/lorem-ipsum-generator-app
+RUN yarn install
+CMD [ "yarn", "develop:lorem-ipsum-generator-app"]

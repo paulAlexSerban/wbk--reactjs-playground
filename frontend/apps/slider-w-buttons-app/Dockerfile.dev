@@ -1,0 +1,4 @@
+FROM wbk--mern-playground__core:latest as builder
+COPY ./frontend/apps/slider-w-buttons-app ./frontend/apps/slider-w-buttons-app
+RUN yarn install
+CMD [ "yarn", "develop:slider-w-buttons-app"]
