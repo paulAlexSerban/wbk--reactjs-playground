@@ -1,0 +1,29 @@
+{
+  "name": "Reviews App",
+  "version": "0.2.1",
+  "description": "A simple reviews app built with ReactJS and TypeScript.",
+  "slug": "reviews-app",
+  "id": "reviews-app-01",
+  "shortDescription": "A simple reviews app built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "reviews-app_1-1920_1440.webp",
+    "reviews-app_2-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2024-06-20T00:00:00.000Z",
+  "tags": [
+    "reviews",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}

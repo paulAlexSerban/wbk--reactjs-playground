@@ -1,0 +1,30 @@
+{
+  "name": "Sidebar and Modal Basic",
+  "version": "0.2.0",
+  "description": "A basic sidebar and modal component built with ReactJS and TypeScript.",
+  "slug": "sidebar-and-modal-basic-app",
+  "id": "sidebar-and-modal-basic-app-01",
+  "shortDescription": "A basic sidebar and modal component built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "sidebar-and-modal-basic-app_1-1920_1440.webp",
+    "sidebar-and-modal-basic-app_2-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2024-06-20T00:00:00.000Z",
+  "tags": [
+    "sidebar",
+    "modal",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}

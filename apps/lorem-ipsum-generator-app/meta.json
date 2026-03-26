@@ -1,0 +1,31 @@
+{
+  "name": "Lorem Ipsum Generator",
+  "version": "0.2.1",
+  "description": "A simple Lorem Ipsum generator app built with ReactJS and TypeScript.",
+  "slug": "lorem-ipsum-generator-app",
+  "id": "lorem-ipsum-generator-app-01",
+  "shortDescription": "A simple Lorem Ipsum generator app built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "lorem-ipsum-generator-app_1-1920_1440.webp",
+    "lorem-ipsum-generator-app_2-1920_1440.webp",
+    "lorem-ipsum-generator-app_3-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2024-06-20T00:00:00.000Z",
+  "tags": [
+    "lorem ipsum",
+    "generator",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
