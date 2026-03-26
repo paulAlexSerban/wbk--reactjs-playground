@@ -465,16 +465,16 @@ const matrix = [
 
 export default function App() {
     const [openDomains, setOpenDomains] = useState(Object.fromEntries(matrix.map((_, i) => [i, i < 3])));
-    const [openCats, setOpenCats] = useState({});
-    const [activeLevel, setActiveLevel] = useState(null);
-    const [highlightSkill, setHighlightSkill] = useState(null);
+    const [openCats, setOpenCats] = useState<Record<string, boolean>>({});
+    const [activeLevel, setActiveLevel] = useState<number | null>(null);
+    const [highlightSkill, setHighlightSkill] = useState<string | null>(null);
     const [view, setView] = useState('matrix'); // matrix | prereqs
 
-    const toggleDomain = (i) => setOpenDomains((p) => ({ ...p, [i]: !p[i] }));
-    const toggleCat = (k) => setOpenCats((p) => ({ ...p, [k]: p[k] === false ? true : false }));
+    const toggleDomain = (i: number) => setOpenDomains((p) => ({ ...p, [i]: !p[i] }));
+    const toggleCat = (k: string) => setOpenCats((p) => ({ ...p, [k]: p[k] === false ? true : false }));
 
     // Build prereq index
-    const allSkills = {};
+    const allSkills: Record<string, { name: string; prereqs: string[]; levels: string[] }> = {};
     matrix.forEach((d) =>
         d.categories.forEach((c) =>
             c.skills.forEach((s) => {
@@ -585,7 +585,7 @@ export default function App() {
                 <PrereqMap allSkills={allSkills} matrix={matrix} />
             ) : (
                 matrix.map((dom, di) => {
-                    const dc = DOMAIN_COLORS[dom.domain] || DOMAIN_COLORS['Programming'];
+                    const dc = DOMAIN_COLORS[dom.domain as keyof typeof DOMAIN_COLORS] || DOMAIN_COLORS['Programming'];
                     return (
                         <div
                             key={di}
@@ -653,7 +653,7 @@ export default function App() {
                                             >
                                                 <span>
                                                     📁 {cat.name}
-                                                    {cat.bridging && (
+                                                    {'bridging' in cat && (
                                                         <span
                                                             style={{
                                                                 marginLeft: 8,
@@ -791,31 +791,55 @@ export default function App() {
     );
 }
 
-function PrereqMap({ allSkills, matrix }) {
-    const [hover, setHover] = useState(null);
+type _MatrixType = {
+    domain: string;
+    icon: string;
+    note?: string;
+    categories: {
+        name: string;
+        bridging?: string;
+        skills: { name: string; prereqs: string[]; levels: string[] }[];
+    }[];
+}[];
 
-    const nodes = [];
-    const edges = [];
-    const domainList = matrix.map((d) => d.domain);
+function PrereqMap({
+    allSkills: _allSkills,
+    matrix,
+}: {
+    allSkills: Record<string, { name: string; prereqs: string[]; levels: string[] }>;
+    matrix: _MatrixType;
+}) {
+    type DomainColor = { bg: string; badge: string; light: string; text: string };
+    type SkillEntry = {
+        name: string;
+        prereqs: string[];
+        levels: string[];
+        domain: string;
+        icon: string;
+        color: DomainColor;
+    };
+    type PositionedSkill = SkillEntry & { x: number; y: number; cx: number; cy: number };
+    type Edge = { from: PositionedSkill; to: PositionedSkill; label: string };
 
-    // Assign positions by domain column, skill row
-    const domainSkills = {};
-    matrix.forEach((d, di) => {
+    const [hover, setHover] = useState<string | null>(null);
+
+    const nodes: Array<{ name: string; x: number; y: number; domain: string; color: DomainColor }> = [];
+    const domainSkills: Record<string, string[]> = {};
+    matrix.forEach((d) => {
         domainSkills[d.domain] = [];
         d.categories.forEach((c) => c.skills.forEach((s) => domainSkills[d.domain].push(s.name)));
     });
 
     const COL_W = 110,
-        ROW_H = 52,
-        COLS = 8;
-    const domainIdx = {};
+        ROW_H = 52;
+    const domainIdx: Record<string, number> = {};
     matrix.forEach((d, i) => {
         domainIdx[d.domain] = i;
     });
 
-    const nodeMap = {};
+    const nodeMap: Record<string, { x: number; y: number; domain: string; icon: string; color: DomainColor }> = {};
     matrix.forEach((d, di) => {
-        const dc = DOMAIN_COLORS[d.domain] || DOMAIN_COLORS['Programming'];
+        const dc = DOMAIN_COLORS[d.domain as keyof typeof DOMAIN_COLORS] || DOMAIN_COLORS['Programming'];
         d.categories.forEach((cat) => {
             cat.skills.forEach((s, si) => {
                 const x = 60 + di * COL_W;
@@ -827,7 +851,7 @@ function PrereqMap({ allSkills, matrix }) {
     });
 
     // Recalculate y per skill across all domains stacked
-    const allSkillList = [];
+    const allSkillList: SkillEntry[] = [];
     matrix.forEach((d) =>
         d.categories.forEach((c) =>
             c.skills.forEach((s) =>
@@ -835,7 +859,7 @@ function PrereqMap({ allSkills, matrix }) {
                     ...s,
                     domain: d.domain,
                     icon: d.icon,
-                    color: DOMAIN_COLORS[d.domain] || DOMAIN_COLORS['Programming'],
+                    color: DOMAIN_COLORS[d.domain as keyof typeof DOMAIN_COLORS] || DOMAIN_COLORS['Programming'],
                 })
             )
         )
@@ -846,7 +870,7 @@ function PrereqMap({ allSkills, matrix }) {
         NH = 56,
         GAPX = 20,
         GAPY = 14;
-    const positioned = allSkillList.map((s, i) => {
+    const positioned: PositionedSkill[] = allSkillList.map((s, i) => {
         const col = i % GRID_COLS,
             row = Math.floor(i / GRID_COLS);
         return {
@@ -857,11 +881,12 @@ function PrereqMap({ allSkills, matrix }) {
             cy: row * (NH + GAPY) + NH / 2,
         };
     });
-    const posMap = {};
+    const posMap: Record<string, PositionedSkill> = {};
     positioned.forEach((p) => {
         posMap[p.name] = p;
     });
 
+    const edges: Edge[] = [];
     positioned.forEach((p) => {
         (p.prereqs || []).forEach((pr) => {
             const pname = pr.split(' L')[0];
@@ -890,11 +915,7 @@ function PrereqMap({ allSkills, matrix }) {
                     {edges.map((e, i) => {
                         const isHL = hover && (hover === e.from.name || hover === e.to.name);
                         const x1 = e.from.cx,
-                            y1 = e.from.cy + e.from.y - e.from.y + NH / 2,
-                            x2 = e.to.cx,
-                            y2 = e.to.cy;
-                        // simple cubic bezier
-                        const mx = (x1 + x2) / 2;
+                            x2 = e.to.cx;
                         return (
                             <g key={i} opacity={hover && !isHL ? 0.12 : 1}>
                                 <path

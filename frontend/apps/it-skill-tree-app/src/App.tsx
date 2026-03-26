@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -260,7 +260,7 @@ const CX = 80,
     PAD_Y = 60;
 const NR = 30; // node radius
 
-function nodePos(skill) {
+function nodePos(skill: { row: number; col: number }) {
     return {
         x: PAD_X + skill.col * CX,
         y: PAD_Y + skill.row * CY,
@@ -272,7 +272,7 @@ const COLS = Math.max(...SKILLS.map((s) => s.col)) + 1;
 const SVG_W = PAD_X * 2 + (COLS - 1) * CX;
 const SVG_H = PAD_Y * 2 + (ROWS - 1) * CY;
 
-function canUnlock(skillId, levels) {
+function canUnlock(skillId: string, levels: Record<string, number>) {
     const skill = SKILLS.find((s) => s.id === skillId);
     if (!skill) return false;
     return skill.prereqs.every((pid) => (levels[pid] || 0) >= 1);
@@ -281,15 +281,15 @@ function canUnlock(skillId, levels) {
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 
 export default function App() {
-    const [levels, setLevels] = useState({});
-    const [selected, setSelected] = useState(null);
-    const containerRef = useRef();
+    const [levels, setLevels] = useState<Record<string, number>>({});
+    const [selected, setSelected] = useState<string | null>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const totalSpent = Object.values(levels).reduce((a, b) => a + b, 0);
     const remaining = TOTAL_POINTS - totalSpent;
 
     const addPoint = useCallback(
-        (id) => {
+        (id: string) => {
             if (remaining <= 0) return;
             if (!canUnlock(id, levels)) return;
             const cur = levels[id] || 0;
@@ -300,7 +300,7 @@ export default function App() {
     );
 
     const removePoint = useCallback(
-        (id) => {
+        (id: string) => {
             const cur = levels[id] || 0;
             if (cur <= 0) return;
             const wouldBreak = SKILLS.some((s) => s.prereqs.includes(id) && (levels[s.id] || 0) >= 1 && cur - 1 < 1);
@@ -317,10 +317,10 @@ export default function App() {
 
     const selSkill = selected ? SKILLS.find((s) => s.id === selected) : null;
     const selLevel = selected ? levels[selected] || 0 : 0;
-    const selDom = selSkill ? DOMAINS[selSkill.domain] : null;
+    const selDom = selSkill ? DOMAINS[selSkill.domain as keyof typeof DOMAINS] : DOMAINS.core;
 
     // edges
-    const edges = [];
+    const edges: { from: (typeof SKILLS)[number]; to: (typeof SKILLS)[number] }[] = [];
     SKILLS.forEach((s) =>
         s.prereqs.forEach((pid) => {
             const from = SKILLS.find((sk) => sk.id === pid);
@@ -452,7 +452,7 @@ export default function App() {
                                 p2 = nodePos(e.to);
                             const lv = levels[e.from.id] || 0;
                             const active = lv >= 1;
-                            const dom = DOMAINS[e.from.domain];
+                            const dom = DOMAINS[e.from.domain as keyof typeof DOMAINS];
                             const isSel = selected && (selected === e.from.id || selected === e.to.id);
                             const mx = (p1.x + p2.x) / 2,
                                 my = (p1.y + p2.y) / 2;
@@ -502,7 +502,7 @@ export default function App() {
                         {SKILLS.map((skill) => {
                             const { x, y } = nodePos(skill);
                             const lv = levels[skill.id] || 0;
-                            const dom = DOMAINS[skill.domain];
+                            const dom = DOMAINS[skill.domain as keyof typeof DOMAINS];
                             const unlockable = canUnlock(skill.id, levels) && lv < 5 && remaining > 0;
                             const locked = !canUnlock(skill.id, levels) && lv === 0;
                             const isSel = selected === skill.id;
@@ -513,7 +513,7 @@ export default function App() {
                                     key={skill.id}
                                     style={{ cursor: unlockable || lv > 0 ? 'pointer' : 'default' }}
                                     onClick={() => {
-                                        setSelected(isSel ? null : skill.id);
+                                        setSelected(isSel ? null : (skill.id as string));
                                         if (unlockable) addPoint(skill.id);
                                     }}
                                     onContextMenu={(e) => {
@@ -715,7 +715,7 @@ export default function App() {
                                         CURRENT — L{selLevel}
                                     </div>
                                     <div style={{ fontSize: 11, color: '#c9a84c', lineHeight: 1.55 }}>
-                                        {LEVEL_DESCS[selSkill.id]?.[selLevel - 1]}
+                                        {(LEVEL_DESCS as Record<string, string[]>)[selSkill.id]?.[selLevel - 1]}
                                     </div>
                                 </div>
                             )}
@@ -735,7 +735,7 @@ export default function App() {
                                         NEXT — L{selLevel + 1}
                                     </div>
                                     <div style={{ fontSize: 11, color: '#5a3a1a', lineHeight: 1.55 }}>
-                                        {LEVEL_DESCS[selSkill.id]?.[selLevel]}
+                                        {(LEVEL_DESCS as Record<string, string[]>)[selSkill.id]?.[selLevel]}
                                     </div>
                                 </div>
                             )}
@@ -749,11 +749,11 @@ export default function App() {
                                     {selSkill.prereqs.map((pid) => {
                                         const ps = SKILLS.find((s) => s.id === pid);
                                         const pl = levels[pid] || 0;
-                                        const pd = DOMAINS[ps.domain];
+                                        const pd = DOMAINS[ps!.domain as keyof typeof DOMAINS];
                                         return (
                                             <div
                                                 key={pid}
-                                                onClick={() => setSelected(pid)}
+                                                onClick={() => setSelected(pid as string)}
                                                 style={{
                                                     display: 'flex',
                                                     alignItems: 'center',
@@ -774,7 +774,7 @@ export default function App() {
                                                     }}
                                                 />
                                                 <span style={{ fontSize: 10, color: pl >= 1 ? pd.color : '#3a1a08' }}>
-                                                    {ps.label}
+                                                    {ps!.label}
                                                 </span>
                                                 <span style={{ fontSize: 9, color: '#3a1a08', marginLeft: 'auto' }}>
                                                     {pl}/5
@@ -796,12 +796,12 @@ export default function App() {
                                             UNLOCKS
                                         </div>
                                         {unlocks.map((us) => {
-                                            const ud = DOMAINS[us.domain];
+                                            const ud = DOMAINS[us.domain as keyof typeof DOMAINS];
                                             const ul = levels[us.id] || 0;
                                             return (
                                                 <div
                                                     key={us.id}
-                                                    onClick={() => setSelected(us.id)}
+                                                    onClick={() => setSelected(us.id as string)}
                                                     style={{
                                                         display: 'flex',
                                                         alignItems: 'center',
