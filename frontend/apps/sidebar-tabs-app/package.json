@@ -1,5 +1,32 @@
 {
     "name": "@wbk--reactjs-playground/sidebar-tabs-app",
+    "id": "sidebar-tabs-app-01",
+    "formattedName": "Sidebar Tabs",
+    "description": "A sidebar with tabs component built with ReactJS and TypeScript.",
+    "shortDescription": "A sidebar with tabs component built with ReactJS and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "sidebar-tabs-app_1-1920_1440.webp",
+        "sidebar-tabs-app_2-1920_1440.webp",
+        "sidebar-tabs-app_3-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-20T00:00:00.000Z",
+    "tags": [
+        "sidebar",
+        "tabs",
+        "react",
+        "typescript",
+        "frontend"
+    ],
     "private": true,
     "version": "0.2.0",
     "type": "module",

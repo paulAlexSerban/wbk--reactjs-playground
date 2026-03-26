@@ -1,5 +1,36 @@
 {
     "name": "@wbk--reactjs-playground/form-user-list-app",
+    "id": "form-user-list-app-01",
+    "formattedName": "Form User List App",
+    "description": "A simple React app to manage a list of users with a form",
+    "shortDescription": "A simple React app to manage a list of users with a form",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Jest",
+        "Testing Library"
+    ],
+    "images": [
+        "form-user-list-app-1-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2025-12-17T00:00:00.000Z",
+    "tags": [
+        "web",
+        "form",
+        "user list",
+        "react",
+        "typescript",
+        "frontend",
+        "vite",
+        "jest",
+        "testing"
+    ],
     "private": true,
     "version": "0.2.1",
     "type": "module",

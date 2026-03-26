@@ -11,10 +11,13 @@ function App() {
     };
 
     return (
-        <div>
-            <UserForm onUserAdd={onUserAdd} />
-            <hr />
-            <UserList users={users} />
+        <div className="app-shell">
+            <div className="card">
+                <h1 className="app-title">User List</h1>
+                <UserForm onUserAdd={onUserAdd} />
+                <hr className="divider" />
+                <UserList users={users} />
+            </div>
         </div>
     );
 }

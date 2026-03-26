@@ -1,5 +1,29 @@
 {
     "name": "@wbk--reactjs-playground/navbar-basic-app",
+    "id": "navbar-basic-app-01",
+    "formattedName": "Navbar Basic",
+    "description": "A basic navbar component built with ReactJS and TypeScript.",
+    "shortDescription": "A basic navbar component built with ReactJS and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "navbar-basic-app_1-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-20T00:00:00.000Z",
+    "tags": [
+        "navbar",
+        "react",
+        "typescript",
+        "frontend"
+    ],  
     "private": true,
     "version": "0.2.1",
     "type": "module",

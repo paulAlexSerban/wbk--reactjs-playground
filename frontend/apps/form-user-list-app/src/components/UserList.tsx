@@ -14,14 +14,24 @@ const UserList: FC<UserListProps> = ({ users }) => {
     });
 
     return (
-        <table>
+        <table className="user-table">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                 </tr>
             </thead>
-            <tbody data-testid="users">{renderedUsers}</tbody>
+            <tbody data-testid="users">
+                {users.length > 0 ? (
+                    renderedUsers
+                ) : (
+                    <tr>
+                        <td className="empty-state" colSpan={2}>
+                            No users added yet.
+                        </td>
+                    </tr>
+                )}
+            </tbody>
         </table>
     );
 };

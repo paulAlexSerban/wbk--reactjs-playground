@@ -25,16 +25,20 @@ const UserForm: FC<UserFormProps> = ({ onUserAdd }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="name">Names</label>
-                <input id="name" value={name} onChange={handleNameChange} aria-label="Names" />
+        <form onSubmit={handleSubmit} className="user-form">
+            <div className="form-group">
+                <label htmlFor="name" className="form-label">
+                    Name
+                </label>
+                <input id="name" value={name} onChange={handleNameChange} aria-label="Names" className="form-input" />
             </div>
-            <div>
-                <label htmlFor="email">Enter Email</label>
-                <input id="email" value={email} onChange={handleEmailChange} aria-label="Email" />
+            <div className="form-group">
+                <label htmlFor="email" className="form-label">
+                    Enter Email
+                </label>
+                <input id="email" value={email} onChange={handleEmailChange} aria-label="Email" className="form-input" />
             </div>
-            <button>Add User</button>
+            <button className="form-button">Add User</button>
         </form>
     );
 };

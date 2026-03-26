@@ -1,5 +1,32 @@
 {
     "name": "@wbk--reactjs-playground/to-do-list-grocery-buddy-app",
+    "id": "to-do-list-grocery-buddy-app-01",
+    "formattedName": "To-Do List & Grocery Buddy",
+    "description": "A to-do list and grocery buddy app built with ReactJS and TypeScript.",
+    "shortDescription": "A to-do list and grocery buddy app built with ReactJS and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "to-do-list-grocery-buddy-app_1-1920_1440.webp",
+        "to-do-list-grocery-buddy-app_2-1920_1440.webp",
+        "to-do-list-grocery-buddy-app_3-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-20T00:00:00.000Z",
+    "tags": [
+        "to-do list",
+        "grocery buddy",
+        "react",
+        "typescript",
+        "frontend"
+    ],
     "private": true,
     "version": "0.1.1",
     "type": "module",

@@ -1,5 +1,32 @@
 {
     "name": "@wbk--reactjs-playground/tours-booking-app",
+    "id": "tours-booking-app-01",
+    "formattedName": "Tours Booking App",
+    "description": "A simple tours booking app built with ReactJS and TypeScript.",
+    "shortDescription": "A simple tours booking app built with ReactJS and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "tours-booking-app_1-1920_1440.webp",
+        "tours-booking-app_2-1920_1440.webp",
+        "tours-booking-app_3-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-20T00:00:00.000Z",
+    "tags": [
+        "tours",
+        "booking",
+        "react",
+        "typescript",
+        "frontend"
+    ],  
     "private": true,
     "version": "0.1.1",
     "type": "module",

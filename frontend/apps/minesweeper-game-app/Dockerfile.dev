@@ -1,4 +1,0 @@
-FROM wbk--mern-playground__core:latest as builder
-COPY ./frontend/apps/minesweeper-game-app ./frontend/apps/minesweeper-game-app
-RUN yarn install
-CMD [ "yarn", "develop:minesweeper-game-app"]

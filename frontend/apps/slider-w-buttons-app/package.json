@@ -1,5 +1,30 @@
 {
     "name": "@wbk--reactjs-playground/slider-w-buttons-app",
+    "id": "slider-w-buttons-app-01",
+    "formattedName": "Slider with Buttons",
+    "description": "A slider component with buttons built with ReactJS and TypeScript.",
+    "shortDescription": "A slider component with buttons built with ReactJS and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
+    "images": [
+        "slider-w-buttons-app_1-1920_1440.webp"
+    ],
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
+    "createdAt": "2024-06-20T00:00:00.000Z",
+    "tags": [
+        "slider",
+        "buttons",
+        "react",
+        "typescript",
+        "frontend"
+    ],
     "private": true,
     "version": "0.1.1",
     "type": "module",
