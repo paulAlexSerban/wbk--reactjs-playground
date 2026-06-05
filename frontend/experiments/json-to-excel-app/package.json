@@ -1,8 +1,22 @@
 {
     "name": "@wbk--reactjs-playground/json-to-excel-app",
+    "id": "json-to-excel-app-01",
+    "formattedName": "JSON to Excel App",
+    "description": "A JSON to Excel app built with ReactJS and TypeScript.",
+    "shortDescription": "A JSON to Excel app built with ReactJS and TypeScript.",
+    "category": "Web App",
+    "techStack": [
+        "React",
+        "TypeScript",
+        "Vite"
+    ],
     "private": true,
     "version": "0.1.0",
     "type": "module",
+    "sourceUrl": "",
+    "demoUrl": "",
+    "docsUrl": "",
+    "featured": false,
     "scripts": {
         "dev": "vite --host --port 8080",
         "build:dev": "export NODE_ENV=development && tsc && vite build",

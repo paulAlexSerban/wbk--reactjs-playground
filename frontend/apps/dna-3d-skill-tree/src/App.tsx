@@ -1,6 +1,6 @@
 import { useRef, useState, useMemo, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Html, Sphere, Tube, CatmullRomLine, Stars } from '@react-three/drei';
+import { OrbitControls, Html, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -12,7 +12,7 @@ const REPOS = [
         repo: 'wbk--software-architecture-and-system-design',
         strand: 'center',
         desc: 'The root — system thinking, design patterns, and architectural principles.',
-        t: 0.0,
+        t: 0.5,
     },
     {
         id: 'dsa-py',
@@ -116,9 +116,9 @@ const REPOS = [
 
 const HELIX_HEIGHT = 22;
 const HELIX_RADIUS = 2.2;
-const HELIX_TURNS = 3.5;
+const HELIX_TURNS = 2;
 
-function helixPoint(t, phase = 0) {
+function helixPoint(t: number, phase = 0) {
     const angle = t * Math.PI * 2 * HELIX_TURNS + phase;
     const y = (t - 0.5) * HELIX_HEIGHT;
     return new THREE.Vector3(Math.cos(angle) * HELIX_RADIUS, y, Math.sin(angle) * HELIX_RADIUS);
@@ -134,7 +134,7 @@ const COLORS = {
     theory: '#00d4ff',
     practice: '#00ff9d',
     center: '#ff6b6b',
-    rung: 'rgba(255,255,255,0.18)',
+    rung: '#ffffff',
     bg: '#050a0f',
 };
 
@@ -146,11 +146,11 @@ const EMISSIVE = {
 
 // ─── Strand Tube ─────────────────────────────────────────────────────────────
 
-function StrandTube({ phase, color }) {
+function StrandTube({ phase, color }: { phase: number; color: string }) {
     const points = useMemo(() => strandPoints(phase), [phase]);
     const curve = useMemo(() => new THREE.CatmullRomCurve3(points), [points]);
     return (
-        <mesh>
+        <mesh raycast={() => null}>
             <tubeGeometry args={[curve, 200, 0.045, 8, false]} />
             <meshStandardMaterial
                 color={color}
@@ -182,16 +182,23 @@ function Rungs() {
 
     return (
         <group>
-            {rungs.map(({ a, b, t }, i) => {
+            {rungs.map(({ a, b }, i) => {
                 const mid = new THREE.Vector3().lerpVectors(a, b, 0.5);
                 const dir = new THREE.Vector3().subVectors(b, a);
                 const len = dir.length();
                 const quat = new THREE.Quaternion();
                 quat.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
                 return (
-                    <mesh key={i} position={mid} quaternion={quat}>
+                    <mesh key={i} position={mid} quaternion={quat} raycast={() => null}>
                         <cylinderGeometry args={[0.025, 0.025, len, 6]} />
-                        <meshStandardMaterial color="#ffffff" transparent opacity={0.12} roughness={0.8} />
+                        <meshStandardMaterial
+                            color="#ffffff"
+                            emissive="#ffffff"
+                            emissiveIntensity={0.8}
+                            transparent
+                            opacity={0.45}
+                            roughness={0.4}
+                        />
                     </mesh>
                 );
             })}
@@ -201,13 +208,21 @@ function Rungs() {
 
 // ─── Node ─────────────────────────────────────────────────────────────────────
 
-function Node({ repo, selected, onSelect, username = 'YOUR_USERNAME' }) {
-    const meshRef = useRef();
+function Node({
+    repo,
+    selected,
+    onSelect,
+}: {
+    repo: (typeof REPOS)[number];
+    selected: boolean;
+    onSelect: (repo: (typeof REPOS)[number]) => void;
+}) {
+    const meshRef = useRef<THREE.Mesh>(null);
     const [hovered, setHovered] = useState(false);
 
     const isCenter = repo.strand === 'center';
-    const color = COLORS[repo.strand];
-    const emissive = EMISSIVE[repo.strand];
+    const color = COLORS[repo.strand as keyof typeof COLORS];
+    const emissive = EMISSIVE[repo.strand as keyof typeof EMISSIVE];
 
     const pos = useMemo(() => {
         if (isCenter) {
@@ -222,15 +237,32 @@ function Node({ repo, selected, onSelect, username = 'YOUR_USERNAME' }) {
         if (!meshRef.current) return;
         const pulse = Math.sin(state.clock.elapsedTime * 2 + repo.t * 10) * 0.08 + 1;
         const scale = (hovered || selected ? 1.5 : 1) * (selected ? pulse : 1);
-        meshRef.current.scale.setScalar(scale);
+        meshRef.current!.scale.setScalar(scale);
     });
 
     const radius = isCenter ? 0.28 : 0.18;
 
+    const handlePointerOver = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        setHovered(true);
+        document.body.style.cursor = 'pointer';
+    };
+
+    const handlePointerOut = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        setHovered(false);
+        document.body.style.cursor = 'default';
+    };
+
+    const handleSelect = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        onSelect(repo);
+    };
+
     return (
         <group position={pos}>
-            {/* Outer glow halo */}
-            <mesh>
+            {/* Outer glow halo — non-interactive so clicks reach the node sphere */}
+            <mesh raycast={() => null}>
                 <sphereGeometry args={[radius * 2.2, 16, 16]} />
                 <meshStandardMaterial
                     color={color}
@@ -244,51 +276,53 @@ function Node({ repo, selected, onSelect, username = 'YOUR_USERNAME' }) {
             {/* Main sphere */}
             <mesh
                 ref={meshRef}
-                onPointerOver={(e) => {
-                    e.stopPropagation();
-                    setHovered(true);
-                    document.body.style.cursor = 'pointer';
-                }}
-                onPointerOut={() => {
-                    setHovered(false);
-                    document.body.style.cursor = 'default';
-                }}
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onSelect(repo);
-                }}
+                onPointerOver={handlePointerOver}
+                onPointerOut={handlePointerOut}
+                onClick={handleSelect}
             >
                 <sphereGeometry args={[radius, 24, 24]} />
                 <meshStandardMaterial
                     color={color}
-                    emissive={color}
+                    emissive={emissive}
                     emissiveIntensity={hovered || selected ? 2.5 : 1.4}
                     roughness={0.1}
                     metalness={0.5}
                 />
             </mesh>
 
+            {/* Invisible larger hit target for easier clicking */}
+            <mesh onPointerOver={handlePointerOver} onPointerOut={handlePointerOut} onClick={handleSelect}>
+                <sphereGeometry args={[radius * 1.8, 16, 16]} />
+                <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+            </mesh>
+
             {/* Label */}
-            <Html center distanceFactor={10} style={{ pointerEvents: 'none', userSelect: 'none' }}>
+            <Html center distanceFactor={6} style={{ pointerEvents: 'none', userSelect: 'none' }}>
                 <div
                     style={{
                         fontFamily: "'Space Mono', monospace",
-                        fontSize: '9px',
-                        color: hovered || selected ? '#fff' : color,
+                        fontSize: '25px',
+                        color: '#ffffff',
                         whiteSpace: 'pre-line',
                         textAlign: repo.strand === 'practice' ? 'left' : repo.strand === 'theory' ? 'right' : 'center',
-                        lineHeight: 1.4,
-                        textShadow: `0 0 12px ${color}`,
+                        lineHeight: 1.35,
+                        background: 'rgba(5, 10, 15, 0.82)',
+                        padding: '5px 10px',
+                        borderRadius: 4,
+                        border: `1px solid ${hovered || selected ? color : `${color}88`}`,
+                        boxShadow: `0 0 14px ${color}44, 0 2px 8px rgba(0, 0, 0, 0.6)`,
+                        textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
                         transform:
                             repo.strand === 'practice'
-                                ? 'translateX(28px)'
+                                ? 'translateX(36px)'
                                 : repo.strand === 'theory'
-                                  ? 'translateX(-28px)'
-                                  : 'translateY(-32px)',
-                        letterSpacing: '0.04em',
-                        fontWeight: selected ? 700 : 400,
-                        transition: 'color 0.2s',
-                        width: '90px',
+                                  ? 'translateX(-36px)'
+                                  : 'translateY(-40px)',
+                        letterSpacing: '0.03em',
+                        fontWeight: selected ? 700 : 600,
+                        transition: 'border-color 0.2s, box-shadow 0.2s',
+                        width: '150px',
+                        maxWidth: '350px',
                     }}
                 >
                     {repo.label}
@@ -300,12 +334,18 @@ function Node({ repo, selected, onSelect, username = 'YOUR_USERNAME' }) {
 
 // ─── Scene ────────────────────────────────────────────────────────────────────
 
-function Scene({ selected, onSelect }) {
-    const groupRef = useRef();
+function Scene({
+    selected,
+    onSelect,
+}: {
+    selected: (typeof REPOS)[number] | null;
+    onSelect: (repo: (typeof REPOS)[number]) => void;
+}) {
+    const groupRef = useRef<THREE.Group>(null);
 
     useFrame((state) => {
         if (groupRef.current && !selected) {
-            groupRef.current.rotation.y = state.clock.elapsedTime * 0.12;
+            groupRef.current.rotation.y = state.clock.elapsedTime * 0.1;
         }
     });
 
@@ -323,7 +363,7 @@ function Scene({ selected, onSelect }) {
 
 // ─── Camera Controller ────────────────────────────────────────────────────────
 
-function CameraRig({ selected }) {
+function CameraRig({ selected }: { selected: (typeof REPOS)[number] | null }) {
     const { camera } = useThree();
     const target = useRef(new THREE.Vector3(0, 0, 14));
 
@@ -350,9 +390,9 @@ function CameraRig({ selected }) {
 
 // ─── Side Panel ───────────────────────────────────────────────────────────────
 
-function Panel({ selected, onClose }) {
+function Panel({ selected, onClose }: { selected: (typeof REPOS)[number] | null; onClose: () => void }) {
     if (!selected) return null;
-    const color = COLORS[selected.strand];
+    const color = COLORS[selected.strand as keyof typeof COLORS];
     const strandLabel = { theory: 'THEORY STRAND', practice: 'PRACTICE STRAND', center: 'ARCHITECTURE CORE' }[
         selected.strand
     ];
@@ -382,7 +422,7 @@ function Panel({ selected, onClose }) {
                             {strandLabel}
                         </div>
                         <div style={{ fontSize: 13, color: '#fff', fontWeight: 700, marginBottom: 6, lineHeight: 1.4 }}>
-                            {selected.repo}
+                            {selected.repo as string}
                         </div>
                         <div style={{ fontSize: 11, color: 'rgba(232,244,248,0.55)', lineHeight: 1.6 }}>
                             {selected.desc}
@@ -390,7 +430,7 @@ function Panel({ selected, onClose }) {
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flexShrink: 0 }}>
                         <a
-                            href={`https://github.com/YOUR_USERNAME/${selected.repo}`}
+                            href={`https://github.com/YOUR_USERNAME/${selected.repo as string}`}
                             target="_blank"
                             rel="noreferrer"
                             style={{
@@ -513,10 +553,10 @@ function Legend() {
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
 export default function DNASkillTree() {
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState<(typeof REPOS)[number] | null>(null);
 
-    const handleSelect = (repo) => {
-        setSelected((prev) => (prev?.id === repo.id ? null : repo));
+    const handleSelect = (repo: (typeof REPOS)[number]) => {
+        setSelected((prev: (typeof REPOS)[number] | null) => (prev?.id === repo.id ? null : repo));
     };
 
     return (
@@ -532,10 +572,10 @@ export default function DNASkillTree() {
             <Legend />
 
             <Canvas
-                camera={{ position: [0, 0, 14], fov: 55 }}
+                camera={{ position: [0, 0, 20], fov: 85 }}
                 gl={{ antialias: true, alpha: false }}
                 style={{ background: COLORS.bg }}
-                onClick={() => setSelected(null)}
+                onPointerMissed={() => setSelected(null)}
             >
                 {/* Lighting */}
                 <ambientLight intensity={0.3} />
@@ -555,7 +595,7 @@ export default function DNASkillTree() {
                 {/* Controls (paused when something is selected) */}
                 {!selected && (
                     <OrbitControls
-                        enablePan={false}
+                        enablePan={true}
                         minDistance={6}
                         maxDistance={28}
                         autoRotate={false}

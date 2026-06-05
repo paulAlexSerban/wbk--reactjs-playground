@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import {
     Fa500Px,
     FaAccusoft,

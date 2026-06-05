@@ -1,4 +1,5 @@
 // Importing necessary libraries, hooks and styles
+import type { JSX } from 'react';
 import { useSelector } from 'react-redux';
 import '../styles/statusbar.css';
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { X, ExternalLink, Github, FileText, ChevronLeft, ChevronRight, Calendar, Tag } from 'lucide-react';
+import { X, ExternalLink, FolderGit, FileText, ChevronLeft, ChevronRight, Calendar, Tag } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -145,7 +145,7 @@ export function ProjectModal({ project, open, onClose }: ProjectModalProps) {
                         {project.sourceUrl && (
                             <Button asChild variant="outline" className="gap-2">
                                 <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
-                                    <Github className="h-4 w-4" />
+                                    <FolderGit className="h-4 w-4" />
                                     Source Code
                                 </a>
                             </Button>

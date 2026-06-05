@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Github, FileText, Star } from 'lucide-react';
+import { ExternalLink, FolderGit, FileText, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -144,7 +144,7 @@ function ListCard({ project, onClick }: { project: Project; onClick: () => void 
                                         rel="noopener noreferrer"
                                         onClick={(e) => e.stopPropagation()}
                                     >
-                                        <Github className="h-4 w-4" />
+                                        <FolderGit className="h-4 w-4" />
                                     </a>
                                 </Button>
                             )}

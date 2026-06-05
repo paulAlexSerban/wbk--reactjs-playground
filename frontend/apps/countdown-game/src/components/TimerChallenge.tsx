@@ -8,7 +8,7 @@ type TimerChallengeProps = {
 };
 
 export default function TimerChallenge({ title, targetTime }: TimerChallengeProps) {
-    const timerRef = useRef<NodeJS.Timeout>();
+    const timerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
     const dialogRef = useRef<ResultModalHandle>(null);
 
     const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);

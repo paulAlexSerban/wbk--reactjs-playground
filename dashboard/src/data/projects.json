@@ -1,23 +1,5 @@
 [
     {
-        "name": "@wbk--reactjs-playground/json-to-excel-app",
-        "version": "0.1.0",
-        "description": "",
-        "slug": "json-to-excel-app",
-        "id": "json-to-excel-app-01",
-        "shortDescription": "",
-        "category": "Web App",
-        "sourceType": "experiment",
-        "techStack": [],
-        "images": [],
-        "sourceUrl": "",
-        "demoUrl": "",
-        "docsUrl": "",
-        "featured": false,
-        "createdAt": "1970-01-01T00:00:00.000Z",
-        "tags": []
-    },
-    {
         "name": "@wbk--reactjs-playground/rnd-axios-http-app",
         "version": "0.2.1",
         "description": "",
@@ -127,6 +109,49 @@
         "featured": false,
         "createdAt": "2023-11-18T00:00:00.000Z",
         "tags": ["counter", "react", "typescript", "frontend"]
+    },
+    {
+        "name": "DFS Mastery Guide Application",
+        "version": "0.1.0",
+        "description": "A DFS mastery guide app built with ReactJS and TypeScript.",
+        "slug": "dfs-mastery-guide-app",
+        "id": "dfs-mastery-guide-app-01",
+        "shortDescription": "A DFS mastery guide app built with ReactJS and TypeScript.",
+        "category": "Web App",
+        "sourceType": "app",
+        "techStack": ["React", "TypeScript", "Vite"],
+        "images": [
+            "dfs-mastery-guide-app_1-1920_1440.webp",
+            "dfs-mastery-guide-app_2-1920_1440.webp",
+            "dfs-mastery-guide-app_3-1920_1440.webp",
+            "dfs-mastery-guide-app_4-1920_1440.webp",
+            "dfs-mastery-guide-app_5-1920_1440.webp",
+            "dfs-mastery-guide-app_6-1920_1440.webp"
+        ],
+        "sourceUrl": "",
+        "demoUrl": "/wbk--reactjs-playground/apps/dfs-mastery-guide-app/",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "2023-11-18T00:00:00.000Z",
+        "tags": []
+    },
+    {
+        "name": "DNA 3D Skill Tree",
+        "version": "0.1.0",
+        "description": "DNA Helix Skill Tree built with three js and drei",
+        "slug": "dna-3d-skill-tree",
+        "id": "dna-3d-skill-tree-01",
+        "shortDescription": "DNA Helix Skill Tree built with three js and drei",
+        "category": "Web App",
+        "sourceType": "app",
+        "techStack": ["React", "TypeScript", "Vite", "Three.js"],
+        "images": ["dna-3d-skill-tree__screenshot-1-1920_1440.webp"],
+        "sourceUrl": "",
+        "demoUrl": "/wbk--reactjs-playground/apps/dna-3d-skill-tree/",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "1970-01-01T00:00:00.000Z",
+        "tags": ["canvas", "animations", "react", "typescript", "frontend"]
     },
     {
         "name": "Dummy Blog",
@@ -380,6 +405,24 @@
         "featured": false,
         "createdAt": "2025-12-17T00:00:00.000Z",
         "tags": ["web", "it skills", "skill tree", "react", "typescript", "frontend", "vite"]
+    },
+    {
+        "name": "JSON to Excel App",
+        "version": "0.1.0",
+        "description": "A JSON to Excel app built with ReactJS and TypeScript.",
+        "slug": "json-to-excel-app",
+        "id": "json-to-excel-app-01",
+        "shortDescription": "A JSON to Excel app built with ReactJS and TypeScript.",
+        "category": "Web App",
+        "sourceType": "experiment",
+        "techStack": ["React", "TypeScript", "Vite"],
+        "images": [],
+        "sourceUrl": "",
+        "demoUrl": "",
+        "docsUrl": "",
+        "featured": false,
+        "createdAt": "1970-01-01T00:00:00.000Z",
+        "tags": []
     },
     {
         "name": "Learn Quizer",
