@@ -1,0 +1,30 @@
+{
+  "name": "DNA 3D Skill Tree",
+  "version": "0.1.0",
+  "description": "DNA Helix Skill Tree built with three js and drei",
+  "slug": "dna-3d-skill-tree",
+  "id": "",
+  "shortDescription": "DNA Helix Skill Tree built with three js and drei",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Three.js"
+  ],
+  "images": [
+    "dna-3d-skill-tree__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2026-.06-05T00:00:00.000Z",
+  "tags": [
+    "canvas",
+    "animations",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
