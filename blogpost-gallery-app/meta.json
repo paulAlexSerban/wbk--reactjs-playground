@@ -1,0 +1,29 @@
+{
+  "name": "Blogpost Gallery App",
+  "version": "0.3.0",
+  "description": "A simple blogpost gallery app built with ReactJS and TypeScript.",
+  "slug": "blogpost-gallery-app",
+  "id": "blogpost-gallery-app-01",
+  "shortDescription": "A simple blogpost gallery app built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "blogpost-gallery-app__screenshot-1-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2023-11-17T00:00:00.000Z",
+  "tags": [
+    "blog",
+    "gallery",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}

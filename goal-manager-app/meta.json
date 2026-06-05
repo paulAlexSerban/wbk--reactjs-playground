@@ -1,0 +1,31 @@
+{
+  "name": "Goal Manager App",
+  "version": "0.3.0",
+  "description": "A simple goal manager app built with ReactJS and TypeScript.",
+  "slug": "goal-manager-app",
+  "id": "goal-manager-app-01",
+  "shortDescription": "A simple goal manager app built with ReactJS and TypeScript.",
+  "category": "Web App",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "Vite"
+  ],
+  "images": [
+    "goal-manager-app__screenshot-1-1920_1440.webp",
+    "goal-manager-app__screenshot-2-1920_1440.webp",
+    "goal-manager-app__screenshot-3-1920_1440.webp"
+  ],
+  "sourceUrl": "",
+  "demoUrl": "",
+  "docsUrl": "",
+  "featured": false,
+  "createdAt": "2025-12-17T00:00:00.000Z",
+  "tags": [
+    "web",
+    "goal manager",
+    "react",
+    "typescript",
+    "frontend"
+  ]
+}
