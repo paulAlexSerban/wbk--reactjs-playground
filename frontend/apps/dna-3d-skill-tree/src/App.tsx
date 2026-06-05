@@ -135,7 +135,7 @@ function helixPoint(t, phase = 0) {
   );
 }
 
-function strandPoints(phase, n = 120) {
+function strandPoints(phase: number, n = 120) {
   return Array.from({ length: n }, (_, i) => helixPoint(i / (n - 1), phase));
 }
 
