@@ -5,7 +5,7 @@
 ### Monorepo Structure (Observed)
 
 ```text
-wbk--reactjs-playground/
+wbk--reactjs-forge/
 |-- frontend/
 |   |-- apps/                 # deployable app workspaces
 |   |-- experiments/          # exploratory app workspaces
@@ -22,7 +22,7 @@ wbk--reactjs-playground/
 |-- scripts/
 |   `-- dashboard-deps.js     # projects.json + serve.json generator
 |-- package/
-|   `-- wbk--reactjs-playground/
+|   `-- wbk--reactjs-forge/
 |       `-- apps/             # packaged build outputs
 `-- _docs/
 ```

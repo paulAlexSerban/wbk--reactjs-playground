@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/megamenu-strapi-clone-app",
+    "name": "@wbk--reactjs-forge/megamenu-strapi-clone-app",
     "id": "megamenu-strapi-clone-app-01",
     "formattedName": "Megamenu Strapi Clone",
     "description": "A megamenu component inspired by the one used in Strapi's website, built with ReactJS and TypeScript.",

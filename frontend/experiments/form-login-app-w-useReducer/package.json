@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/form-login-app-w-usereducer",
+    "name": "@wbk--reactjs-forge/form-login-app-w-usereducer",
     "id": "form-login-app-w-usereducer-01",
     "formattedName": "Form Login App w/ useReducer",
     "description": "A simple form login app using ReactJS and TypeScript with useReducer",

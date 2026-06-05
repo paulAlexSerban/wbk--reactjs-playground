@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/dummy-blog-app",
+    "name": "@wbk--reactjs-forge/dummy-blog-app",
     "id": "dummy-blog-app-01",
     "formattedName": "Dummy Blog",
     "description": "A simple blog application built with ReactJS and TypeScript, demonstrating basic CRUD operations and routing.",

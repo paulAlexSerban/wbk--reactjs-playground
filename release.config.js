@@ -1,6 +1,6 @@
 module.exports = {
     branches: 'release',
-    repositoryUrl: 'https://github.com/paulAlexSerban/wbk--reactjs-playground',
+    repositoryUrl: 'https://github.com/paulAlexSerban/wbk--reactjs-forge',
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',

@@ -14,7 +14,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - **production builds:** pracgice ([f5061fe](https://github.com/paulAlexSerban/wbk--mern-playground/commit/f5061feeb1ce06af5f4fff22a35f5ad2923f8fc2))
 - **typescript:** add type checking in develop script ([e7452a1](https://github.com/paulAlexSerban/wbk--mern-playground/commit/e7452a155aed4eb698b2993513f2d76ddeb865b4))
 
-# [0.2.0](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/blogpost-gallery-app@0.1.0...@wbk--reactjs-playground/blogpost-gallery-app@0.2.0) (2024-02-05)
+# [0.2.0](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/blogpost-gallery-app@0.1.0...@wbk--reactjs-forge/blogpost-gallery-app@0.2.0) (2024-02-05)
 
 ### Features
 

@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/to-do-app",
+    "name": "@wbk--reactjs-forge/to-do-app",
     "id": "to-do-app-01",
     "formattedName": "To-Do App",
     "description": "A feature-rich to-do list application built with React and TypeScript, designed to help users manage tasks efficiently with a clean and intuitive interface.",

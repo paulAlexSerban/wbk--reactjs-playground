@@ -259,7 +259,7 @@ The app uses Vite environment variables:
 
 ```typescript
 // vite.config.ts
-const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-playground/apps/pour-perfect`;
+const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-forge/apps/pour-perfect`;
 ```
 
 ---
@@ -757,7 +757,7 @@ This app is part of a larger React playground workspace. To contribute:
 
 ## License
 
-Part of the wbk--reactjs-playground project. See root LICENSE file.
+Part of the wbk--reactjs-forge project. See root LICENSE file.
 
 ---
 

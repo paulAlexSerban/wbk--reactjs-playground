@@ -13,7 +13,7 @@ if (isNaN(PORT)) {
 }
 
 export default defineConfig(({ command }) => {
-    const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-playground/apps/${SLUG}`;
+    const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-forge/apps/${SLUG}`;
     const config = {
         plugins: [react(), writeMetaPlugin()],
         base: DOMAIN_PATH,

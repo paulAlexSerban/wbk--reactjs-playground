@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.1](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/slider-w-buttons-app@0.1.0...@wbk--reactjs-playground/slider-w-buttons-app@0.1.1) (2024-10-25)
+## [0.1.1](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/slider-w-buttons-app@0.1.0...@wbk--reactjs-forge/slider-w-buttons-app@0.1.1) (2024-10-25)
 
 ### Bug Fixes
 

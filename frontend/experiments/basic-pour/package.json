@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/basic-pour",
+    "name": "@wbk--reactjs-forge/basic-pour",
     "id": "basic-pour-01",
     "formattedName": "AbcBar Tilt Pour Trainer",
     "description": "A mobile pour training application using device orientation sensors to help practice bartending pour precision.",

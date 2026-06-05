@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/form-user-list-app",
+    "name": "@wbk--reactjs-forge/form-user-list-app",
     "id": "form-user-list-app-01",
     "formattedName": "Form User List App",
     "description": "A simple React app to manage a list of users with a form",

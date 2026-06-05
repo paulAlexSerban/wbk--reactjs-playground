@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/lorem-ipsum-generator-app",
+    "name": "@wbk--reactjs-forge/lorem-ipsum-generator-app",
     "id": "lorem-ipsum-generator-app-01",
     "formattedName": "Lorem Ipsum Generator",
     "description": "A simple Lorem Ipsum generator app built with ReactJS and TypeScript.",

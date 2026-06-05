@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.2.0](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/sidebar-tabs-app@0.1.0...@wbk--reactjs-playground/sidebar-tabs-app@0.2.0) (2024-10-25)
+# [0.2.0](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/sidebar-tabs-app@0.1.0...@wbk--reactjs-forge/sidebar-tabs-app@0.2.0) (2024-10-25)
 
 ### Features
 

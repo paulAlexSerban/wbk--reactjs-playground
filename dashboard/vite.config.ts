@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
-    const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-playground/`;
+    const DOMAIN_PATH = command === 'serve' ? '/' : `/wbk--reactjs-forge/`;
     return {
         server: {
             host: '::',

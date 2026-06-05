@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/quiz-app",
+    "name": "@wbk--reactjs-forge/quiz-app",
     "id": "quiz-app-01",
     "formattedName": "Quiz App",
     "description": "A simple quiz app built with React and TypeScript.",

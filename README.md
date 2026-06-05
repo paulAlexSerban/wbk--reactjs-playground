@@ -2,7 +2,7 @@
 
 > A comprehensive showcase of modern React application development, demonstrating enterprise-level monorepo architecture, automated deployment pipelines, and contemporary frontend engineering practices.
 
-[![Deployed](https://img.shields.io/badge/deployed-GitHub%20Pages-success)](https://paulalexserban.github.io/wbk--reactjs-playground/)
+[![Deployed](https://img.shields.io/badge/deployed-GitHub%20Pages-success)](https://paulalexserban.github.io/wbk--reactjs-forge/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-61dafb)](https://reactjs.org/)
 [![Lerna](https://img.shields.io/badge/Lerna-7.3-purple)](https://lerna.js.org/)
@@ -28,7 +28,7 @@ This monorepo demonstrates professional frontend development practices through a
 
 ### Live Demo
 
-**[View Portfolio Dashboard →](https://paulalexserban.github.io/wbk--reactjs-playground/)**
+**[View Portfolio Dashboard →](https://paulalexserban.github.io/wbk--reactjs-forge/)**
 
 The dashboard provides an interactive showcase of all applications with live previews and technical details.
 
@@ -37,7 +37,7 @@ The dashboard provides an interactive showcase of all applications with live pre
 The repository is structured as a Lerna-managed monorepo with clear separation of concerns and reusable build patterns:
 
 ```
-wbk--reactjs-playground/
+wbk--reactjs-forge/
 ├── frontend/
 │   ├── apps/                    # Production React applications
 │   │   ├── learn-quizer/       # Educational quiz platform with spaced repetition
@@ -121,7 +121,7 @@ yarn build:full
 
 2. **App Packaging** (`yarn package:apps`)
     - Executes `scripts/package-apps.bash`
-    - Copies each app's `dist/` to `package/wbk--reactjs-playground/apps/{app-name}`
+    - Copies each app's `dist/` to `package/wbk--reactjs-forge/apps/{app-name}`
     - Maintains project structure for multi-app GitHub Pages deployment
 
 3. **Dependency Generation** (`yarn dashboard:deps`)
@@ -214,7 +214,7 @@ The project implements a production-grade GitHub Actions workflow for continuous
 - Deploy to GitHub Pages using peaceiris/actions-gh-pages@v4
 ```
 
-**Deployment URL:** `https://paulalexserban.github.io/wbk--reactjs-playground/`
+**Deployment URL:** `https://paulalexserban.github.io/wbk--reactjs-forge/`
 
 ### Engineering Solutions
 
@@ -245,8 +245,8 @@ The project implements a production-grade GitHub Actions workflow for continuous
 
 ```bash
 # Clone the repository
-git clone https://github.com/paulAlexSerban/wbk--reactjs-playground.git
-cd wbk--reactjs-playground
+git clone https://github.com/paulAlexSerban/wbk--reactjs-forge.git
+cd wbk--reactjs-forge
 
 # Install dependencies (Lerna will bootstrap all workspaces)
 yarn install

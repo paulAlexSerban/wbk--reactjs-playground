@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/routed-app",
+    "name": "@wbk--reactjs-forge/routed-app",
     "id": "routed-app-01",
     "formattedName": "Routed App",
     "description": "A simple routed app built with React, TypeScript, and Vite.",

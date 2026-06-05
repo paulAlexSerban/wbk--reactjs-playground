@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/project-management-app",
+    "name": "@wbk--reactjs-forge/project-management-app",
     "id": "project-management-app-01",
     "formattedName": "Project Management App",
     "description": "A project management app built with ReactJS, TypeScript, and TailwindCSS.",

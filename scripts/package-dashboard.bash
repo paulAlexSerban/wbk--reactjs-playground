@@ -5,5 +5,5 @@ cd "$(dirname "$0")" || exit
 APP_PATH="../dashboard"
 
 if [[ -d "$APP_PATH/dist" ]]; then
-  cp -rfv $APP_PATH/dist/* ../package/wbk--reactjs-playground/
+  cp -rfv $APP_PATH/dist/* ../package/wbk--reactjs-forge/
 fi

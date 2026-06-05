@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/json-to-excel-app",
+    "name": "@wbk--reactjs-forge/json-to-excel-app",
     "id": "json-to-excel-app-01",
     "formattedName": "JSON to Excel App",
     "description": "A JSON to Excel app built with ReactJS and TypeScript.",

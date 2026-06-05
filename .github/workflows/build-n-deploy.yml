@@ -6,8 +6,8 @@ on:
     workflow_dispatch:
 
 env:
-    NODE_VERSION: 24.12.0
-    REPO_NAME: wbk--reactjs-playground
+    NODE_VERSION: 24.16.0
+    REPO_NAME: wbk--reactjs-forge
 
 permissions:
     contents: write

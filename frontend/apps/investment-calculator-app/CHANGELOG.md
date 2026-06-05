@@ -3,17 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.3.3](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/investment-calculator-app@0.3.2...@wbk--reactjs-playground/investment-calculator-app@0.3.3) (2024-11-10)
+## [0.3.3](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/investment-calculator-app@0.3.2...@wbk--reactjs-forge/investment-calculator-app@0.3.3) (2024-11-10)
 
-**Note:** Version bump only for package @wbk--reactjs-playground/investment-calculator-app
+**Note:** Version bump only for package @wbk--reactjs-forge/investment-calculator-app
 
-## [0.3.2](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/investment-calculator-app@0.3.1...@wbk--reactjs-playground/investment-calculator-app@0.3.2) (2024-11-04)
+## [0.3.2](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/investment-calculator-app@0.3.1...@wbk--reactjs-forge/investment-calculator-app@0.3.2) (2024-11-04)
 
-**Note:** Version bump only for package @wbk--reactjs-playground/investment-calculator-app
+**Note:** Version bump only for package @wbk--reactjs-forge/investment-calculator-app
 
-## [0.3.1](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/investment-calculator-app@0.3.0...@wbk--reactjs-playground/investment-calculator-app@0.3.1) (2024-10-25)
+## [0.3.1](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/investment-calculator-app@0.3.0...@wbk--reactjs-forge/investment-calculator-app@0.3.1) (2024-10-25)
 
-**Note:** Version bump only for package @wbk--reactjs-playground/investment-calculator-app
+**Note:** Version bump only for package @wbk--reactjs-forge/investment-calculator-app
 
 # 0.3.0 (2024-10-22)
 
@@ -26,7 +26,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - **production builds:** pracgice ([f5061fe](https://github.com/paulAlexSerban/wbk--mern-playground/commit/f5061feeb1ce06af5f4fff22a35f5ad2923f8fc2))
 - **typescript:** add type checking in develop script ([e7452a1](https://github.com/paulAlexSerban/wbk--mern-playground/commit/e7452a155aed4eb698b2993513f2d76ddeb865b4))
 
-# [0.2.0](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-playground/investment-calculator-app@0.1.0...@wbk--reactjs-playground/investment-calculator-app@0.2.0) (2024-02-05)
+# [0.2.0](https://github.com/paulAlexSerban/wbk--mern-playground/compare/@wbk--reactjs-forge/investment-calculator-app@0.1.0...@wbk--reactjs-forge/investment-calculator-app@0.2.0) (2024-02-05)
 
 ### Features
 

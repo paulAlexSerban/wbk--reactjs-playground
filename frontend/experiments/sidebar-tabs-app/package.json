@@ -1,5 +1,5 @@
 {
-    "name": "@wbk--reactjs-playground/sidebar-tabs-app",
+    "name": "@wbk--reactjs-forge/sidebar-tabs-app",
     "id": "sidebar-tabs-app-01",
     "formattedName": "Sidebar Tabs",
     "description": "A sidebar with tabs component built with ReactJS and TypeScript.",
