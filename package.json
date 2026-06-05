@@ -58,7 +58,7 @@
             "shared/*",
             "shared/**/*",
             "scripts/*",
-            "dashboard/*"
+            "dashboard/"
         ],
         "nohoist": [
             "**/normalize-scss"
