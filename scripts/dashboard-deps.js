@@ -6,7 +6,7 @@ const serveConfigPath = path.join(__dirname, '..', 'package', 'serve.json');
 const frontendAppsSource = path.join(__dirname, '..', 'frontend', 'apps');
 const frontendExperimentsSource = path.join(__dirname, '..', 'frontend', 'experiments');
 
-const BASE_PATH = '/wbk--reactjs-forge/apps/';
+const BASE_PATH = '/wbk--reactjs-forge/';
 const DEFAULT_CREATED_AT = new Date(0).toISOString();
 const ALLOWED_CATEGORIES = new Set([
     'Web App',
